@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class MFUQueuesSQLite3 | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Acl.html">Acl</a></li>
+				<li><a href="class-Authenticator.html">Authenticator</a></li>
+				<li><a href="class-BasePresenter.html">BasePresenter</a></li>
+				<li><a href="class-ErrorPresenter.html">ErrorPresenter</a></li>
+				<li><a href="class-Helpers.html">Helpers</a></li>
+				<li><a href="class-MFUBaseQueueModel.html">MFUBaseQueueModel</a></li>
+				<li><a href="class-MFUBaseQueuesModel.html">MFUBaseQueuesModel</a></li>
+				<li><a href="class-MFUQueueSQLite3.html">MFUQueueSQLite3</a></li>
+				<li class="active"><a href="class-MFUQueuesSQLite3.html">MFUQueuesSQLite3</a></li>
+				<li><a href="class-MFUTemplate.html">MFUTemplate</a></li>
+				<li><a href="class-MFUUIBase.html">MFUUIBase</a></li>
+				<li><a href="class-MFUUIHTML4SingleUpload.html">MFUUIHTML4SingleUpload</a></li>
+				<li><a href="class-MFUUIPlupload.html">MFUUIPlupload</a></li>
+				<li><a href="class-MFUUIRegistrator.html">MFUUIRegistrator</a></li>
+				<li><a href="class-MultipleFileUpload.html">MultipleFileUpload</a></li>
+				<li><a href="class-RouterFactory.html">RouterFactory</a></li>
+				<li><a href="class-VisualPaginator.html">VisualPaginator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-IMFUQueueModel.html">IMFUQueueModel</a></li>
+				<li><a href="class-IMFUQueuesModel.html">IMFUQueuesModel</a></li>
+				<li><a href="class-MFUUIInterface.html">MFUUIInterface</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-FormContainer_addMultipleFileUpload.html">FormContainer_addMultipleFileUpload</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class MFUQueuesSQLite3</h1>
+
+
+	<div class="description">
+	
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Object
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-MFUBaseQueuesModel.html"><span>MFUBaseQueuesModel</span></a>
+			
+			 implements 
+				<a href="class-IMFUQueuesModel.html"><span>IMFUQueuesModel</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>MFUQueuesSQLite3</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Property int $cleaninterval clean:</b>
+				interval
+<br>
+				<b>Property int $lifetime life:</b>
+				time
+<br>
+		<b>Located at</b> <a href="source-class-MFUQueuesSQLite3.html#4-162" title="Go to source code">components/MultipleFileUpload/Models/SQLite3/MFUQueuesSQLite3.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="initialize" id="_initialize">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initialize">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#23-28" title="Go to source code">initialize</a>( )</code>
+
+		<div class="description short">
+			<p>Initialize driver</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Initialize driver</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConnection" id="_getConnection">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConnection">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#32-47" title="Go to source code">getConnection</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="query" id="_query">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-SQLite3Result.html">SQLite3Result</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_query">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#49-61" title="Go to source code">query</a>( <span>string <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			<p>Execute query</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Execute query</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-SQLite3Result.html">SQLite3Result</a></code></code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prepare" id="_prepare">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-SQLite3Stmt.html">SQLite3Stmt</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prepare">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#64-76" title="Go to source code">prepare</a>( <span>string <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			<p>Prepare query</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Prepare query</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-SQLite3Stmt.html">SQLite3Stmt</a></code></code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="openDB" id="_openDB">
+
+		<td class="attributes"><code>
+			 public 
+
+			SQLiteDatabase
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_openDB">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#79-91" title="Go to source code">openDB</a>( )</code>
+
+		<div class="description short">
+			<p>Open SQLite file</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Open SQLite file</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>SQLiteDatabase</code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getQueue" id="_getQueue">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-MFUQueueSQLite3.html">MFUQueueSQLite3</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getQueue">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#94-101" title="Go to source code">getQueue</a>( <span>string <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Get queue (if needed create)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get queue (if needed create)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-MFUQueueSQLite3.html">MFUQueueSQLite3</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createQueueObj" id="_createQueueObj">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-MFUQueueSQLite3.html">MFUQueueSQLite3</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createQueueObj">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#103-114" title="Go to source code">createQueueObj</a>( <span>string <var>$queueID</var></span> )</code>
+
+		<div class="description short">
+			<p>Factory for MFUQueueSQLite</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Factory for MFUQueueSQLite</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$queueID</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-MFUQueueSQLite3.html">MFUQueueSQLite3</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="cleanup" id="_cleanup">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_cleanup">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#116-130" title="Go to source code">cleanup</a>( )</code>
+
+		<div class="description short">
+			<p>Execute cleanup</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Execute cleanup</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getQueues" id="_getQueues">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getQueues">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#132-149" title="Go to source code">getQueues</a>( )</code>
+
+		<div class="description short">
+			<p>Get all queues</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get all queues</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>of IMFUQueueModel
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="init" id="_init">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_init">#</a>
+		<code><a href="source-class-MFUQueuesSQLite3.html#151-160" title="Go to source code">init</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-MFUBaseQueuesModel.html#methods">MFUBaseQueuesModel</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-MFUBaseQueuesModel.html#_getCleanInterval">getCleanInterval()</a>, 
+			<a href="class-MFUBaseQueuesModel.html#_getLifeTime">getLifeTime()</a>, 
+			<a href="class-MFUBaseQueuesModel.html#_setCleanInterval">setCleanInterval()</a>, 
+			<a href="class-MFUBaseQueuesModel.html#_setLifeTime">setLifeTime()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="connection" id="$connection">
+		<td class="attributes"><code>
+			private  
+			SQLite3Database
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MFUQueuesSQLite3.html#6-9" title="Go to source code"><var>$connection</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$connection" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="databasePath" id="$databasePath">
+		<td class="attributes"><code>
+			public static 
+			string|null
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MFUQueuesSQLite3.html#11-15" title="Go to source code"><var>$databasePath</var></a>
+
+			<div class="description short">
+				<p>Path to SQLite3 database file</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Path to SQLite3 database file</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$databasePath" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="uploadsTempDir" id="$uploadsTempDir">
+		<td class="attributes"><code>
+			public static 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MFUQueuesSQLite3.html#17-21" title="Go to source code"><var>$uploadsTempDir</var></a>
+
+			<div class="description short">
+				<p>Path to director of uploaded files (temp)</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Path to director of uploaded files (temp)</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$uploadsTempDir" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

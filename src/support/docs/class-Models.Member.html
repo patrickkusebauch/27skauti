@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Models\Member | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Models.Calendar.html">Calendar</a></li>
+				<li><a href="class-Models.Event.html">Event</a></li>
+				<li><a href="class-Models.Guestbook.html">Guestbook</a></li>
+				<li><a href="class-Models.History.html">History</a></li>
+				<li class="active"><a href="class-Models.Member.html">Member</a></li>
+				<li><a href="class-Models.News.html">News</a></li>
+				<li><a href="class-Models.Privilege.html">Privilege</a></li>
+				<li><a href="class-Models.Registration.html">Registration</a></li>
+				<li><a href="class-Models.Repository.html">Repository</a></li>
+				<li><a href="class-Models.User.html">User</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Models.html" title="Summary of Models"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Member</h1>
+
+
+	<div class="description">
+	<p>Member model</p>
+
+<p>Represents the members of Mustang Liberec</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Object
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-Models.Repository.html"><span>Models\Repository</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Models\Member</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> Models<br>
+		
+
+				<b>Author:</b>
+				Patrick Kusebauch
+<br>
+				<b>Version:</b>
+				2.00, 09. 11. 2014
+<br>
+		<b>Located at</b> <a href="source-class-Models.Member.html#3-135" title="Go to source code">model/Member.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="getAuthenticatedUsers" id="_getAuthenticatedUsers">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAuthenticatedUsers">#</a>
+		<code><a href="source-class-Models.Member.html#13-22" title="Go to source code">getAuthenticatedUsers</a>( )</code>
+
+		<div class="description short">
+			<p>Gets all members that have an account connected to them</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all members that have an account connected to them</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLeader" id="_getLeader">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\ActiveRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLeader">#</a>
+		<code><a href="source-class-Models.Member.html#27-37" title="Go to source code">getLeader</a>( )</code>
+
+		<div class="description short">
+			<p>Gets the main leader of "27. oddíl střediska Mustang Liberec"</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the main leader of "27. oddíl střediska Mustang Liberec"</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\ActiveRow</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLeaders" id="_getLeaders">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLeaders">#</a>
+		<code><a href="source-class-Models.Member.html#39-49" title="Go to source code">getLeaders</a>( )</code>
+
+		<div class="description short">
+			<p>Gets all the leaders of "27. oddíl střediska Mustang Liberec"</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all the leaders of "27. oddíl střediska Mustang Liberec"</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMembersWithoutRegistration" id="_getMembersWithoutRegistration">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMembersWithoutRegistration">#</a>
+		<code><a href="source-class-Models.Member.html#51-65" title="Go to source code">getMembersWithoutRegistration</a>( )</code>
+
+		<div class="description short">
+			<p>All the members that don't have registration</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>All the members that don't have registration</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMloci" id="_getMloci">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMloci">#</a>
+		<code><a href="source-class-Models.Member.html#67-77" title="Go to source code">getMloci</a>( )</code>
+
+		<div class="description short">
+			<p>Gets all the "Mloky" of "27. oddíl střediska Mustang Liberec"</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all the "Mloky" of "27. oddíl střediska Mustang Liberec"</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getNewbies" id="_getNewbies">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getNewbies">#</a>
+		<code><a href="source-class-Models.Member.html#79-88" title="Go to source code">getNewbies</a>( )</code>
+
+		<div class="description short">
+			<p>Gets all the newbies of "27. oddíl střediska Mustang Liberec"</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all the newbies of "27. oddíl střediska Mustang Liberec"</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getOldscouts" id="_getOldscouts">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getOldscouts">#</a>
+		<code><a href="source-class-Models.Member.html#90-99" title="Go to source code">getOldscouts</a>( )</code>
+
+		<div class="description short">
+			<p>Gets all the oldscouts of "27. oddíl střediska Mustang Liberec"</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all the oldscouts of "27. oddíl střediska Mustang Liberec"</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getOrderedMembers" id="_getOrderedMembers">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getOrderedMembers">#</a>
+		<code><a href="source-class-Models.Member.html#101-110" title="Go to source code">getOrderedMembers</a>( )</code>
+
+		<div class="description short">
+			<p>Returns all the members ordered by their stripes and group</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns all the members ordered by their stripes and group</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRangers" id="_getRangers">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRangers">#</a>
+		<code><a href="source-class-Models.Member.html#112-122" title="Go to source code">getRangers</a>( )</code>
+
+		<div class="description short">
+			<p>Gets all the rangers of "27. oddíl střediska Mustang Liberec"</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all the rangers of "27. oddíl střediska Mustang Liberec"</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTucnaci" id="_getTucnaci">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTucnaci">#</a>
+		<code><a href="source-class-Models.Member.html#124-134" title="Go to source code">getTucnaci</a>( )</code>
+
+		<div class="description short">
+			<p>Gets all the "Tučňáky" of "27. oddíl střediska Mustang Liberec"</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all the "Tučňáky" of "27. oddíl střediska Mustang Liberec"</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Models.Repository.html#methods">Models\Repository</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Models.Repository.html#___construct">__construct()</a>, 
+			<a href="class-Models.Repository.html#_findAll">findAll()</a>, 
+			<a href="class-Models.Repository.html#_findBy">findBy()</a>, 
+			<a href="class-Models.Repository.html#_get">get()</a>, 
+			<a href="class-Models.Repository.html#_getBy">getBy()</a>, 
+			<a href="class-Models.Repository.html#_insert">insert()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="table" id="$table">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Models.Member.html#24-25" title="Go to source code"><var>$table</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$table" class="anchor">#</a>
+				<code><span class="php-quote">&quot;member&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Models.Repository.html#properties">Models\Repository</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Models.Repository.html#$database"><var>$database</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

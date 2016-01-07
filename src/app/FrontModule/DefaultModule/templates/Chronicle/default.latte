@@ -1,0 +1,60 @@
+{**
+ * Chronicle overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $chronicles chronicles from specified year
+ *}
+{block #head}
+	<link rel="stylesheet" href="{$basePath}/css/paginator.css" />
+{/block}
+
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+<h1 class="heading_1">Kronika</h1>
+{control vp}
+{foreach $chronicles as $chronicle}
+<div class="box-outer">
+	<div class="box-innerlined-inner">
+		<div class="box-innerlined-inner-heading">
+			<span class="box-left"><a n:href="Chronicle:detail id=>$chronicle->id">{$chronicle->name|truncate:30}</a></span>
+			<span class="box-right">{$chronicle->dateend|date:'%B %Y'}</span>
+		</div>
+		{if $chronicle->related('chronicle_photos')->where('intro', 1)->fetch()}
+		<div class="picture-outer" style="margin-top:10px;">
+			{include '../common/chronicle_picture.latte', chronicle => $chronicle}
+		</div>
+		{/if}
+		<table class="in-box-table" style="width:450px; margin-top:30px;">
+			<thead></thead><tbody style="vertical-align: top;">
+				<tr>
+					<td class="italic">Datum:</td><td class="bold">
+					{if $chronicle->datestart == $chronicle->dateend}
+						{$chronicle->datestart|date:'j. n. Y'}
+					{elseif $chronicle->datestart->format('n') == $chronicle->dateend->format('n')}
+						{$chronicle->datestart|date:'j.'}-{$chronicle->dateend|date:'j. n. Y'}
+					{else}
+						{$chronicle->datestart|date:'j. n.'}-{$chronicle->dateend|date:'j. n. Y'}
+					{/if}
+					</td>
+				</tr><tr n:if="$chronicle->route">
+					<td class="italic">Trasa:</td><td class="bold">{$chronicle->route}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+{/foreach}
+
+{/block}

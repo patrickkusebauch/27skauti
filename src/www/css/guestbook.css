@@ -1,0 +1,14 @@
+#guestbook-form>table>tbody>tr>th>label {
+	font-size: 18px;
+	font-weight: normal;
+	font-style: italic;
+	letter-spacing: 2px;
+}
+
+#guestbook-form>table>tbody>tr>th>label.required {
+	color: #B0381A;
+}
+
+#guestbook-form>table>tbody>tr:last-child>td {
+	float: right;
+}

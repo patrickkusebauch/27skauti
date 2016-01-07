@@ -1,0 +1,30 @@
+{**
+ * Organization ranger page template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $members    Rangers of the group
+ *}
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+	<h1 class="heading_1">{$title}</h1>
+	<div class="box-nolined">
+		<p>Roveři jsou aktivní členové oddílu ve věku od 15 do cca 18 let. Pomáhají vedoucím s přípravou programu,
+		zajišťují nezbytné technické i programové zázemí většiny akcí. Díky roverům se daří realizovat program, na který
+		by vedoucí již neměli kapacitu. Roveři skládají tzv. čekatelské zkoušky, kde musí prokázat základní znalosti
+		nejen klasických skautských disciplín, ale i zdravovědy, pedagogiky či psychologie. O něco málo níže se můžete
+		podívat jaké máme v současné době aktivní rovery.</p>
+	</div>
+	{include 'member.latte', showAge => TRUE}
+{/block}

@@ -1,0 +1,25 @@
+{*
+ * Displays school years
+ *
+ * @author Patrick Kusebauch
+ * @version 1.01, 27. 10. 2014
+ *
+ * Displays schools years in format (yyyy/yyyy) in a drop down menu
+ * @param Paginator $paginator
+ * @param array     $steps
+ *}
+
+{var $dummy = rsort($steps)}
+{if $paginator->pageCount > 1}
+<ul class="drop-paginator">
+	<li>{$paginator->page}/{$paginator->page + 1}
+		<ul>{foreach $steps as $step}
+			{if $step == $paginator->page}
+				<li class="paginator-current">{$step}/{$step + 1}</li>
+			{else}
+				<li><a href="{link this, 'page' => $step}">{$step}/{$step + 1}</a></li>
+			{/if}
+		{/foreach}</ul>
+	</li>
+</ul>
+{/if}

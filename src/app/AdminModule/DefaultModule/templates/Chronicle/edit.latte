@@ -1,0 +1,49 @@
+{**
+ * Edit individual chronicle template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param string    $name       name of the event
+ *}
+{block #content}
+<h1 class="heading_1">Kronika - Editace akce</h1>
+<div class="box-outer">
+	<span class="box-left">{$event->name|truncate:45}
+	{if $event->datestart == $event->dateend}
+        ({$event->datestart|date:'j. n. Y'})
+    {elseif $event->datestart->format('n') == $event->dateend->format('n')}
+        ({$event->datestart|date:'j.'}-{$event->dateend|date:'j. n. Y'})
+    {else}
+        ({$event->datestart|date:'j. n.'}-{$event->dateend|date:'j. n. Y'})
+    {/if}</span>
+	<div class="box-nolined">
+		{form editChronicleForm}
+			<ul class="errors" n:if="$form->hasErrors()">
+			        <li n:foreach="$form->errors as $error">{$error}</li>
+			</ul>
+		{input id}
+		<table class="bold" style="width:100%"><tbody>
+			<tr><td style="width:175px">{label name /}</td><td>{input name, style => 'width:100%'}</td></tr>
+			<tr><td>{label rangers /}</td><td>{input rangers, style => 'width:100%', rows => 3}</td></tr>
+			<tr><td>{label mloci /}</td><td>{input mloci, style => 'width:100%', rows => 3}</td></tr>
+			<tr><td>{label tucnaci /}</td><td>{input tucnaci, style => 'width:100%', rows => 3}</td></tr>
+			<tr><td>{label novacci /}</td><td>{input novacci, style => 'width:100%', rows => 3}</td></tr>
+			<tr><td>{label route /}</td><td>{input route, style => 'width:100%', rows => 4}</td></tr>
+			<tr><td>{label content /}</td><td>{input content, style => 'width:100%', rows => 8}</td></tr>
+			<tr><td>{label chroniclewriter, class => 'required' /}</td><td>{input chroniclewriter}</td></tr>
+			<tr n:if="$form->components[showchronicle]"><td>{label showchronicle:}{/label}</td><td>{input showchronicle:}</td></tr>
+			<tr><td></td><td>{input send}</td></tr>
+		</tbody></table>
+		{/form}
+	</div>
+</div>
+{/block}
+

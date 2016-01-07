@@ -1,0 +1,67 @@
+{**
+ * Error layout template.
+ *
+ * @author Patrick Kusebauch
+ * @version 1.00, 12. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="robots" content="noindex">
+
+	<title>27skauti.cz</title>
+
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/boxes.css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+</head>
+
+<body>
+<div id="body">
+	<div id="header">
+		<img src="{$basePath}/images/common/logo.gif" id="logo" />
+		<span id="heading">Mustang</span>
+		<span id="address">www.27skauti.cz</span>
+		<hr id="head_line" />
+		<span id="subheading">27. oddíl Liberec</span>
+	</div>
+    <div id="menu">
+<ul>
+	<li>
+	        <a n:href=":Front:Default:Homepage:">Úvod</a>
+	</li>
+	<li>
+	        <a n:href=":Front:Default:News:">Aktuality/Akce</a>
+	</li>
+	<li>
+	        <a n:href=":Front:Default:Organization:">Organizace</a>
+	</li>
+	<li>
+	        <a n:href=":Front:Default:Chronicle:">Kronika</a>
+	</li>
+	<li>
+	        <a n:href=":Front:Default:Hlasinek:">Hlásínek</a>
+	</li>
+	<li>
+	        <a n:href=":Front:Default:Guestbook:">Kniha Návštěv</a>
+	</li>
+</ul>
+	</div>
+	<div id="content-outer">
+		<div id="content-inner">
+			{include #content}
+		</div>
+    </div>
+</div>
+
+</body>
+</html>

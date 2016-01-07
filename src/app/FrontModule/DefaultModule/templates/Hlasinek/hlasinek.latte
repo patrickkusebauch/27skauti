@@ -1,0 +1,57 @@
+﻿{**
+ * Hlásínek display template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path (URI relative path)
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param string    $dir        Directory name where the files for chosen "Hlásínek" are stored
+ *}
+{var $months = [
+	'Září' => '01',
+	'Říjen' => '02',
+	'Listopad' => '03',
+	'Prosinec' => '04',
+	'Leden' => '05',
+	'Únor' => '06',
+	'Březen'=> '07',
+	'Duben' => '08',
+	'Květen' => '09',
+	'Červen' => '10',
+	'Tábor' => '11'
+
+]}
+{foreach $months as $month_name => $month_number}
+	{var $path = $config['hlasinekStorage'] . '/' . $dir . '/hlas' . $month_number}
+	{var $first_page_gif = $path . '01.gif'}
+	{var $first_page_pdf = $path . '01.pdf'}
+	{var $second_page_gif = $path . '02.gif'}
+	{var $second_page_pdf = $path . '02.pdf'}
+	{var $has_first_page = file_exists($config['wwwDir'] . $first_page_gif) && file_exists($config['wwwDir'] . $first_page_pdf)}
+	{var $has_second_page = file_exists($config['wwwDir'] . $second_page_gif) && file_exists($config['wwwDir'] . $second_page_pdf)}
+	{if $has_first_page}
+	<div class="hlasinek-outer-box">
+		<div class="box-left">{$month_name}</div>
+		{if $has_first_page}
+		<div class="hlasinek-inner-box"{if !$has_second_page} style="float:none; margin-left:auto; margin-right:auto;"{/if}>
+			<a href="{$basePath}{$first_page_pdf}" target="_blank">
+				<img src="{$first_page_gif}" alt="¨První strana Hlásínku" width="90px" height="130px" /><span class="bold">PDF</span>
+			</a>
+		</div>
+    		{/if}
+    		{if $has_second_page}
+		<div class="hlasinek-inner-box">
+			<a href="{$basePath}{$second_page_pdf}" target="_blank">
+				<img src="{$basePath}{$second_page_gif}" alt="Druhá strana Hlásínku" width="90px" height="130px" /><span class="bold">PDF</span>
+			</a>
+		</div>
+		{/if}
+	</div>
+	{/if}
+{/foreach}

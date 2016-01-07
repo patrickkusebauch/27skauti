@@ -1,0 +1,104 @@
+<?php
+use Nette\Application\Routers\RouteList,
+Nette\Application\Routers\Route;
+/**
+ * Router factory
+ *
+ * @author Patrick Kusebauch
+ * @version 2.10, 18. 11. 2014
+ */
+class RouterFactory
+{
+
+	/**
+	 * @return Nette\Application\IRouter
+	 */
+	public function createRouter()
+	{
+		$router = new RouteList();
+		$router[] = new Route('index.php', 'Front:Default:Homepage:default', Route::ONE_WAY);
+		$router[] = new Route('//oddil.27skauti.cz/admin/<presenter>/<action>[/<id>]', array(
+			'module' => 'Admin:Oddil',
+			'presenter' => array(
+				Route::VALUE => 'Homepage',
+				Route::FILTER_TABLE => array(
+					// řetězec v URL => presenter
+					'isskaut' => 'Skautis',
+				),
+			),
+			'action' => 'default',
+		));
+
+		$router[] = new Route('admin/<presenter>/<action>[/<id>]', array(
+			'module' => 'Admin:Default',
+			'presenter' => array(
+				Route::VALUE => 'Homepage',
+				Route::FILTER_TABLE => array(
+					// řetězec v URL => presenter
+					'isskaut' => 'Skautis',
+				),
+			),
+			'action' => 'default',
+		));
+
+		$router[] = new Route('oddil/<presenter>/<action>[/<id>]', array(
+			'module' => 'Front:Oddil',
+			'presenter' => array(
+				Route::VALUE => 'Homepage',
+				Route::FILTER_TABLE => array(
+					// řetězec v URL => presenter
+					'aktuality' => 'News',
+				),
+			),
+			'action' => array(
+				Route::VALUE => 'default',
+				Route::FILTER_TABLE => array(
+					// řetězec v URL => akce
+					'zapomenuteHeslo' => 'forgot',
+				),
+			),
+		));
+
+		$router[] = new Route('<presenter>/<action>[/<id>]', array(
+			'module' => 'Front:Default',
+			'presenter' => array(
+				Route::VALUE => 'Homepage',
+				Route::FILTER_TABLE => array(
+					// řetězec v URL => presenter
+					'aktuality' => 'News',
+					'akce' => 'Event',
+					'kronika' => 'Chronicle',
+					'organizace' => 'Organization',
+					'knihanavstev' => 'Guestbook',
+					'prihlaseni' => 'Sign',
+				),
+			),
+			'action' => array(
+				Route::VALUE => 'default',
+				Route::FILTER_TABLE => array(
+					// řetězec v URL => akce
+					'zapomenuteHeslo' => 'forgot',
+					'registrace' => 'register',
+					'aktivace' => 'activate',
+					'nabor' => 'recruit',
+					'prorodice' => 'parent',
+					'klubovna' => 'lounge',
+					'detailKlubovny' => 'loungeDetail',
+					'detailFotky' => 'detailPicture',
+					'kontakty' => 'contact',
+					'pridejse' => 'join',
+					'akce' => 'event',
+					'aktuality' => 'news',
+					'archiv' => 'archive',
+					'vedeni' => 'leader',
+					'roveri' => 'ranger',
+					'novacci' => 'newbie',
+					'oldskauti' => 'oldscout',
+					'historieOddilu' => 'history',
+				),
+			),
+		));
+		return $router;
+	}
+
+}

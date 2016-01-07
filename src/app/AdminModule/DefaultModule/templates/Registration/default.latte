@@ -1,0 +1,58 @@
+{**
+ * Registration overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param array     $groups     array of registrations members in each group
+ *}
+{block #content}
+<h1 class="heading_1">Registrace</h1>
+<div class="box-nolined">
+	<p>Registrace jsou rozšířením informací o členech střediska, proto je lze
+	vytvořit pouze pro členy, které je možno nalést v sekci organizace. Pokud
+	chcete vytvořit kompletně nového člena, nejprve vytvořte osobu v organizaci
+	a následně doplnte informace v registraci. Pokud osoba není členem našeho
+	oddílu, nevplňujte jí pozici v oddílu. Tak se nezobrazí v sekci "Organizace"
+	na stránkách. V budoucnu snad bude možné tyto informace získat rovnou z IS.skaut,
+	ale prozatím je nutné je zadávat ručně.</p>
+	<p n:if="$user->isAllowed('Admin:Default:Registration', 'create')"><a n:href="create">Registrovat stávajícího člena</a></p>
+</div>
+
+{foreach $groups as $group}
+<table class="table">
+	<thead>
+		<tr><td colspan=8>{$group['name']}. oddíl</td></tr>
+		<tr>
+			<td>Přezdívka</td>
+			<td>Datum nar.</td>
+			<td>Adresa</td>
+			<td>Mobil</td>
+			<td n:if="$user->isAllowed('Admin:Default:Registration', 'edit')">Editace</td>
+			<td n:if="$user->isAllowed('Admin:Default:Registration', 'delete')">Mazání</td>
+		</tr>
+	</thead>
+	<tbody>
+        {foreach $group['members'] as $member}
+		<tr>
+			<td>{$member->member_nickname}</td>
+			<td>{$member->birth_date|date:'j. n. Y'}</td>
+			<td>{$member->address|nl2br|noescape}</td>
+			<td>{$member->mobile}</td>
+			<td n:if="$user->isAllowed('Admin:Default:Registration', 'edit')"><a n:href="edit member_nickname => $member->member_nickname">Edituj</a></td>
+			<td n:if="$user->isAllowed('Admin:Default:Registration', 'delete')"><a n:href="delete! member_nickname => $member->member_nickname">Smaž</a></td>
+		</tr>
+		{/foreach}
+	</tbody>
+</table>
+{/foreach}
+
+{/block}
+

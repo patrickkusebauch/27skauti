@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class AdminModule\DefaultModule\NewsPresenter | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-AdminModule.DefaultModule.BasePresenter.html">BasePresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.ChroniclePresenter.html">ChroniclePresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.EventPresenter.html">EventPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.GuestbookPresenter.html">GuestbookPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.HistoryPresenter.html">HistoryPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.HlasinekPresenter.html">HlasinekPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.HomepagePresenter.html">HomepagePresenter</a></li>
+				<li class="active"><a href="class-AdminModule.DefaultModule.NewsPresenter.html">NewsPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.OrganizationPresenter.html">OrganizationPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.PrivilegePresenter.html">PrivilegePresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.RegistrationPresenter.html">RegistrationPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.UserPresenter.html">UserPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.VipchroniclePresenter.html">VipchroniclePresenter</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-AdminModule.DefaultModule.html" title="Summary of AdminModule\DefaultModule"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class NewsPresenter</h1>
+
+
+	<div class="description">
+	<p>Posting and managing the news</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Application\UI\Presenter
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-BasePresenter.html"><span>BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-AdminModule.BasePresenter.html"><span>AdminModule\BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:90px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-AdminModule.DefaultModule.BasePresenter.html"><span>AdminModule\DefaultModule\BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:120px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>AdminModule\DefaultModule\NewsPresenter</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> AdminModule\DefaultModule<br>
+		
+
+				<b>Author:</b>
+				Patrick Kusebauch
+<br>
+				<b>Version:</b>
+				2.00, 09. 11. 2014
+<br>
+				<b>Resource("admin:default:news")</b>
+				
+<br>
+				<b>Secured</b>
+				
+<br>
+		<b>Located at</b> <a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#5-243" title="Go to source code">AdminModule/DefaultModule/presenters/NewsPresenter.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="injectEvent" id="_injectEvent">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_injectEvent">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#23-34" title="Go to source code">injectEvent</a>( <span><code><a href="class-Models.Event.html">Models\Event</a></code> <var>$event</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects connection to event model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects connection to event model</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$event</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="injectNews" id="_injectNews">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_injectNews">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#36-47" title="Go to source code">injectNews</a>( <span><code><a href="class-Models.News.html">Models\News</a></code> <var>$news</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects connection to news model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects connection to news model</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$news</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadItem" id="_loadItem">
+
+		<td class="attributes"><code>
+			 protected 
+
+			false|Nette\Database\Table\ActiveRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadItem">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#49-63" title="Go to source code">loadItem</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Load a news post by its ID</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load a news post by its ID</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>News ID
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|Nette\Database\Table\ActiveRow</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="startup" id="_startup">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_startup">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#65-71" title="Go to source code">startup</a>( )</code>
+
+		<div class="description short">
+			<p>Adding dependand select box for Form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Adding dependand select box for Form</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionCreate" id="_actionCreate">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_actionCreate">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#73-78" title="Go to source code">actionCreate</a>( )</code>
+
+		<div class="description short">
+			<p>Creates a news post</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Creates a news post</p>
+
+
+
+
+
+
+				<h4>Privilege('create')</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionEdit" id="_actionEdit">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_actionEdit">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#80-96" title="Go to source code">actionEdit</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Edits a news post</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Edits a news post</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>News ID
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege('edit')</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="beforeRender" id="_beforeRender">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_beforeRender">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#98-104" title="Go to source code">beforeRender</a>( )</code>
+
+		<div class="description short">
+			<p>Allows for AJAJ response</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Allows for AJAJ response</p>
+
+
+
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-BasePresenter.html#_beforeRender">BasePresenter::beforeRender()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="renderDefault" id="_renderDefault">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_renderDefault">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#106-122" title="Go to source code">renderDefault</a>( )</code>
+
+		<div class="description short">
+			<p>Overview of news</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Overview of news</p>
+
+
+
+
+
+
+				<h4>Privilege("default")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleDelete" id="_handleDelete">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleDelete">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#124-135" title="Go to source code">handleDelete</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Deleting a news post</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Deleting a news post</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>News ID
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("delete")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleShow" id="_handleShow">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleShow">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#137-153" title="Go to source code">handleShow</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Changing visibility of news posts</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Changing visibility of news posts</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>News ID
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("show")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createComponentEditNewsForm" id="_createComponentEditNewsForm">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createComponentEditNewsForm">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#155-188" title="Go to source code">createComponentEditNewsForm</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Form for adding and editing News</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Form for adding and editing News</p>
+
+
+
+
+
+
+				<h4>Action('create',</h4>
+				<div class="list">
+						'edit')
+<br>
+				</div>
+				<h4>Privilege('create',</h4>
+				<div class="list">
+						'edit')
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getValuesEventId" id="_getValuesEventId">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getValuesEventId">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#190-215" title="Go to source code">getValuesEventId</a>( <span>mixed <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Custom values loading function for dependand select</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Custom values loading function for dependand select</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>('value' => 'text')            for selectbox
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="editNewsFromSucceded" id="_editNewsFromSucceded">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_editNewsFromSucceded">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#217-242" title="Go to source code">editNewsFromSucceded</a>( <span>mixed <var>$button</var></span> )</code>
+
+		<div class="description short">
+			<p>Processing of News editing form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Processing of News editing form</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$button</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege('create',</h4>
+				<div class="list">
+						'edit')
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-AdminModule.DefaultModule.BasePresenter.html#methods">AdminModule\DefaultModule\BasePresenter</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-AdminModule.DefaultModule.BasePresenter.html#_createComponentMenu">createComponentMenu()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-AdminModule.BasePresenter.html#methods">AdminModule\BasePresenter</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-AdminModule.BasePresenter.html#_createComponent">createComponent()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-BasePresenter.html#methods">BasePresenter</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-BasePresenter.html#_checkRequirements">checkRequirements()</a>, 
+			<a href="class-BasePresenter.html#_createComponentSignInForm">createComponentSignInForm()</a>, 
+			<a href="class-BasePresenter.html#_createTemplate">createTemplate()</a>, 
+			<a href="class-BasePresenter.html#_handleOut">handleOut()</a>, 
+			<a href="class-BasePresenter.html#_signInFormSucceeded">signInFormSucceeded()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="events" id="$events">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Models.Event.html">Models\Event</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#17-18" title="Go to source code"><var>$events</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$events" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="news" id="$news">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Models.News.html">Models\News</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-AdminModule.DefaultModule.NewsPresenter.html#20-21" title="Go to source code"><var>$news</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$news" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

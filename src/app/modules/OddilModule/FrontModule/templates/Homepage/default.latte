@@ -1,0 +1,61 @@
+{**
+ * Front Homepage template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param ActiveRow $chronicle  Newest chronicle allowed for display
+ * @param Selection $news       4 newest news allowed for display
+ *}
+{block #head}
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/homepage.css">
+{/block}
+
+{block #content}
+<h1 class="heading_1">Úvod</h1>
+<!-- about -->
+<div class="box-outer" style="clear:both;">
+	<span class="box-left-small">O oddílu</span>	
+	<div class="box-doublelined-inner"> {** Intentionally NOT using <p> for formatting *}
+		<img src="{$basePath}/images/nabor.gif" style="width: 255px; height: 361px; float:right; padding: 0px 0px 10px 10px;" />
+		<span class="bold"> Co znamená 27.oddíl skautů?</span>
+		<p>
+		    <span class="bold">Prima parta</span> správných kluků od osmi let.<br />
+		    <span class="bold">Společné akce</span> - scházíme se každou středu od&nbsp17h v klubovně v Hanychově. Jednou za&nbspčtrnáct dní v sobotu jezdíme na&nbspvýpravy do okolí Liberce. V létě pořádáme tábor nedaleko Českého Dubu.<br />
+		    <span class="bold">Dobrodružství</span> - turistika, zálesáctví, horolezectví, lyžování, …
+		</p>
+		<p>
+		    <span class="bold">Přidej se i ty do našeho oddílu!</span><br />
+		    Hledáme chlapce ze 3.-5. tříd, kteří se nebojí…<br />
+		    <span class="bold">…nových zkušeností</span>, s nimiž je jednoduché připravit se do života.<br />
+		    <span class="bold">…nových kamarádů</span>, kteří vědí, co je to přátelství.<br />
+		    <span class="bold">…nových zážitků</span> ve městě, v horách, na laně na skále, u&nbsppočítače, v přírodě, s mapou nebo i GPSkou v ruce…<br />
+		</p>
+		<p>
+		    <span class="bold">Náš oddíl…</span><br />
+		    … vedou dospělí a zkušení vedoucí<br />
+		    … funguje již od roku 1983<br />
+		    … je způsob, jak poznáš, co v tobě doopravdy je<br />
+		    … příležitost ukázat, co skutečně dokážeš<br />
+		    … je přátelství, zábava, sport, odpočinek, poznání, ale i dřina a překonání sebe sama<br />
+		    … se zúčastnil letu Měsíc, natáčel film v Hollywoodu, spolupracoval s tajnými službami, …, a kam se vydáme tentokrát? 
+		</p>
+		<div class="bold" style="text-align:center">Záleží jen na Vás jestli to&nbspchcete vědět …</div>
+	</div>
+</div>
+<!-- end of about -->
+
+<div style="clear:both; float:right;">
+	Počet návštěv: 
+	<a href="http://counter.cnw.cz" target="_blank">
+		<img src="http://counter.cnw.cz/cooper.cgi?27skauticz&5&C2C3C5&F7F7F7&on" />
+	</a>
+</div>
+{/block}

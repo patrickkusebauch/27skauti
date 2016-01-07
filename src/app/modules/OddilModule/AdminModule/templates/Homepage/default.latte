@@ -1,0 +1,35 @@
+{**
+ * Admin homepage template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $privilege  privileges of current user
+ *}
+{block #content}
+<h1 class="heading_1">Admin</h1>
+<div class="box-outer">
+<span class="box-left">Oprávnění</span>
+<div class="box-nolined">
+	<p>Momentálně máte přístup do těchto sekcí s těmito oprávněními:</p>
+	<table class="table"><thead><tr><th>Sekce</th><th>Oprávnění</th></tr></thead><tbody>
+		<tr><td>Obecně</td><td>{$privilege->base}</td></tr>
+		<tr n:if="$privilege->news"><td>Aktuality</td><td>{$privilege->news}</td></tr>
+		<tr n:if="$privilege->event"><td>Akce/Kalendář</td><td>{$privilege->event}</td></tr>
+		<tr n:if="$privilege->chronicle"><td>Kronika/Historie oddílu</td><td>{$privilege->chronicle}</td></tr>
+		<tr n:if="$privilege->vip"><td>VIP Kronika</td><td>{$privilege->vip}</td></tr>
+		<tr n:if="$privilege->hlasinek"><td>Hlásínek</td><td>{$privilege->hlasinek}</td></tr>
+		<tr n:if="$privilege->registration"><td>Registrace/Organizace</td><td>{$privilege->registration}</td></tr>
+		<tr n:if="$privilege->guestbook"><td>Kniha návštěv</td><td>{$privilege->guestbook}</td></tr>
+		<tr n:if="$privilege->privilege"><td>Práva</td><td>{$privilege->privilege}</td></tr>
+	</tbody></table>
+</div>
+</div>
+{/block}

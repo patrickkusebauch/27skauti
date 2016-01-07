@@ -1,0 +1,50 @@
+{**
+ * Chronicle picture template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path (URI relative path)
+ * @param string    $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param ActiveRow $chronicle  chronicle to display picture for
+ *}
+{var $filename = NULL}
+{if $chronicle}
+    {var $picture = $chronicle->related('chronicle_photos')->where('intro', 1)->order('RAND()')->limit(1)->fetch()}
+    {** Set up the filename *}
+    {if $picture}
+    	{var $filename = \Nette\Utils\Strings::padLeft($picture->order, 4 ,'0')}
+    	{var $year = $chronicle->calendar->yearpart == "jaro" ? ($chronicle->calendar->year -1) : $chronicle->calendar->year}
+    	{var $filename = $config['chroniclePhotosStorage'] . '/' . $year . ($year + 1) . '/' . Nette\Templating\Helpers::date($chronicle->datestart, 'Ymd') . '/' . $filename . '.jpg'}
+    {/if}
+{/if}
+{** fail-safe for no picture *}
+{if !(file_exists($config['wwwDir'] . $filename) && is_file($config['wwwDir'] . $filename))}
+	{var $filename = $config['chroniclePhotosStorage'] . '/default.gif'}
+{/if}
+		
+{var $picture = Nette\Image::fromFile($config['wwwDir'] . $filename)}
+{if $picture->getWidth() > $picture->getHeight()}
+	<div class="picture-inner-higher"></div>
+	<div class="picture-inner-wider">
+	    {if $chronicle}
+		<a n:href="Chronicle:detail id=>$chronicle->id"><img src="{$basePath . $filename}" alt="Foto z akce" class="landscape" /></a>
+		{else}
+		    <img src="{$basePath . $filename}" alt="Foto z akce" class="landscape" />
+		{/if}
+	</div>
+{else}
+	<div class="picture-inner-wider"></div>
+	<div class="picture-inner-higher">
+	    {if $chronicle}
+		<a n:href="Chronicle:detail id=>$chronicle->id"><img src="{$basePath . $filename}" alt="Foto z akce" class="photo" /></a>
+		{else}
+		    <img src="{$basePath . $filename}" alt="Foto z akce" class="photo" />
+		{/if}
+	</div>
+{/if}

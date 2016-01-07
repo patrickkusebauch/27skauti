@@ -1,0 +1,111 @@
+{**
+ * Hlásínek page template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param string    $dir        Directory name where the files for chosen "Hlásínek" are stored
+ *}
+{block #head}
+	<link rel="stylesheet" href="{$basePath}/css/paginator.css" />
+{/block}
+
+{block #content}
+<h1 class="heading_1">IS skaut</h1>
+<div class="box-outer">
+    <span class="box-left">Validní členové</span>
+    <div class="box-nolined">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Přezdívka</th>
+	        <th>Titul</th>
+                <th>Jméno</th>
+                <th>Příjmení</th>
+        	<th>Datum Nar.</th>
+        	<th>Adresa</th>
+    	        <th>Telefon</th>
+            </tr>
+        </thead>
+        <tbody>
+            {for $i=0; $i < $validSize; $i++}
+            <tr>
+                <td>{$validMembers[$i]->nickname|diff:$validISmembers[$i]->NickName}</td>
+	        <td>{$validMembers[$i]->member->title|diff:$validISmembers[$i]->DegreeInFrontOf}</td>
+                <td>{$validMembers[$i]->member->name|diff:$validISmembers[$i]->FirstName}</td>
+		<td>{$validMembers[$i]->member->surname|diff:$validISmembers[$i]->LastName}</td>
+		{capture $birthDate}{$validISmembers[$i]->Birthday|date:'j.n.Y'}{/capture}
+		<td>{$validMembers[$i]->birth_date|date:'j.n.Y'|diff:$birthDate}</td>
+		{var $ISaddress = $validISmembers[$i]->Street . ' 
+' . $validISmembers[$i]->City . ' 
+' . $validISmembers[$i]->Postcode}
+		{dump $ISaddress}{dump $validMembers[$i]->address}
+    	        <td>{$validMembers[$i]->address|diff:$ISaddress}</td>
+    	        <td>{if property_exists($validISmembers[$i],'Phone')}{$validMembers[$i]->mobile|diff:$validISmembers[$i]->Phone}{/if}</td>
+            </tr>
+            {/for}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<div class="box-outer">
+    <span class="box-left">Členové pouze na stránkách nebo bez Reg. čísla</span>
+    <div class="box-nolined">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Reg. č.</th>
+                <th>Přezdívka</th>
+                <th>Jméno</th>
+                <th>Příjmení</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach $invalidMembers as $invalidMember}
+            <tr>
+                <td>{$invalidMember->registration_number ?: '<b>CHYBÍ</b>'|noescape}</td>
+                <td>{$invalidMember->member_nickname}</td>
+                <td>{$invalidMember->member->name}</td>
+                <td>{$invalidMember->member->surname}</td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<div class="box-outer">
+    <span class="box-left">Členové pouze v IS skautu</span>
+    <div class="box-nolined">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Reg. č.</th>
+                <th>Přezdívka</th>
+                <th>Jméno</th>
+                <th>Příjmení</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach $invalidISmembers as $invalidISmember}
+            <tr>
+                <td>{$invalidISmember->RegistrationNumber}</td>
+                <td>{$invalidISmember->NickName}</td>
+                <td>{$invalidISmember->FirstName}</td>
+                <td>{$invalidISmember->LastName}</td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{/block}

@@ -1,0 +1,64 @@
+{**
+ * Lounge page template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Finder    $images     Images of "Klubovna"
+ *}
+{block #head}
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+	<link rel="stylesheet" href="{$basePath}/css/photobox.css">
+	<!--[if lt IE 9]><link rel="stylesheet" href="{$basePath}/css/photobox.ie.css"><![endif]-->
+{/block}
+
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+<h1 class="heading_1">{$title}</h1>
+<div class="box-outer">
+	<span class="box-left-small">Kde nás najdete?</span>
+	<div class="box-doublelined-inner">
+		<p>Každý týden pořádáme ve středu od 17:00 do 18:30 schůzky v naší klubovně, která se nalézá v Liberci v Hanychově na adrese:</p>
+		<p class="bold">Zemědělská 18a/302<br />
+				Liberec 8<br />
+				460 08</p>
+		<p style="text-align:center;"><a href="http://www.mapy.cz/#st=s@sss=1@ssq=id%3Apremise%201913838@@" target="_blank"><img src="{$basePath}/images/klubovna.gif" width="483" height="284"></a></p>
+	</div>
+</div>
+
+<div class="box-outer" id="photogalery">
+	<span class="box-left-small">Fotografie naší klubovny</span>
+	<div class="box-doublelined-inner" id="gallery">
+	{foreach $images as $image}
+		<a href="{$basePath . $config['loungePhotosStorage'] . '/' . $image->getFilename()}">
+		<img src="{$basePath . $config['loungePhotosStorage'] . '/' . $image->getFilename()}" alt="Foto klubovny" width="166px"/></a>
+	{/foreach}
+	</div>
+</div>
+{/block}
+
+{block #scripts}
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="{$basePath}/js/jquery.js"></script>
+<script src='{$basePath}/js/jquery.photobox.js'></script>
+<script src="{$basePath}/js/masonry.js"></script>
+<script src="{$basePath}/js/imagesloaded.js"></script>
+<script type="text/javascript">	
+	$('#gallery').photobox('a');
+	$('#gallery').imagesLoaded(function() {
+		$('#gallery').masonry({
+		columnWidth: 166,
+		itemSelector: 'a'
+		});
+	});
+</script>
+{/block}

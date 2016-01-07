@@ -1,0 +1,68 @@
+body {
+	background-color: #F1F1F2;
+	color: #848888;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	height: 700px;
+	text-align: center;
+}
+
+.paginator {
+	width: 610px;
+	height: 30px;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.paginator>span, .paginator>a {
+	vertical-align: middle;
+}
+
+.description {
+	width: 610px;
+	height: 60px;
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.picture-outer {
+	width: 610px;
+	height: 610px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.picture-inner-higher {
+	background-color: #D8D9DA;
+	position: absolute;
+	width: 450px;
+	height: 600px;
+	left: 75px;
+	border: 5px #C2C3C5 solid;
+}
+
+.picture-inner-wider {
+	background-color: #D8D9DA;
+	position: absolute;
+	width: 600px;
+	height: 450px;
+	top: 75px;
+	border: 5px #C2C3C5 solid;
+}
+
+.photo {
+	width: 450px;
+	height: 600px;
+}
+
+.landscape {
+	width: 600px;
+	height: 450px;
+}

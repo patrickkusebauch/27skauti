@@ -1,0 +1,53 @@
+{**
+ * Member overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $member     record of all members
+ *}
+{block #content}
+<h1 class="heading_1">Organizace</h1>
+<div class="box-nolined">
+	<p>Pokud pouze nechcete, aby se osoba zobrazovala v organizaci na stránkách, tak jí pouze vymažte Pozici.</p>
+	<p>Pokud smažete osobu v organizaci, tak jí také vymažete registraci a v neposlední řadě jí nebudete moci přidat
+	jako kontakt v lístečku na výpravu nebo ověřit ji v knize návštěv. Každá osoba v organizaci by měla být členem našeho
+	středika nebo jinak významně zasahovat do fungování webu.</p>
+	<p n:if="$user->isAllowed('Admin:Default:Organization', 'create')"><a n:href="create">Přidat nového člena</a></p>
+</div>
+
+{if $members->fetch()}
+<table class="table"><thead><tr>
+	<th>Jméno</th>
+	<th>Foto</th>
+	<th>Vstup do oddílu</th>
+	<th style="width:200px">Pozice</th>
+	<th>Frčky</th>
+	<th n:if="$user->isAllowed('Admin:Default:Organization', 'edit')">Editace</th>
+	<th n:if="$user->isAllowed('Admin:Default:Organization', 'delete')">Mazání</th>
+</tr></thead><tbody>
+{foreach $members as $member}
+	<tr>
+		<td>{$member->title} {$member->name} {$member->surname}</td>
+		<td>
+			{var $filename = $config['memberPhotosStorage'] . "/" . \Nette\Utils\Strings::lower(\Nette\Utils\Strings::toAscii($member->nickname)) . ".jpg"}
+			{if file_exists($config['wwwDir'] . $filename)}<img src="{$basePath . $filename}" style="height:40px; vertical-align:middle;"/> {/if}
+		</td>
+		<td>{$member->entered|date:'j. n. Y'}</td>
+		<td>{$member->group}</td>
+		<td>{if $member->stripe}<img src="{$basePath}{$config['stripePhotosStorage']}/{$member->stripe}" />{/if}</td>
+		<td n:if="$user->isAllowed('Admin:Default:Organization', 'edit')"><a n:href="edit nickname => $member->nickname">Edituj</a></td>
+		<td n:if="$user->isAllowed('Admin:Default:Organization', 'delete')"><a n:href="delete! nickname => $member->nickname">Smaž</a></td>
+	</tr>
+{/foreach}
+</tbody></table>
+{/if}
+{/block}
+

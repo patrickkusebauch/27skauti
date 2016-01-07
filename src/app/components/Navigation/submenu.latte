@@ -1,0 +1,15 @@
+{**
+ * Horiznotal top menu - submenu
+ *
+ * @author Patrick Kusebauch
+ * @version 1.05, 03. 11. 2014
+ *
+ * @param Component $children   contains the individual NavigationNode
+ *}
+{block #menu}
+<ul>
+	<li n:foreach="$children as $item">
+	        <a{ifCurrent $item->url} class="current"{/ifCurrent} href="{plink $item->url}">{$item->label}</a>
+	</li>
+</ul>
+{/block}

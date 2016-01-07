@@ -1,0 +1,46 @@
+{**
+ * Organization member template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $members    members of the group
+ *}
+{foreach $members as $member}
+<div class="box-outer">
+    <span class="box-left">{$member->nickname}</span>
+	<div class="box-doublelined-inner in-box-text-bigger">
+		<div class="picture-outer">
+			{include '../common/member_picture.latte', member => $member}
+		</div>
+		<table class="in-box-table"><thead></thead><tbody>
+		    <tr>
+				<td>Jméno:</td><td>{$member->name} {$member->surname}</td>
+			</tr>
+			<tr n:if="$showAge && $member->ref('registration', 'nickname')"><td>Věk:</td><td>
+                {$age = $member->ref('registration', 'nickname')->birth_date->diff(\Nette\DateTime::from(time()))->y}
+		{if $age == 1}rok{elseif $age < 5}roky{else}let{/if}
+            </td></tr>
+			<tr>
+				<td>V oddíle:</td><td>
+                {var $age = $member->entered->diff(\Nette\DateTime::from(time()))->y}
+                {if $age == 0} 1. rokem
+                {elseif $age == 1} {$age} rok
+                {elseif $age < 5} {$age} roky
+                {else} {$age} let
+                {/if}
+            </td></tr>
+			<tr>
+				<td>Pozice:</td><td>{$member->group|lower}</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>
+{/foreach}

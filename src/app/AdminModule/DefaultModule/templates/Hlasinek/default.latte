@@ -1,0 +1,93 @@
+{**
+ * Hlasinek overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param array     $folders    folders with Hlasinek
+ *}
+{block #content}
+{var $months = [
+	'Září' => '01',
+	'Říjen' => '02',
+	'Listopad' => '03',
+	'Prosinec' => '04',
+	'Leden' => '05',
+	'Únor' => '06',
+	'Březen'=> '07',
+	'Duben' => '08',
+	'Květen' => '09',
+	'Červen' => '10',
+	'Tábor' => '11'
+]}
+
+<h1 class="heading_1">Hlásínek</h1>
+<div class="box-nolined">
+	<p>I když se hlásínek dá nahrát přímo na FTP server a pokud má správné jméno, tak se zobrazí,
+	avšak důrazně od toho odrazuji. Pokud někde vytvoříte složku nebo soubor, co tam nemá co dělat,
+	tak můžete celé zobrazování hlásínku kompletně rozhodit. Proto raději použijte pro nahrávání tuto stránku.</p>
+	<div m:if="$user->isAllowed('Admin:Default:Hlasinek', 'create')">
+		{control addFolderForm}
+	</div>
+	<div m:if="$user->isAllowed('Admin:Default:Hlasinek', 'delete')">
+		Smazání složky také smaže všechny hlásínky v ní obsažené.
+		{control deleteFolderForm}
+	</div>
+</div>
+{if $folders}
+<table class="table">
+{foreach $folders as $folder}
+{var $year = mb_substr($folder, 0, 4)}
+	<thead>
+		<tr><td colspan=10>{$year}/{$year + 1}</td></tr>
+		<tr><td>Měsíc</td>
+			<td>GIF 1</td>
+			<td>PDF 1</td>
+			<td>GIF 2</td>
+			<td>PDF 2</td>
+		</tr>
+	</thead>
+	<tbody>
+	{foreach $months as $month_name => $month_number}
+		{var $path = '/' . $folder . '/hlas' . $month_number}
+			
+		{var $pages = [
+			$path . '01.gif',
+			$path . '01.pdf',
+			$path . '02.gif',
+			$path . '02.pdf']}
+		<tr>
+			<td class="bold">
+				{if $user->isAllowed('Admin:Default:Hlasinek', 'addall')}
+					<a n:href="addall folder => $folder, month_number => $month_number">{$month_name}</a>
+				{else}
+					{$month_name}
+				{/if}
+			</td>
+			{foreach $pages as $page}
+			<td>
+				{if file_exists($config['wwwDir'] . $config['hlasinekStorage'] . $page)}
+					{if $user->isAllowed('Admin:Default:Hlasinek', 'delete')}
+						<a n:href="delete! path => $page">Smazat</a>{else}Smazat{/if}
+				{else}
+					{if $user->isAllowed('Admin:Default:Hlasinek', 'addall')}
+						<a class="bold" n:href="addall folder => $folder, month_number => $month_number">Nahrát</a>
+					{else}Nahrát{/if}
+				{/if}
+			</td>
+			{/foreach}
+		</tr>
+	{/foreach}
+	</tbody>
+{/foreach}
+</table>
+{/if}
+{/block}
+

@@ -1,0 +1,4 @@
+//remove th -n switch for actual rename. Right now it does only mock rename
+
+find . -type f -exec rename -n 's/hlas[0-9][0-9]/hlas/' * '{}' \;
+

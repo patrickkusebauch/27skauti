@@ -1,0 +1,48 @@
+{**
+ * Upload photos template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+
+{block scripts}{/block}
+{**
+ * Overloads JS loading sequence
+ * Loads JS in before loading the page instead of after
+ * This way method can be called while the page renders itself
+ *}
+{block #head}
+        <script type="text/JavaScript" src="{$baseUri}/js/jquery.js"></script>
+        <script type="text/JavaScript" src="{$baseUri}/js/jquery.livequery.js"></script>
+        <script type="text/JavaScript" src="{$baseUri}/js/jquery.nette.js"></script>
+        <script type="text/JavaScript" src="{$baseUri}/js/netteForms.js"></script>
+	    <script type="text/JavaScript" src="{$baseUri}/modules/multipleFileUpload/js/MFUFallbackController.js"></script>
+	    {!=MultipleFileUpload::getHead()}
+{/block}
+
+{block #content}
+<h1 class="heading_1">Kronika - Nahrávání fotek</h1>
+<div class="box-outer">
+	<span class="box-left">{$event->name|truncate:45}
+	{if $event->datestart == $event->dateend}
+        ({$event->datestart|date:'j. n. Y'})
+    {elseif $event->datestart->format('n') == $event->dateend->format('n')}
+        ({$event->datestart|date:'j.'}-{$event->dateend|date:'j. n. Y'})
+    {else}
+        ({$event->datestart|date:'j. n.'}-{$event->dateend|date:'j. n. Y'})
+    {/if}</span>
+	<div class="box-nolined">
+	{snippet form}
+		{control uploadPhotosForm}
+	{/snippet}
+    </div>
+</div>
+{/block}
+

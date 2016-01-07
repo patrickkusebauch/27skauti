@@ -1,0 +1,7 @@
+#calendar-highlighted>td {
+	color: #B0381A;
+	border-bottom: solid;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #B0381A;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+
+	<title>File components/MultipleFileUpload/MFUTemplate.php | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Acl.html">Acl</a></li>
+				<li><a href="class-Authenticator.html">Authenticator</a></li>
+				<li><a href="class-BasePresenter.html">BasePresenter</a></li>
+				<li><a href="class-ErrorPresenter.html">ErrorPresenter</a></li>
+				<li><a href="class-Helpers.html">Helpers</a></li>
+				<li><a href="class-MFUBaseQueueModel.html">MFUBaseQueueModel</a></li>
+				<li><a href="class-MFUBaseQueuesModel.html">MFUBaseQueuesModel</a></li>
+				<li><a href="class-MFUQueueSQLite3.html">MFUQueueSQLite3</a></li>
+				<li><a href="class-MFUQueuesSQLite3.html">MFUQueuesSQLite3</a></li>
+				<li class="active"><a href="class-MFUTemplate.html">MFUTemplate</a></li>
+				<li><a href="class-MFUUIBase.html">MFUUIBase</a></li>
+				<li><a href="class-MFUUIHTML4SingleUpload.html">MFUUIHTML4SingleUpload</a></li>
+				<li><a href="class-MFUUIPlupload.html">MFUUIPlupload</a></li>
+				<li><a href="class-MFUUIRegistrator.html">MFUUIRegistrator</a></li>
+				<li><a href="class-MultipleFileUpload.html">MultipleFileUpload</a></li>
+				<li><a href="class-RouterFactory.html">RouterFactory</a></li>
+				<li><a href="class-VisualPaginator.html">VisualPaginator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-IMFUQueueModel.html">IMFUQueueModel</a></li>
+				<li><a href="class-IMFUQueuesModel.html">IMFUQueuesModel</a></li>
+				<li><a href="class-MFUUIInterface.html">MFUUIInterface</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-FormContainer_addMultipleFileUpload.html">FormContainer_addMultipleFileUpload</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li>
+				<a href="class-MFUTemplate.html" title="Summary of MFUTemplate"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2: </a>
+</span><span id="3" class="l"><a class="l" href="#3"> 3: </a><span class="php-keyword1">class</span> <a id="MFUTemplate" href="#MFUTemplate">MFUTemplate</a> <span class="php-keyword1">extends</span> Nette\Templating\FileTemplate {
+</span><span id="4" class="l"><a class="l" href="#4"> 4: </a>
+</span><span id="5" class="l"><a class="l" href="#5"> 5: </a>  <span class="php-keyword1">function</span>  <a id="___construct" href="#___construct">__construct</a>() {
+</span><span id="6" class="l"><a class="l" href="#6"> 6: </a>    parent::__construct();
+</span><span id="7" class="l"><a class="l" href="#7"> 7: </a>    <span class="php-var">$this</span>-&gt;onPrepareFilters[] = callback(<span class="php-var">$this</span>, <span class="php-quote">&quot;registerFilters&quot;</span>);
+</span><span id="8" class="l"><a class="l" href="#8"> 8: </a>  }
+</span><span id="9" class="l"><a class="l" href="#9"> 9: </a>
+</span><span id="10" class="l"><a class="l" href="#10">10: </a>  <span class="php-keyword1">function</span> <a id="_registerFilters" href="#_registerFilters">registerFilters</a>() {
+</span><span id="11" class="l"><a class="l" href="#11">11: </a>    <span class="php-var">$this</span>-&gt;registerFilter(<span class="php-keyword1">new</span> \Nette\Latte\Engine());
+</span><span id="12" class="l"><a class="l" href="#12">12: </a>  }
+</span><span id="13" class="l"><a class="l" href="#13">13: </a>}</span></code></pre>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+Jdi na http://phpmyadmin.27skauti.cz a prihlas se.
+
+Vyexportuj nasledujci tabulky s timto nastavenim:
+    Tabulky:
+        akce, aktuality, cleny, kalendar, kniha_navstev,
+        kronika, kronika_fotky, online, prava, reg_podklady
+    Nastaveni:
+        ulozit do souboru: ANO
+        znakova sada: UTF-8
+        komprese: zadna
+        format: SQL
+        zobrazit komentare: ANO
+        vlozit cas vytvoreni: ANO
+        uzavrit v transakci: NE
+        vypnout kontolu cizich klicu: ANO
+        Struktura a data
+        Uzavrit do zpetnych uvozovek: ANO
+        Příklad: INSERT INTO tbl_name (col_A,col_B) VALUES (1,2,3), (4,5,6), (7,8,9)
+        vypisovat TIMESTAMP v UTC: ANO
+
+Na locale vytvor databazi 27skauti_transfer s collation "utf8_czech_ci"
+    v teto databazi spust soubor "create_tables.sql"
+    nasledne spust soubor, ktery jsi zrovna stahnul
+
+V tuhle chvili by jsi mel mit presne 22 tabulek:
+akce, aktuality, calendar, chornicle_photos, chronicle_videos, cleny, event,
+event_meeting, guestbook, history, kalendar, kniha_navstev, kronika,
+kronika_fotky, member, news, online, prava, privilege, registration,
+reg_podklady, user
+
+Od teto chvile je velmi dulezite si hlidat v jakem poradi jsou nasledujici
+soubory spustney, nebot spolehaji na to, ze budou v tomto poradi spusteny.
+
+Soubor                      Tabulky
+user.sql                    user
+privilege.sql               privilege
+member_registration.sql     member, registration
+calendar.sql                calendar
+events_chronicles.sql       event, member, event_meeting, chronicle_photos
+news.sql                    news
+guestbook.sql               guestbook
+history.sql
+
+Po uspesnem nacteni vsech techto tabulek by mel byt tranfer database dokoncen
+a jen potreba vycistit databazi od starych a nepotrebnych tabulek.
+K tomuto ucelu slouzi "cleanup.sql"
+
+Naledne vyexportuj nove vytvorenou databazi a nahraj ji na server

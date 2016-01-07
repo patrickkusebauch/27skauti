@@ -1,0 +1,36 @@
+{**
+ * Picture detail template.
+ * Allows for browsing other pictures in the same set via VisualPaginator
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path (URI relative path)
+ * @param string    $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param string    $filename   filepath for the file relative to $config['wwwDir']
+ * @param int	    $page	current paginator page
+ *}
+{control vp}
+<div class="picture-outer">
+{var $picture = Nette\Image::fromFile($config['wwwDir'] . $filename)}
+{if $picture->getWidth() > $picture->getHeight()}
+	<div class="picture-inner-higher"></div>
+	<div class="picture-inner-wider">
+		<a href="{link this, 'vp-page' => ($page+1)}">
+		<img src="{$basePath . $filename}" alt="Foto" class="landscape" />
+		</a>
+	</div>
+{else}
+	<div class="picture-inner-wider"></div>
+	<div class="picture-inner-higher">
+		<a href="{link this, 'vp-page' => ($page+1)}">
+		<img src="{$basePath . $filename}" alt="Foto" class="photo" />
+		</a>
+	</div>
+{/if}
+</div>

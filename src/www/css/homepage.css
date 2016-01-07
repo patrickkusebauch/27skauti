@@ -1,0 +1,13 @@
+p {
+	text-align: justify;
+}
+
+.chronicle {
+	width: 180px;
+	margin-left: 30px;
+}
+
+.chronicle>div {
+	right: 0px;
+	margin-top: 10px;
+}

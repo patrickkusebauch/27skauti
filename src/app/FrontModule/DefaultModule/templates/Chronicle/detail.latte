@@ -1,0 +1,119 @@
+{**
+ * Chronicle event detail template
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param string    $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param ActiveRow $chronicle  chosen chronicle
+ *}
+{block #head}
+	<link rel="stylesheet" href="{$basePath}/css/chronicle.css" />
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+	<link rel="stylesheet" href="{$basePath}/css/photobox.css">
+	<!--[if lt IE 9]><link rel="stylesheet" href="{$basePath}/css/photobox.ie.css"><![endif]-->
+{/block}
+
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+<!-- Overview -->
+<div class="box-outer">
+	<span class="box-left" title="{$chronicle->name}">{$chronicle->name|truncate:30}</span>
+	<span class="box-right">
+	{if $chronicle->datestart == $chronicle->dateend}
+		{$chronicle->datestart|date:'j. n. Y'}
+	{elseif $chronicle->datestart->format('n') == $chronicle->dateend->format('n')}
+		{$chronicle->datestart|date:'j.'}-{$chronicle->dateend|date:'j. n. Y'}
+	{else}
+		{$chronicle->datestart|date:'j. n.'}-{$chronicle->dateend|date:'j. n. Y'}
+	{/if}
+	</span>
+	<div class="box-singlelined-inner">
+		<table class="in-box-table" style="width:100%;">
+			<thead></thead><tbody>
+				<tr><td>Trasa:</td><td>{$chronicle->route}</td></tr>
+				<tr><td>Vedení:</td><td>{$chronicle->rangers}</td></tr>
+				<tr><td>Členové:</td><td>
+					<span class="bold">Mloci: </span>{$chronicle->mloci}<br />
+					<span class="bold">Tučňáci: </span>{$chronicle->tucnaci}
+					{if $chronicle->novacci}<br /><span class="bold">Nováčci: </span>{$chronicle->novacci}{/if}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<!-- end of Overview -->
+
+<!-- Record -->
+{if ($chronicle->content && $chronicle->chroniclewriter)}
+<div class="box-outer">
+	<span class="box-left-small">Zápis do kroniky</span>
+	<span class="box-right" style="top:4px;">Zapsal: {$chronicle->chroniclewriter}</span>
+	<div class="box-doublelined-inner" style="text-align:justify;">
+		{$chronicle->content|noescape}
+	</div>
+</div>
+{/if}
+<!-- end of Record -->
+
+<!-- Videos -->
+{if $chronicle->related('chronicle_videos')->fetch()}
+<div class="box-outer">
+	<span class="box-left-small">Videa</span>
+	<div class="box-doublelined-inner">
+	{foreach $chronicle->related('chronicle_videos') as $video}
+		<span class="bold">{$video->note}</span><br />
+		{$video->input|noescape}<br /><br />
+	{/foreach}
+	</div>
+</div>
+{/if}
+<!-- end of Videos -->
+
+<!-- Photos -->
+{if $chronicle->related('chronicle_photos')->fetch()}
+<div class="box-outer" id="photogalery">
+	<span class="box-left-small">Fotky</span>
+	<div class="box-doublelined-inner" id="gallery">
+	{foreach $chronicle->related('chronicle_photos') as $photo}
+
+        {var $filename = \Nette\Utils\Strings::padLeft($photo->order, 4, '0')}
+        {var $year = $chronicle->calendar->yearpart == "jaro" ? ($chronicle->calendar->year -1) : $chronicle->calendar->year}
+        {var $filename = $config['chroniclePhotosStorage'] . '/' . $year . ($year + 1) . '/' . Nette\Templating\Helpers::date($chronicle->datestart, 'Ymd') . '/' . $filename . '.jpg'}
+        {** fail-safe for no picture *}
+        {if file_exists($config['wwwDir'] . $filename) === FALSE}{var $filename = $config['chroniclePhotosStorage']. '/default.gif'}{/if}
+		
+		<a href="{$basePath . $filename}" style="display:inline;">
+        	<img src="{$basePath . $filename}" title="{$photo->text}" width="166px" /></a>
+	{/foreach}
+	</div>
+</div>
+{/if}
+<!-- end of Photos -->
+{/block}
+
+{block #scripts}
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="{$basePath}/js/jquery.js"></script>
+<script src='{$basePath}/js/jquery.photobox.js'></script>
+<script src="{$basePath}/js/masonry.js"></script>
+<script src="{$basePath}/js/imagesloaded.js"></script>
+<script type="text/javascript">	
+	$('#gallery').photobox('a');
+	$('#gallery').imagesLoaded(function() {
+		$('#gallery').masonry({
+		columnWidth: 168,
+		itemSelector: 'a'
+		});
+	});
+</script>
+{/block}

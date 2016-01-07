@@ -1,0 +1,44 @@
+{**
+ * Admin homepage template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $privilege  privileges of current user
+ *}
+{block #content}
+<h1 class="heading_1">Zpěvník</h1>
+<div class="box-outer">
+<span class="box-left">Přehled</span>
+<div class="box-nolined">
+	<p><a n:href="add">Přidat novou píseň</a></p>
+	<table class="table">
+	    <thead>
+	        <tr>
+	            <th>Zpěvník</th>
+	            <th>Název písně</th>
+	            <th>Interpret</th>
+	            <th n:if='$user->isAllowed("Oddil:Songbook", "edit")'>Editace</th>
+	            <th n:if='$user->isAllowed("Oddil:Songbook", "delete")'>Smazat</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr n:foreach="$songbook as $song">
+	            <td>{$song->group}</td>
+	            <td>{$song->name}</td>
+	            <td>{$song->artist}</td>
+	            <td n:if='$user->isAllowed("Oddil:Songbook", "edit")'><a n:href="edit $song->id">Editovat</a></td>
+	            <td n:if='$user->isAllowed("Oddil:Songbook", "delete")'><a n:href="delete! $song->id">Smazat</a></td>
+	        </tr>
+	    </tbody>
+	</table>
+</div>
+</div>
+{/block}

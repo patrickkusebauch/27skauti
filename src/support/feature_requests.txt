@@ -1,0 +1,24 @@
+- kontaktní osoba nemusí nutně být vedoucí oddílu pro sekce Homepage->pro rodiče atb
+- Automaticky vytvorena aktualita pri vytvoreni kroniky, listecku na akci, nahrani hlasinku
+- kontaktni osoba je dana pro sraz, ne pro celou akci
+- nahodna generace fotky pro historii oddilu ze vsech uvodnich fotek toho roku
+- do registrace přidat kolonku třída – zobrazení v organizaci bobanů
+- Udělat čtyřkrokové přidávání akcí
+  1. zadání informací
+  2. kompozice informací na lísteček
+  3. nastavení, komu všemu se má poslat listeček na email
+  4. finální kontrola
+- sekce oddíl - Pouze bodově, co by tam mělo být
+  - stezky
+  - bodování
+  - kanadské bodování
+  - docházka
+  - hodnocení výprav
+  - kontakty
+  - P&N
+  - sázky
+  - dokumenty ke stažení
+  - hodnocení děcek (pro rovery)
+- moznost zmenit si vlastni e-mail
+- propojeni s IS.skaut tak, aby se data pro registrace ziskavala automaticky
+- moznost mazat jednotlive fotky z kroniky

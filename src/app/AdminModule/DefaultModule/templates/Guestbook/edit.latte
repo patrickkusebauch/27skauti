@@ -1,0 +1,23 @@
+{**
+ * Guestbook post edit template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+{block #content}
+<h1 class="heading_1">Přidat příspěvek</h1>
+
+<div class="box-nolined">
+	<p>Pokud vyberete ověřeného uživatele, tak se přezdívka a e-mail neuloží,
+	místo toho se použije e-mail a přezdívka ověřeného uživatele.</p>
+	{control guestbookForm}
+</div>
+{/block}
+

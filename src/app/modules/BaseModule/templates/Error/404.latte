@@ -1,0 +1,19 @@
+{**
+ * 404 Error template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+{block #content}
+    <h1 class="heading_1">Stránka nenalezena</h1>
+    <p>Stránka, kterou jste se pokusily zobrazit, nebyla nalezena. Je možná, že máte špatný
+    odkaz nebo stránka byla smazána.</p>
+    <p><small>error 404</small></p>
+{/block}

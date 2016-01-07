@@ -1,0 +1,50 @@
+{**
+ * News overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $news       several news posts
+ *}
+{block #content}
+<h1 class="heading_1"> Aktuality </h1>
+
+<div class="box-nolined">
+	<p n:if="$user->isAllowed('Admin:Default:News', 'create')"><a n:href="News:create">Vytvořit novou aktualitu</a></p>
+	Stránkování:
+	{control vp}
+</div>
+
+{if $news->fetch()}
+<table class="table"><thead><tr>
+	<th>Datum</th>
+	<th>Sekce</th>
+	<th style="width:300px">Nadpis</th>
+	<th n:if="$user->isAllowed('Admin:Default:News', 'edit')">Editace</th>
+	<th n:if="$user->isAllowed('Admin:Default:News', 'show')">Zobrazení</th>
+	<th n:if="$user->isAllowed('Admin:Default:News', 'delete')">Mazání</th>
+</tr></thead><tbody>
+{foreach $news as $post}
+	<tr>
+		<td>{$post->posted|date:'j. n. y'}</td>
+		<td>{$post->type}</td>
+		<td>{$post->heading|truncate:'30'}</td>
+		<td n:if="$user->isAllowed('Admin:Default:News', 'edit')"><a n:href="edit id => $post->id">Edituj</a></td>
+		<td n:if="$user->isAllowed('Admin:Default:News', 'show')"><a n:href="show! id => $post->id">
+			{if $post->show}Odzobraz{else}Zobraz{/if}
+		</a></td>
+		<td n:if="$user->isAllowed('Admin:Default:News', 'delete')"><a n:href="delete! id => $post->id">Smaž</a></td>
+		
+	</tr>
+{/foreach}
+</tbody></table>
+{/if}
+{/block}
+

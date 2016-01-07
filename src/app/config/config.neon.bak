@@ -1,0 +1,59 @@
+parameters:
+	chroniclePhotosStorage: '/images/chronicle'         # directory where chronicle photos are stored
+	historyPhotosStorage: '/images/history'             # directory where history photos are stored
+	loungePhotosStorage: '/images/lounge'               # directory where history photos are stored
+	memberPhotosStorage: '/images/organization/profile' # directory where member's profile photos are stored
+	stripePhotosStorage: '/images/organization/stripes' # directory where member's stripes are stored
+	hlasinekStorage: '/files/hlasinek'                  # directory where history photos are stored
+	baseChronicleYear: '1983'                           # first year of recorded chronicle
+	baseEventYear: '2005'                               # first year for event invitation
+	contactMail: ''            # who should parents bother with questions
+	supportMail: ''          	    # website support contact
+php:
+	date.timezone: Europe/Prague
+	zlib.output_compression: yes
+
+nette:
+	application:
+		errorPresenter: Error
+		mapping:
+			module: Module\*s
+			presenter: Presenters\*Presenter
+	database:
+		dsn: 
+		user: 
+		password: 
+	session:
+		expiration: 14 days
+		cookiePath: '/'
+		cookieDomain: '.27skauti.cz'
+services:
+	authenticator: Authenticator
+	authorizator: Acl
+	routerFactory: RouterFactory
+	router: @routerFactory::createRouter
+	event: Models\Event
+	member: Models\Member
+	calendar: Models\Calendar
+	news: Models\News
+	history: Models\History
+	privilege: Models\Privilege
+	guestbook: Models\Guestbook
+	users: Models\User
+	registration: Models\Registration
+	stezky: Models\Stezky
+	songbook: Models\Songbook
+	notebook: Models\Notebook
+
+extensions:
+	skautis: \Skautis\Nette\SkautisExtension22
+	thumbnail: \Kollarovic\Thumbnail\DI\Extension
+
+thumbnail:
+	thumbPathMask: '{dir}/thumbs/{filename}-{width}x{height}.{extension}'
+	placeholder: 'http://dummyimage.com/{width}x{height}/efefef/f00&text=Image+not+found'
+
+skautis:
+	applicationId : 
+	testMode : false 
+	profiler: true

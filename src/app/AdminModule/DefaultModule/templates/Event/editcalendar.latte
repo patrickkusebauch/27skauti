@@ -1,0 +1,58 @@
+{**
+ * Calendar editation template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $calendar   calendar to make editations on
+ *}
+{block #content}
+<h1 class="heading_1">Editace kalendáře - {$calendar->yearpart} {$calendar->year}</h1>
+
+<div class="box-nolined">
+
+{form editCalendarForm}
+<ul class="errors" n:if="$form->hasErrors()">
+        <li n:foreach="$form->errors as $error">{$error}</li>
+</ul>
+{input calendar_id}
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Začátek</th>
+			<th>Konec</th>
+			<th>Typ</th>
+			<th>Poznámka</th>
+			<th>Vedoucí</th>
+			<th>X</th>
+		</tr>
+	</thead>
+	<tbody>
+	{foreach $form['events']->containers as $id => $event}
+		<tr>
+			{input events-$id-id}
+			<td>{input events-$id-datestart, style => 'width:90px'}</td>
+			<td>{input events-$id-dateend, style => 'width:90px'}</td>
+			<td>{input events-$id-type}</td>
+			<td>{input events-$id-calendarnote}</td>
+			<td>{input events-$id-leaders}</td>
+			<td>{input events-$id-remove}</td>
+		</tr>
+	{/foreach}
+	</tbody>
+</table>
+<div style="float:left;">{input events-add}</div>
+<div style="float:right;">{input send}</div>
+{/form}
+
+</div>
+
+{/block}

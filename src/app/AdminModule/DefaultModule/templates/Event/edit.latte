@@ -1,0 +1,69 @@
+{**
+ * Event editation template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+{block #content}
+<h1 class="heading_1">Editace akce</h1>
+<div class="box-nolined">
+
+{form editEventForm}
+<ul class="errors" n:if="$form->hasErrors()">
+        <li n:foreach="$form->errors as $error">{$error}</li>
+</ul>
+
+{input id}
+<table>
+<tbody>
+	<tr><td>{label name, class=>"required bold" /}</td><td>{input name, size=>50}</td></tr>
+	<tr><td>{label text, class=>"required bold" /}</td><td>{input text, rows=>7, cols=>60}</td></tr>
+	<tr><td colspan=2><span class="required bold">Srazy:</span> (v případě pouze jednoho srazu nevyplňujte typ)
+	<table class="table" style="width:100%">
+		<thead>
+			<tr>
+				<td>Typ</td>
+				<td>Datum a čas srazu</td>
+				<td>Místo srazu</td>
+				<td>Datum a čas návratu</td>
+				<td>Místo návratu</td>
+				<td>X</td>
+			</tr>
+		</thead>
+		<tbody>
+		{foreach $form['event_meeting']->containers as $id => $meeting}
+			<tr>
+				<td>{input event_meeting-$id-comment, style => "width:80px"}</td>
+				<td>{input event_meeting-$id-starttime, style => "width:170px"}</td>
+				<td>{input event_meeting-$id-startplace, style => "width:110px"}</td>
+				<td>{input event_meeting-$id-endtime, style => "width:170px"}</td>
+				<td>{input event_meeting-$id-endplace, style => "width:110px"}</td>
+				<td>{input event_meeting-$id-remove}</td>
+			</tr>
+		{/foreach}
+		</tbody>
+	</table>
+	</td></tr>
+	<tr><td colspan=2 style="text-align:center">{input event_meeting-add}</td></tr>
+	<tr><td>{label equipment, class=>"required bold" /}</td><td>{input equipment, rows=>6, cols=>60}</td></tr>
+	<tr><td>{label morse, class=>"required bold" /}<br />
+			Normální text,<br />sama se převede
+		</td>
+		<td>{input morse, cols=>60}</td></tr>
+	<tr><td>{label contactperson, class=>"required bold" /}</td><td>{input contactperson}</td></tr>
+	<tr><td></td><td style="float:right;">{input send}</td></tr>
+</tbody>
+</table>
+
+{/form}
+</div>
+
+{/block}
+

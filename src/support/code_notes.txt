@@ -1,0 +1,227 @@
+DOCUMENTATION
+-------------
+
+1. PHP Documentation
+
+Order of PHPDoc in presenter's class
+    /**
+     * Descriptive text
+     *                          intentional space
+     * @author
+     * @version
+     *                          intentional space
+     * @Secured
+     * @Resource
+     * @Privilege
+     *                          intentional space
+     * @todo
+     */
+
+Order of PHPDoc in presenter's methods
+    /**
+     * Descriptive text
+     *                          intentional space
+     * @Secured
+     * @Resource
+     * @Action
+     * @Privilege
+     *                          intentional space
+     * @param
+     * @throws
+     * @return
+     *                          intentional space
+     * @todo
+     */
+
+2. Latte Documentation
+
+Every latte template is to have the following documentation
+
+{**
+ * Descriptive text
+ *                              intentional space
+ * @author
+ * @version
+ *}
+
+Additionally every presenter template follows with:
+{**
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+ Those 2 are in a same comment block separated by space
+
+Lastly if there are any variables injected by presenter, they follow in
+the next block with formating same ase above
+
+VERSIONING OF FILES
+-------------------
+There are 3 levels with respect to the version of the file and each has its
+parameters, the rules for versioning are as follows:
+ - format: A.BC         where A,B & C are digits (A occasionally a number)
+ - if there is a change of file that makes it incompatable with previous
+ version
+    - set A to next digit (number) and set B & C to 0.
+ - if there is a addition of new functionality or refactoring of methods
+    - set B to next digit and set C to 0
+    - if B is already 9, set A to next digit (number) and set B & C to 0.
+ - if there is a minor change to the file that does not affect functionality
+ like addition or change in comments, change in variable names within methods
+ or minor change of calls within methods
+    - set C to next digit
+    - if C is already 9, set B to next digit and C to 0.
+    - if B is already 9, set A to next digit (number) and set B & C to 0.
+
+METHODS ORDER
+-------------
+Methods in presenters are to be ordered in a certain way, and that is:
+    - __contruct
+    - inject*
+    - function unrelated to presenter's lifetime (e.g. methods not mentioned)
+    - helper functions of all action*, render* and handle*
+    - startup
+    - action*
+    - beforeRender
+    - render*
+    - handle*
+    - helper functions used in more than one component
+    - createComponent*
+        - after every createComponent* before the next one goes in this order:
+          - helper functions used in the component
+          - processing function of the component
+
+If two functions are in the same category, they are ordered lexicographically.
+
+CONFIGURATION'S OPTIONS
+-----------------------
+There are three levels to configuration, two of whitch can be found in
+config.neon:
+
+1. Internal settings - Everything past the "parameters" section
+
+Be very wary when editing anything in this section.
+The most notable section to mention is "nette:database", where the database
+connection is configured. Other than this, no alteration to the config should be
+necessary.
+The second section is the services section, where all connections to repositories
+are set. This part can be should be expanded whe adding new functionality and new
+database tables into the website.
+
+2. External settings - "parameters" section
+
+This section has some configuration, that can be readily changed by pretty much
+anybody without any programming knowledge. However, there is little reason to do
+so with the exception of "contactMail".
+
+3. ACL - Access Control list
+
+Last configuration can be set up in "acl.php" file, where privileges to access
+certain parts of the website are defined. However any addition does not change
+the behavior, since it cannot be attributed to any user without changing
+appropriate form. And any deletion might as well break the system as resources
+and privileges might be missing.
+
+SECURITY BY ANNOTATION
+----------------------
+When you want to secure a page, you do so by securing presenter action or render
+Every secured action or render has to have the following in its PHPDoc block:
+    /**
+     * @Secured
+     * @Resource("[name of resource]")
+     * @Privilege([comma separated values])
+     */
+Where @Secured starts the security control process, @Resource("") uniquely
+identifies the the page and @Privilege sets all the privilege that has access to
+specified resource. @Privilege can be an array as more than one privilege can
+have access to a resource.
+
+Same process applies for signals as well, where handle* has to have the same
+PHPDoc block.
+
+Both @Resource and @Privilege must be present in the "acl.php" Access Control
+List file in order to work.
+
+For a ease of use, These annotations are inherited to method by class, so you
+can stay DRY. The rules for overwriting are as follows:
+    - @Secured - stays the same if overwritten (you cannot unsecure a method
+        inside a secured class)
+    - @Resource("") - overwrites the resource as everything can only be a one
+        specific resource
+    - @Privilege("","") - extends upon class. Whatever is in class PHPDoc block
+        applies to every method in that class plus you can add additional
+        privileges that will have access
+
+Forms are secured by annotation as well in two particular ways:
+    - by @Privilege in createComponent* and process* methods - same as above
+    - by @Action([comma separated values]) in createComponent* - ties form to a
+        specific action, hence it cannot be created or processed from any other
+        action*. Action*'s security also applies. DOES NOT WORK WITH RENDER*!!
+
+Example:
+
+/**
+ * @Secured
+ * @Resource("Admin:Default:Chronicle")
+ */
+class ChroniclePresenter extends BasePresenter{
+
+    /**
+     * @Privilege("edit")
+     */
+    public function actionEdit(){}
+
+    /**
+     * @Privilege("default")
+     */
+    public function renderDefault(){}
+
+    /**
+     * @Privilege("delete")
+     */
+    public function handleDelete(){}
+
+    /**
+     * @Privilege("edit", "create")
+     * @Action("edit", "create")
+     */
+    protected function createComponentEditChronicleForm(){}
+
+    /**
+     * @Privilege("edit", "create")
+     */
+    public function editEventFormSucceded(Form $form){}
+}
+
+Check documentation of admin presenters for more examples
+
+TRANSPARENCY OF DEPENDENCIES
+----------------------------
+Every presenter has to be transparent with respect to the dependencies it needs
+in order to function properly. That mean calls in form `$this->context` are
+discuraged with except to `$this->context->parameters`. If a presenter needs a
+service, it can incejt it either in its constructor (discuraged) or with a
+`inject*` method (preferred). This way it is clear how a change in service will
+affect the rest of the system.
+
+USE OF MODELS IN PRESENTERS
+---------------------------
+If a presenter need an access to a model, it injects it to itself via `inject*`.
+While working with the model, the result it will get can be of class
+`\Nette\Database\Table\Selection`. If that is the case, the use of its methods is
+limited to:
+ - get
+ - all fetches (can use the name of the field)
+ - limit, page, count, insert
+
+This is to prevent dependancy in presenters on the name of fields, as those can
+easily change. If you need more functionality in presenter, create an appropriate
+method in the model and call it from presenter. Model can assume anything about
+itself and other models.
+
+If you need update or delete functionality, you have to be working with
+`\Nette\Database\Table\ActiveRow`. This may result in more queries to the database,
+however in the small scale of this project, this is not critical.

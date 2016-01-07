@@ -1,0 +1,55 @@
+{**
+ * Recruit page template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param ActiveRow $leader    Main leader of the group
+ *}
+
+{block #head}
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/homepage.css">
+{/block}
+
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+<h1 class="heading_1">{$title}</h1>
+<div class="box-outer">
+	<span class="box-left-small">Přidej se i ty do našeho oddílu!</span>	
+	<div class="box-doublelined-inner">
+    <!-- TODO -->
+	</div>
+</div>
+
+<div class="box-outer">
+	<span class="box-left-small">Informace o našem oddíle</span>	
+	<div class="box-doublelined-inner">
+		<p>Jsme chlapecký oddíl skautů z Liberce. V současné době navštěvuje náš oddíl cca 12 dětí ve věku 9 - 14 let. Každou středu pořádáme schůzky v naší <a n:href="Homepage:lounge">skautské klubovně</a> (Zemědělská 17/302, 460 08 Liberec 8) pravidelně od 17:00 do 18:30. Každých 14 dní se vydáváme na jednodenní sobotní výpravy a přibližně šestkrát do roka jezdíme na výpravy vícedenní (tyto termíny většinou korespondují s termíny školních prázdnin).</p>
+		<p> Vyvrcholením naší činnosti je třítýdenní letní tábor, pořádaný pravidelně na louce nedaleko Českého Dubu. Stanujeme tu v malebném údolí řeky Zábrdky v indiánských tee-pee.</p>
+		<p>Naše činnost a program akcí je zaměřen nejen na výlety do přírody a její poznávání, ale též na rozvíjení osobnostních stránek dětí. Učíme je různým dovednostem pomocí her a soutěží. Pořádáme různé výpravy do bližšího i vzdálenějšího okolí Liberce. Tyto akce jsou zpestřené například výlety do bazénu, na lyže (běžky, sjezdovky i snowboard), na horolezeckou stěnu, na vodu, či na kola.</p>
+		<p>Více informací se můžete dozvědět na našich internetových stránkách <a n:href="Homepage:">www.27skauti.cz</a>
+			{if $leader}
+				{if $leader->ref('registration', 'nickname')->mobile}
+				, telefonicky u vedoucího oddílu ({$leader->name} {$leader->surname} - {$leader->ref('registration', 'nickname')->mobile})
+				{/if}{if $leader->user->mail}
+				, emailem (<a href="mailto:{$leader->user->mail}">{$leader->user->mail}</a>)
+				{/if}
+			{/if}
+		, případně přímo během osobního setkání.</p>
+		<p>V případě Vašeho zájmu nás neváhejte kdykoliv <a n:href="contact">kontaktovat</a>.</p>
+		<div n:if="$leader" style="float: right; text-align: right;"><span class="bold">{$leader->title} {$leader->name} {$leader->surname}</span><br />vedoucí oddílu</div>
+	</div>
+</div>
+
+{/block}
+

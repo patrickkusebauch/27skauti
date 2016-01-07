@@ -1,0 +1,67 @@
+/*
+	(c) 2009 David Grudl. All rights reserved.
+*/
+
+
+.paginator {
+	margin: 1em 0;
+	font-size: 90%;
+}
+
+.paginator a, .paginator span {
+	margin-right: 0.1em;
+	padding: 0.2em 0.5em;
+	color: #999999;
+}
+
+.paginator a {
+	border: 1px solid #9AAFE5;
+	text-decoration: none;
+	color: #105CB6;
+}
+
+.paginator span.paginator-button {
+	border: 1px solid #DDDDDD;
+}
+
+.paginator .paginator-current {
+	background: #2E6AB1;
+	border: 1px solid #2E6AB1;
+	color: white;
+	font-weight: bold;
+}
+
+.drop-paginator ul {
+	display: none;
+	list-style: none;
+	position: absolute;
+	top: 100%;
+	z-index: 50;
+	background: #5f6975; 
+	border-radius: 10px; 
+	padding: 0;
+	overflow: auto;
+	max-height: 300px;
+	width: 110px;
+}
+
+.drop-paginator:hover li>ul {
+	display: block;
+}
+
+.drop-paginator {
+	background: #efefef; 
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+	margin-top: 0px;
+	padding: 0 20px;
+	border-radius: 10px;  
+	list-style: none;
+	position: relative;
+	display: inline-table;	
+}
+
+.drop-paginator:after {
+	content: ""; clear: both; display: block;
+}

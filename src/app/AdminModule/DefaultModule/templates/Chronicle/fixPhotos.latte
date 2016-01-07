@@ -1,0 +1,24 @@
+{**
+ * Fix chronicle photos template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+{block #content}
+<h1 class="heading_1">Kronika - oprava fotek</h1>
+<div class="box-nolined">
+	<p>Oprava fotek kontroluje, jestli je v databázi záznam pro každou fotky, která je nahraná ve složce.
+	Jelikož kotroluje každou fotky zvlášť, tak může chvíli trvat, než se kontrola dokončí. Nedivte se proto,
+	když oprava fotek bude trvat několik minut. Po dokončení opravy dostanete zprávu informující o tom,
+	 které fotky byli opraveny.</p>
+	{control fixPhotosForm}
+</div>
+{/block}
+

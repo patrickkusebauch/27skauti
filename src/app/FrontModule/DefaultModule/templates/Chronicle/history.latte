@@ -1,0 +1,77 @@
+{**
+ * History page template
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path (URI relative path)
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $histories  all the histories of the group
+ *}
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+<h1 class="heading_1">{$title}</h1>
+<div class="box-nolined">
+	<p>Náš oddíl byl založen 7. září 1983 jako třetí oddíl střediska Mustang (odtud starý název "Trojka"). Mezi první
+	vedoucí našeho oddílu patří Polednice, Meke a Mourek. Prvními nováčky v té době byli například Kiwi, Kondor,
+	Plamínek, Šotek a Mravenec. Postupem času se ve vedení oddílu vystřídali také Karla, Špunt, Vítek, Kiwi, Muf a Zip
+	(který vede oddíl do dnes).</p>
+	<p>Náš oddíl měl skoro vždy dvě družiny a to Tučňáky a Mloky. Avšak několikrát v historii byly chvíle, kdy se náš
+	oddíl rozrostl až na družiny tři (s názvem Krtci, nebo Jezevci). Chvíli tu fungovala i roverská družina Vlci.</p>
+	<p>O něco málo níže si můžete prohlédnout složení našeho oddílu od jeho založení až dodnes. Jsou tu napsaní opravdu
+	všichni, jenž tu vydrželi alespoň jeden tábor. Civilní jméno je vždy uvedeno pouze jednou a to v roce, kdy dotyčný
+	člověk vstoupil do oddílu.</p>
+</div>
+
+{foreach $histories as $history}
+<div class="box-outer">
+	<span class="box-left">&nbsp</span><span class="box-right">{$history->year}</span>
+	<div class="box-doublelined-inner in-box-text-bigger">
+		<table class="in-box-table" style="width:100%"><thead></thead><tbody>
+		<tr>
+		    <td style="width:160px;">Táborová hra</td><td style="color:#B0381A">{$history->game}</td>
+		{var $filename = $config['historyPhotosStorage'] . '/' . $history->year . '.jpg'}
+		{if file_exists($config['wwwDir'] . $filename)}
+		    <td rowspan=4><div class="picture-outer" style="right:0px;">
+		        {var $picture = Nette\Image::fromFile($config['wwwDir'] . $filename)}
+		        {if $picture->getWidth() > $picture->getHeight()}
+			        <div class="picture-inner-higher"></div>
+			            <div class="picture-inner-wider">
+       					<img src="{$basePath . $filename}" alt="Foto z akce" width="160px" height="110px" />
+       				</div>
+       			{else}
+	        		<div class="picture-inner-wider"></div>
+       				<div class="picture-inner-higher">
+	        			<img src="{$basePath . $filename}" alt="Foto z akce" width="110px" height="160px" />
+       				</div>
+       			{/if}
+	    	</div></td>
+		{/if}
+        </tr>
+		<tr><td>Vedoucí:</td><td>{$history->leaders}</td></tr>
+		<tr><td>Zástupci:</td><td>{$history->deputies}</td></tr>
+		<tr><td>Oldskauti:</td><td>{$history->oldscouts}</td></tr>
+		<tr><td>Roveři:</td><td colspan=2>{$history->rangers}</td></tr>
+		<tr><td>Klubovna:</td><td colspan=2>{$history->club}</td></tr>
+		<tr><td>Tábořiště:</td><td colspan=2>{$history->camp}</td></tr>
+		</tbody></table>
+		<table class="in-box-table" style="width:100%;">
+			<thead><tr><td>MLOCI</td><td>TUČŇÁCI</td>{if $history->jezevci}<td>JEZEVCI</td>{/if}</tr></thead>
+			<tbody><tr>
+			    <td style="width:auto; color:black; font-style:italic;">{$history->mloci|nl2br|noescape}</td>
+				<td>{$history->tucnaci|nl2br|noescape}</td>
+				{if $history->jezevci}<td>{$history->jezevci|nl2br|noescape}</td>{/if}
+		    </tr></tbody>
+		</table>
+	</div>
+</div>
+{/foreach}
+{/block}

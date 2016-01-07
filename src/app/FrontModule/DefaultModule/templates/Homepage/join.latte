@@ -1,0 +1,28 @@
+{**
+ * Joining Form page
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+<h1 class="heading_1">{$title}</h1>
+<div class="box-outer">
+	<div class="box-doublelined-inner">
+		<p>Pokud Vás činnost našeho oddílu zaujala, můžete nám poslat nezávaznou přihlášku. My se Vám ozveme a domluvíme  další podrobnosti, které by Vás mohly zajímat. Pro lepší přehled vyplňte i školu a třídu, do které Váš syn chodí – preferujeme kluky za 3. – 5. tříd, ale příp. se můžeme dohodnout i na vstupu syna staršího věku. Pokud byste měli zájem přihlásit syna mladšího nebo Vaši dceru, rádi předáme kontakt na další skautské oddíly v našem středisku.</p>
+		<p>A pokud ještě chodíš na základní školu a máš o náš oddíl zájem, nezapomeň o své zaslané nezávazné přihlášce říci rodičům nebo ještě lépe, pošli nám kontakty přímo na ně.</p>
+	</div>
+</div>
+	{control optInForm}
+{/block}
+

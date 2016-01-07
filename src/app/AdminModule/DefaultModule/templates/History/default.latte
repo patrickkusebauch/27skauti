@@ -1,0 +1,45 @@
+{**
+ * History overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $histories  histories of the group
+ *}
+{block #content}
+<h1 class="heading_1">Historie oddílu</h1>
+
+<div class="box-nolined">
+	<p n:if="$user->isAllowed('Admin:Default:History', 'create')"><a n:href="create">Přidat historii oddílu</a></p>
+	{if $histories->fetch()}
+	<table class="table">
+		<thead>
+			<tr>
+				<td>Rok</td>
+				<td>Táborová hra</td>
+				<td n:if="$user->isAllowed('Admin:Default:History', 'edit')">Editace</td>
+				<td n:if="$user->isAllowed('Admin:Default:History', 'delete')">Mazání</td>
+			</tr>
+		</thead>
+		<tbody>
+		{foreach $histories as $history}
+			<tr>
+				<td>{$history->year}</td>
+				<td>{$history->game}</td>
+				<td n:if="$user->isAllowed('Admin:Default:History', 'edit')"><a n:href="edit year => $history->year">Edituj</a></td>
+				<td n:if="$user->isAllowed('Admin:Default:History', 'delete')"><a n:href="delete! year => $history->year">Smaž</a></td>
+			</tr>
+		{/foreach}
+		</tbody>
+	</table>
+	{/if}
+</div>
+{/block}
+

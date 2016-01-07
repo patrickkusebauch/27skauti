@@ -1,0 +1,123 @@
+{**
+ * Front Homepage template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param ActiveRow $chronicle  Newest chronicle allowed for display
+ * @param Selection $news       4 newest news allowed for display
+ *}
+{block #head}
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/homepage.css">
+{/block}
+
+{block #content}
+<h1 class="heading_1">Stezky</h1>
+<div class="box-outer" style="clear:both;">
+	<span class="box-left-small">Přehledy</span>
+	<div class="box-doublelined-inner">
+	<table class="table" style="width:35%; float:left;">
+		<thead>
+			<tr>
+				<th>Přezdívka</th>
+				<th>Spl. úkolů</th>
+				<th>Spl. odborností</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr n:foreach="$overview as $member">
+				<td>{$member->nickname}</td>
+				<td>{$member->count}</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table" style="width:60%; float:right;">
+		<thead>
+			<tr>
+				<th>Odbornost</th>
+				<th>Stupeň</th>
+				<th>Spl. úkolů</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr n:foreach="$myOverview->fetchAll() as $member">
+				<td>{$member->name}</td>
+				<td>{$member->level}</td>
+				<td>{$member->count}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>
+<div class="box-outer" style="clear:both;">
+	<span class="box-left-small">Já vs. ostatní</span>
+	<div class="box-doublelined-inner">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Prezdívka</th>
+				<th n:foreach="$myOverview->fetchAll() as $member"><span title="{$member->name}">{$member->name|truncate:1,''}<span></th>
+				<th>Celkem</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr n:foreach="$allOverviews as $nickname => $oneOverview">
+				<td>{$nickname}</td>
+				<td n:foreach="$oneOverview as $member">{$member->count}</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>
+<div class="box-outer" style="clear:both;">
+	<span class="box-left-small">Moje stezky</span>
+	<div class="box-doublelined-inner">
+	<ol style="list-style-type: none;">
+		<li class="toggle" n:foreach="$detail as $levelName => $level">{$levelName}
+		<ol style="list-style-type: none;">
+			<li class="toggle" n:foreach="$level as $groupName => $group">{$groupName}
+			<ol style="list-style-type: none; display:none;"><li>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Znění úkolu</th>
+							<th>Status</th>
+							<th>Datum</th>
+							<th>Podepsal</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr n:foreach="$group as $taskName => $task">
+							<td>{$taskName}</td>
+							<td>{$task->status}</td>
+							<td>{$task->signed|date:'j.n.Y'}</td>
+							<td>{$task->signature}</td>
+						</tr>
+					</tbody>
+				</table>
+			</li></ol>
+			</li>
+		</ol>
+		</li>
+	</ol>
+	</div>
+</div>
+{/block}
+
+{block #scripts}
+<script type="text/javascript">
+$("li.toggle").click(function() {
+	$(this).children().toggle("slow");
+	return false;
+});
+</script>
+{/block}

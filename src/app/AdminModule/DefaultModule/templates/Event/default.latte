@@ -1,0 +1,85 @@
+{**
+ * Event and calendar overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $events     events from a specified year
+ * @param Selection $calendars  all the calendars in descending order
+ *}
+{block #head}
+	<link rel="stylesheet" href="{$basePath}/css/paginator.css" />
+{/block}
+
+{block #content}
+<h1 class="heading_1">Akce</h1>
+
+
+{control vp}
+{if $events->fetch()}
+<table class="table"><thead><tr>
+	<th>Datum</th>
+	<th>Typ Akce</th>
+	<th>Záznam</th>
+	<th n:if="$user->isAllowed('Admin:Default:Event', 'edit')">Editace</th>
+	<th n:if="$user->isAllowed('Admin:Default:Event', 'show')">Zobrazení</th>
+	<th n:if="$user->isAllowed('Admin:Default:Event', 'delete')">Mazání</th>
+</tr></thead><tbody>
+{foreach $events as $event}<tr>
+	<td>
+		{if $event->datestart == $event->dateend}
+			{$event->datestart|date:'j. n.'}
+		{elseif $event->datestart->format('n') == $event->dateend->format('n')}
+			{$event->datestart|date:'j.'}-{$event->dateend|date:'j. n.'}
+		{else}
+			{$event->datestart|date:'j. n.'}-{$event->dateend|date:'j. n.'}
+		{/if}
+	</td>
+	<td>{$event->type}</td>
+	<td>{$event->name|truncate:25}</td>
+	<td n:if="$user->isAllowed('Admin:Default:Event', 'edit')"><a n:href="edit id => $event->id">Edituj</a></td>
+	<td n:if="$user->isAllowed('Admin:Default:Event', 'show')"><a n:href="show! id => $event->id">
+		{if $event->showevent}Odzobraz{else}Zobraz{/if}
+	</a></td>
+	<td n:if="$user->isAllowed('Admin:Default:Event', 'delete')"><a n:href="delete! id => $event->id">Smaž</a></td>
+</tr>{/foreach}
+</tbody></table>
+{/if}
+
+
+
+<div class="box-outer">
+    <span class="box-left">Kalendáře</span>
+    <div class="box-nolined">
+    	<a n:if="$user->isAllowed('Admin:Default:Event', 'edit')" n:href="createcalendar">Přidat Kalendář</a>
+        {if $calendars->fetch()}
+        <table class="table"><thead><tr>
+	        <th>Rok</th>
+	        <th>Období</th>
+        	<th n:if="$user->isAllowed('Admin:Default:Event', 'edit')">Editace</th>
+    	    <th n:if="$user->isAllowed('Admin:Default:Event', 'show')">Zobrazení</th>
+        </tr></thead><tbody>
+        {foreach $calendars as $calendar}
+        	<tr>
+        		<td>{$calendar->year}</td>
+    		    <td>{$calendar->yearpart}</td>
+    		    <td n:if="$user->isAllowed('Admin:Default:Event', 'edit')"><a n:href="editcalendar id => $calendar->id">Edituj</a></td>
+        		<td n:if="$user->isAllowed('Admin:Default:Event', 'show')"><a n:href="showcalendar! id => $calendar->id">
+        			{if $calendar->show}Odzobraz{else}Zobraz{/if}
+    		    </a></td>
+        	</tr>
+        {/foreach}
+        </tbody></table>
+        {/if}
+    </div>
+</div>
+
+{/block}
+

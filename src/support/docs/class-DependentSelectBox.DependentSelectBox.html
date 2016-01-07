@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class DependentSelectBox\DependentSelectBox | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox</a></li>
+				<li><a href="class-DependentSelectBox.FormControlDependencyHelper.html">FormControlDependencyHelper</a></li>
+				<li><a href="class-DependentSelectBox.JsonDependentSelectBox.html">JsonDependentSelectBox</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-DependentSelectBox.html" title="Summary of DependentSelectBox"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class DependentSelectBox</h1>
+
+
+	<div class="description">
+	
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Forms\Controls\SelectBox
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>DependentSelectBox\DependentSelectBox</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-DependentSelectBox.JsonDependentSelectBox.html">DependentSelectBox\JsonDependentSelectBox</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> DependentSelectBox<br>
+		
+
+		<b>Located at</b> <a href="source-class-DependentSelectBox.DependentSelectBox.html#17-403" title="Go to source code">components/DependentSelectBox/DependentSelectBox.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#55-76" title="Go to source code">__construct</a>( <span>string <var>$label</var></span>, <span>Nette\Forms\Controls\SelectBox|<code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a></code>|<code><a href="class-DependentSelectBox.FormControlDependencyHelper.html">DependentSelectBox\FormControlDependencyHelper</a></code> <var>$parents</var></span>, <span>callable <var>$dataCallback</var></span> )</code>
+
+		<div class="description short">
+			<p>Constructor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$label</var></dt>
+					<dd>Label of control
+</dd>
+					<dt><var>$parents</var></dt>
+					<dd>$depends SelectBox on which is this control attached
+</dd>
+					<dt><var>$dataCallback</var></dt>
+					<dd>Callback for data retreiving function($form, $dependentSelectBox)
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="attached" id="_attached">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_attached">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#78-86" title="Go to source code">attached</a>( <span>IComponent <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>This method will be called when the component becomes attached to Form.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>This method will be called when the component becomes attached to Form.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="processAttaching" id="_processAttaching">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_processAttaching">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#88-95" title="Go to source code">processAttaching</a>( <span>Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Process all attaching methods</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Process all attaching methods</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="initializeState" id="_initializeState">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initializeState">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#97-111" title="Go to source code">initializeState</a>( <span>Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Initialize state of control. "Disable" control or set value ...</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Initialize state of control. "Disable" control or set value ...</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setValue" id="_setValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setValue">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#117-130" title="Go to source code">setValue</a>( <span>mixed <var>$value</var></span>, <span>boolean <var>$refreshTree</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>Set value of selectbox</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set value of selectbox</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd>
+</dd>
+					<dt><var>$refreshTree</var></dt>
+					<dd>Remake tree of components? (false only for internal system)
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDisabledValue" id="_setDisabledValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDisabledValue">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#132-142" title="Go to source code">setDisabledValue</a>( <span>array <var>$disabledValue</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Set value for "disabled" select box</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set value for "disabled" select box</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$disabledValue</var></dt>
+					<dd>$key =&gt; $value)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDefaultValue" id="_setDefaultValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDefaultValue">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#144-155" title="Go to source code">setDefaultValue</a>( <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets default value for control and remake subtree of components</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets default value for control and remake subtree of components</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setItems" id="_setItems">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setItems">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#157-166" title="Go to source code">setItems</a>( <span>array <var>$items</var></span>, <span>mixed <var>$useKeys</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+
+		<div class="description short">
+			<p>Sets items from which to choose.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets items from which to choose.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$items</var></dt>
+					<dd>
+</dd>
+					<dt><var>$useKeys</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a></code></code><br>provides a fluent interface
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addOnSubmitCallback" id="_addOnSubmitCallback">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addOnSubmitCallback">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#168-179" title="Go to source code">addOnSubmitCallback</a>( <span>mixed <var>$callback</var></span>, <span>mixed <var>$parameter</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$_</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Add callback which is called after submit
+Parameters passed to callback could be defined too</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add callback which is called after submit
+Parameters passed to callback could be defined too</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd>passed to callback
+</dd>
+					<dt><var>$parameter</var></dt>
+					<dd>
+</dd>
+					<dt><var>$_</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a></code></code><br>provides a fluent interface
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setLeaveFirstEmpty" id="_setLeaveFirstEmpty">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setLeaveFirstEmpty">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#181-184" title="Go to source code">setLeaveFirstEmpty</a>( <span>mixed <var>$leaveFirstEmpty</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDependentParents" id="_getDependentParents">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Forms\Controls\SelectBox|<code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a>[]</code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDependentParents">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#186-191" title="Go to source code">getDependentParents</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Forms\Controls\SelectBox|<code><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox\DependentSelectBox</a>[]</code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="submitButtonHandler" id="_submitButtonHandler">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_submitButtonHandler">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#198-221" title="Go to source code">submitButtonHandler</a>( <span>SubmitButton <var>$button</var></span> )</code>
+
+		<div class="description short">
+			<p>Handler which is called when form is submmited by button of this control</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Handler which is called when form is submmited by button of this control</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$button</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="refresh" id="_refresh">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_refresh">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#227-242" title="Go to source code">refresh</a>( <span>boolean <var>$clearValue</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$recursive</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>"Remake" tree of dependent components</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>"Remake" tree of dependent components</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$clearValue</var></dt>
+					<dd>
+</dd>
+					<dt><var>$recursive</var></dt>
+					<dd>Refresh all items in tree or only this item ?
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createDependencyHelper" id="_createDependencyHelper">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-DependentSelectBox.FormControlDependencyHelper.html">DependentSelectBox\FormControlDependencyHelper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createDependencyHelper">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#245-256" title="Go to source code">createDependencyHelper</a>( <span>FormControl <var>$control</var></span> )</code>
+
+		<div class="description short">
+			<p>Create helper which creates submit buttons</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Create helper which creates submit buttons</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$control</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DependentSelectBox.FormControlDependencyHelper.html">DependentSelectBox\FormControlDependencyHelper</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="autoSelectRootFirstItem" id="_autoSelectRootFirstItem">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_autoSelectRootFirstItem">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#258-275" title="Go to source code">autoSelectRootFirstItem</a>( )</code>
+
+		<div class="description short">
+			<p>Test whenever $this->autoSelectRootFirstItem is true and if parent is root SelectBox, select first item</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Test whenever $this->autoSelectRootFirstItem is true and if parent is root SelectBox, select first item</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasAnyParentEmptyValue" id="_hasAnyParentEmptyValue">
+
+		<td class="attributes"><code>
+			 protected 
+
+			booleam
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasAnyParentEmptyValue">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#277-292" title="Go to source code">hasAnyParentEmptyValue</a>( )</code>
+
+		<div class="description short">
+			<p>Tests if any parent control have empty value</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Tests if any parent control have empty value</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>booleam</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasEmptyValue" id="_hasEmptyValue">
+
+		<td class="attributes"><code>
+			 protected 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasEmptyValue">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#294-300" title="Go to source code">hasEmptyValue</a>( )</code>
+
+		<div class="description short">
+			<p>Tests if this control have empty value</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Tests if this control have empty value</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setItemsFromCallback" id="_setItemsFromCallback">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setItemsFromCallback">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#303-315" title="Go to source code">setItemsFromCallback</a>( <span>Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Load items from callback</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load items from callback</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>Form with values
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="disableAllChilds" id="_disableAllChilds">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_disableAllChilds">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#317-325" title="Go to source code">disableAllChilds</a>( )</code>
+
+		<div class="description short">
+			<p>"Disable" all childs DependentSelectBox which are attached</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>"Disable" all childs DependentSelectBox which are attached</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="selectFirstItemForAllChilds" id="_selectFirstItemForAllChilds">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_selectFirstItemForAllChilds">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#327-336" title="Go to source code">selectFirstItemForAllChilds</a>( )</code>
+
+		<div class="description short">
+			<p>"Disable" all childs DependentSelectBox which are attached</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>"Disable" all childs DependentSelectBox which are attached</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="disableSelectBox" id="_disableSelectBox">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_disableSelectBox">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#338-356" title="Go to source code">disableSelectBox</a>( )</code>
+
+		<div class="description short">
+			<p>"Disable" this control</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>"Disable" this control</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isSelected" id="_isSelected">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isSelected">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#358-360" title="Go to source code">isSelected</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isDependentSelectBoxDisabled" id="_isDependentSelectBoxDisabled">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isDependentSelectBoxDisabled">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#362-364" title="Go to source code">isDependentSelectBoxDisabled</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isRoot" id="_isRoot">
+
+		<td class="attributes"><code>
+			 protected 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isRoot">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#366-373" title="Go to source code">isRoot</a>( <span>Control <var>$control</var></span> )</code>
+
+		<div class="description short">
+			<p>Is parent root SelectBox ?</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Is parent root SelectBox ?</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$control</var></dt>
+					<dd>item to check
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addEmptyHeaderItem" id="_addEmptyHeaderItem">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addEmptyHeaderItem">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#375-382" title="Go to source code">addEmptyHeaderItem</a>( <span>mixed <var>$selectFirst</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>Add empty header item and select him</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add empty header item and select him</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setFirstItemSelected" id="_setFirstItemSelected">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setFirstItemSelected">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#384-391" title="Go to source code">setFirstItemSelected</a>( )</code>
+
+		<div class="description short">
+			<p>Select first item</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Select first item</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="Container_prototype_addDependentSelectBox" id="_Container_prototype_addDependentSelectBox">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_Container_prototype_addDependentSelectBox">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#393-395" title="Go to source code">Container_prototype_addDependentSelectBox</a>( <span>Nette\Forms\Container <var>$obj</var></span>, <span>mixed <var>$name</var></span>, <span>mixed <var>$label</var></span>, <span>mixed <var>$parents</var></span>, <span>mixed <var>$dataCallback</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="register" id="_register">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_register">#</a>
+		<code><a href="source-class-DependentSelectBox.DependentSelectBox.html#397-399" title="Go to source code">register</a>( <span>mixed <var>$methodName</var> = <span class="php-quote">&quot;addDependentSelectBox&quot;</span></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="disableChilds" id="$disableChilds">
+		<td class="attributes"><code>
+			public static 
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#21-22" title="Go to source code"><var>$disableChilds</var></a>
+
+			<div class="description short">
+				<p>"Disable" child DependentSelectBox-es or select 1st value? (Disabling does not effect validation)</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>"Disable" child DependentSelectBox-es or select 1st value? (Disabling does not effect validation)</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$disableChilds" class="anchor">#</a>
+				<code><span class="php-keyword1">true</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="disabledHtmlClass" id="$disabledHtmlClass">
+		<td class="attributes"><code>
+			public static 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#23-24" title="Go to source code"><var>$disabledHtmlClass</var></a>
+
+			<div class="description short">
+				<p>Html class set on "disabled" control</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Html class set on "disabled" control</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$disabledHtmlClass" class="anchor">#</a>
+				<code><span class="php-quote">&quot;disabledControl&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="emptyValueTitle" id="$emptyValueTitle">
+		<td class="attributes"><code>
+			public static 
+			Title
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#25-26" title="Go to source code"><var>$emptyValueTitle</var></a>
+
+			<div class="description short">
+				<p>for unselected value</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>for unselected value</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$emptyValueTitle" class="anchor">#</a>
+				<code><span class="php-quote">&quot;- - - - -&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="disabledItemTitle" id="$disabledItemTitle">
+		<td class="attributes"><code>
+			public static 
+			Title
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#27-28" title="Go to source code"><var>$disabledItemTitle</var></a>
+
+			<div class="description short">
+				<p>for disabled value</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>for disabled value</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$disabledItemTitle" class="anchor">#</a>
+				<code><span class="php-quote">&quot;x x x x x&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="autoSelectRootFirstItem" id="$autoSelectRootFirstItem">
+		<td class="attributes"><code>
+			public  
+			Select
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#29-30" title="Go to source code"><var>$autoSelectRootFirstItem</var></a>
+
+			<div class="description short">
+				<p>first item for root SelectBox ?</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>first item for root SelectBox ?</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$autoSelectRootFirstItem" class="anchor">#</a>
+				<code><span class="php-keyword1">true</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="parents" id="$parents">
+		<td class="attributes"><code>
+			protected  
+			array(SelectBox|DependentSelectBox)
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#32-33" title="Go to source code"><var>$parents</var></a>
+
+			<div class="description short">
+				<p>Form control/s on which is this DependentSelectBox attached</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Form control/s on which is this DependentSelectBox attached</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$parents" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="dataCallback" id="$dataCallback">
+		<td class="attributes"><code>
+			protected  
+			callable
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#34-35" title="Go to source code"><var>$dataCallback</var></a>
+
+			<div class="description short">
+				<p>Callback to function which returns items for selectbox</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Callback to function which returns items for selectbox</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$dataCallback" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="childs" id="$childs">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#36-37" title="Go to source code"><var>$childs</var></a>
+
+			<div class="description short">
+				<p>of DependentSelectBox Childs which are attached on this DependentSelectBox</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>of DependentSelectBox Childs which are attached on this DependentSelectBox</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$childs" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>()</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="onSubmit" id="$onSubmit">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#38-39" title="Go to source code"><var>$onSubmit</var></a>
+
+			<div class="description short">
+				<p>Registred onSubmit callbacks</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Registred onSubmit callbacks</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$onSubmit" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>()</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="isDisabled" id="$isDisabled">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#40-41" title="Go to source code"><var>$isDisabled</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Boolean</h4>
+					<div class="list">
+							Is this component in "disabled" state?
+<br>
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$isDisabled" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="disabledValue" id="$disabledValue">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#42-43" title="Go to source code"><var>$disabledValue</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Array</h4>
+					<div class="list">
+							array(key => value) for "disabled" select box
+<br>
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$disabledValue" class="anchor">#</a>
+				<code><span class="php-keyword1">null</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="leaveFirstEmpty" id="$leaveFirstEmpty">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#44-45" title="Go to source code"><var>$leaveFirstEmpty</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Bool</h4>
+					<div class="list">
+							Leave first empty line in all states?
+<br>
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$leaveFirstEmpty" class="anchor">#</a>
+				<code><span class="php-keyword1">false</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="emptyValues" id="$emptyValues">
+		<td class="attributes"><code>
+			private static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.DependentSelectBox.html#47-48" title="Go to source code"><var>$emptyValues</var></a>
+
+			<div class="description short">
+				<p>Unselected values</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Unselected values</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$emptyValues" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>(<span class="php-quote">''</span>, <span class="php-keyword1">null</span>)</code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

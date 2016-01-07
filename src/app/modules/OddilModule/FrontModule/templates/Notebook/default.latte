@@ -1,0 +1,44 @@
+{**
+ * Front Homepage template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param ActiveRow $chronicle  Newest chronicle allowed for display
+ * @param Selection $news       4 newest news allowed for display
+ *}
+{block #head}
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/homepage.css">
+{/block}
+
+{block #content}
+<h1 class="heading_1">Zápisník</h1>
+<div class="box-outer" style="clear:both;">
+	<span class="box-left-small">Přehled</span>
+<div class="box-doublelined-inner">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nadpis</th>
+				<th>Témata</th>
+				<th>Text</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr n:foreach="$notebook as $entry">
+				<td><a n:href="detail id => $entry->id">{$entry->name}</a></td>
+				<td>{$entry->tags}</td>
+				<td>{$entry->content|truncate:50}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+{/block}

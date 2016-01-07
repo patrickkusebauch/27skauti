@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Models\Calendar | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Models.Calendar.html">Calendar</a></li>
+				<li><a href="class-Models.Event.html">Event</a></li>
+				<li><a href="class-Models.Guestbook.html">Guestbook</a></li>
+				<li><a href="class-Models.History.html">History</a></li>
+				<li><a href="class-Models.Member.html">Member</a></li>
+				<li><a href="class-Models.News.html">News</a></li>
+				<li><a href="class-Models.Privilege.html">Privilege</a></li>
+				<li><a href="class-Models.Registration.html">Registration</a></li>
+				<li><a href="class-Models.Repository.html">Repository</a></li>
+				<li><a href="class-Models.User.html">User</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Models.html" title="Summary of Models"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Calendar</h1>
+
+
+	<div class="description">
+	<p>Calendar model</p>
+
+<p>Represents the calendar used for scheduling events</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Object
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-Models.Repository.html"><span>Models\Repository</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Models\Calendar</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> Models<br>
+		
+
+				<b>Author:</b>
+				Patrick Kusebauch
+<br>
+				<b>Version:</b>
+				2.00, 09. 11. 2014
+<br>
+		<b>Located at</b> <a href="source-class-Models.Calendar.html#3-71" title="Go to source code">model/Calendar.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="descendingOrder" id="_descendingOrder">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_descendingOrder">#</a>
+		<code><a href="source-class-Models.Calendar.html#16-25" title="Go to source code">descendingOrder</a>( )</code>
+
+		<div class="description short">
+			<p>Gets all calendars in descending order</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all calendars in descending order</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCalendar" id="_getCalendar">
+
+		<td class="attributes"><code>
+			 public 
+
+			false|Nette\Database\Table\ActiveRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCalendar">#</a>
+		<code><a href="source-class-Models.Calendar.html#27-39" title="Go to source code">getCalendar</a>( <span>integer <var>$year</var></span>, <span>string <var>$yearpart</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets a individual calendar from a period</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets a individual calendar from a period</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$year</var></dt>
+					<dd>Year of the calendar
+</dd>
+					<dt><var>$yearpart</var></dt>
+					<dd>"jaro"|"podzim"
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|Nette\Database\Table\ActiveRow</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getVisibleCalendars" id="_getVisibleCalendars">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getVisibleCalendars">#</a>
+		<code><a href="source-class-Models.Calendar.html#41-50" title="Go to source code">getVisibleCalendars</a>( )</code>
+
+		<div class="description short">
+			<p>Gets Collection of calnedars that are set for viewing</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets Collection of calnedars that are set for viewing</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showCalendar" id="_showCalendar">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\ActiveRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showCalendar">#</a>
+		<code><a href="source-class-Models.Calendar.html#52-70" title="Go to source code">showCalendar</a>( <span>integer <var>$id</var></span>, <span>boolean|null <var>$show</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			<p>Do you want to show the calendar</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Do you want to show the calendar</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Calendar ID
+</dd>
+					<dt><var>$show</var></dt>
+					<dd>Do you want to show the calendar (NULL for flip from current state)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\ActiveRow</code><br>Affected row
+
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidArgumentException<br>if $show is not bool/NULL
+
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Models.Repository.html#methods">Models\Repository</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Models.Repository.html#___construct">__construct()</a>, 
+			<a href="class-Models.Repository.html#_findAll">findAll()</a>, 
+			<a href="class-Models.Repository.html#_findBy">findBy()</a>, 
+			<a href="class-Models.Repository.html#_get">get()</a>, 
+			<a href="class-Models.Repository.html#_getBy">getBy()</a>, 
+			<a href="class-Models.Repository.html#_insert">insert()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="table" id="$table">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Models.Calendar.html#13-14" title="Go to source code"><var>$table</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$table" class="anchor">#</a>
+				<code><span class="php-quote">&quot;calendar&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Models.Repository.html#properties">Models\Repository</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Models.Repository.html#$database"><var>$database</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

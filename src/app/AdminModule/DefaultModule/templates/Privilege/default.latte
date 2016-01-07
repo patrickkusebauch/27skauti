@@ -1,0 +1,165 @@
+{**
+ * Privilege overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param ActiveRow $privilege  user to edit privileges of
+ *}
+{block #content}
+
+<div class="box-outer">
+	<span class="box-left">Oprávnění uživatelů</span>
+	<div class="box-nolined">
+		{if $user->isAllowed('Admin:Default:Privilege', 'edit')}
+			{control pickUserForm}
+			{if $privilege}
+				{control changePrivilegeForm}
+			{/if}
+		{else}
+			<p>Pro úpravu práv nemáte dostatečná oprávnění.</p>
+		{/if}
+	</div>
+</div>
+
+<div class="box-outer">
+	<span class="box-left">Tabulka práv</span>
+	<div class="box-nolined">
+		<p>Pokud není výslovně stanoveno jinak, tak jakékoliv pozdější právo v sekci může dělat vše, co všechna předchozí práva dohromady.</p>
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce Aktuality</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Vstup</td><td>Může pouze vstoupit do sekce a prohlížet záznamy.<br />
+							Nemůže je však žádným způsobem upravovat.</td></tr>
+				<tr><td>Vytváření/Editace</td><td>Může vytvářet a editovat aktuality.<br />
+							Nemůže však zobrazit aktuality na webu.</td></tr>
+				<tr><td>Zobrazování</td><td>Může rozhodovat o tom, jestli se aktualita<br />
+							zobrazí na webu nebo ne.</td></tr>
+				<tr><td>Mazání</td><td>Může smazat aktuality z webu.</td></tr>
+			</tbody>
+	    </table>
+
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce Akce</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Vstup</td><td>Může pouze vstoupit do sekce a prohlížet záznamy.<br />
+							Nemůže je však žádným způsobem upravovat.</td></tr>
+				<tr><td>Vytváření/Editace</td><td>Může vytvářet a editovat akce anebo kalendář.<br />
+							Nemůže je však zobrazit na webu</td></tr>
+				<tr><td>Zobrazování</td><td>Může rozhodovat o tom, jestli se lísteček na akci<br />
+							anebo kalendář zobrazí na webu nebo ne.</td></tr>
+				<tr><td>Mazání</td><td>Může smazat akce. Ne však kalendář</td></tr>
+			</tbody>
+	    </table>
+
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce Kronika/Historie oddílu</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Vstup</td><td>Může nahlédnout do sekcí.<br />
+				            Nemůže však nic upravovat ani nahrávat</td></tr>
+				<tr><td>Vytváření/Editace</td><td>Může vytvářet a editovat kroniky</td></tr>
+				<tr><td>Popisky</td><td>Může přidávat popisky k fotkám a videa</td></tr>
+				<tr><td>Generování</td><td>Může nahrávat fotky ke kronikám.</td></tr>
+				<tr><td>Zobrazování</td><td>Může zobrazovat kroniky.<br />
+				            Může vytvářet a upravovat historie oddílu.</td></tr>
+				<tr><td>Mazání</td><td>Může mazat korniky a historie.</td></tr>
+			</tbody>
+	    </table>
+
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce VIP Kronika</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td colspan=2>Momentálně nedělá vůbec nic</td></tr>
+			</tbody>
+	    </table>
+
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce Hlásínek</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Vstup</td><td>Může nahlédnout do sekce.<br />
+				            Nemůže však nic upravovat ani nahrávat</td></tr>
+				<tr><td>Vytváření</td><td>Může nahrávat hlásínky na server</td></tr>
+				<tr><td>Mazání</td><td>Může mazat hlásínky ze serveru</td></tr>
+			</tbody>
+	    </table>
+
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce Organizace/Registrace</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Vstup</td><td>Může pouze vstoupit do sekcí a prohlížet záznamy.<br />
+							Nemůže je však žádným způsobem upravovat.</td></tr>
+				<tr><td>Vytváření/Editace</td><td>Může vytvářet a editovat členy a jejich registrace.<br />
+				            Automaticky je také může zobrazovat, pokud správně vyplní pole</td></tr>
+				<tr><td>Mazání</td><td>Může mazat členy a jejich registrace.</td></tr>
+			</tbody>
+		</table>
+
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce Historie oddílu</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Vstup</td><td>Může pouze vstoupit do sekcí a prohlížet záznamy.<br />
+							Nemůže je však žádným způsobem upravovat.</td></tr>
+			</tbody>
+		</table>
+
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce Kniha návštěv</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Vstup</td><td>Může pouze vstoupit do sekce a prohlížet záznamy.<br />
+							Nemůže je však žádným způsobem upravovat.</td></tr>
+				<tr><td>Editace</td><td>Může upravovat záznamy.<br />
+							Může nahlížet do organizace aby věděl, kdo je ověřený uživatel.</td></tr>
+				<tr><td>Zobrazování</td><td>Může zobrazovat a odzobrazovat záznamy.</td></tr>
+				<tr><td>Mazání</td><td>Může mazat záznamy.</td></tr>
+			</tbody>
+		</table>
+
+		<table class="table">
+			<thead>
+				<tr><th colspan=2>Sekce Práva</th></tr>
+				<tr><th>Oprávnění</th><th>Co může dělat</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>Vstup</td><td>Může pouze vstoupit do sekcí a prohlížet záznamy.<br />
+							Nemůže je však žádným způsobem upravovat.</td></tr>
+				<tr><td>Vytváření/Editace</td><td>Může sobě a ostatním měnit přístupová práva.<br />
+				            Přidělit toto právo je jako přidělit "mazání" ke všem právům.</td></tr>
+				<tr><td>Mazání</td><td>Momentálně nědělá nic extra.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+{/block}
+

@@ -1,0 +1,119 @@
+{**
+ * Event and calendar page template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $events     Events with invitations to display
+ * @param Selection $calendars  calendars to display
+ *}
+{block #head}
+	<link rel="stylesheet" href="{$basePath}/css/news.css" />
+{/block}
+
+{block #submenu}
+	{control submenu}
+{/block}
+<!-- Akce -->
+{block #content}
+{if $events->fetch()} <h1 class="heading_1">{$title}</h1>{/if}
+{foreach $events as $event}
+	<div class="box-outer">
+		<span class="box-left">{$event->name|truncate:30}</span>
+		<span class="box-right">
+		{if $event->datestart == $event->dateend}
+			{$event->datestart|date:'j. n. Y'}
+		{elseif $event->datestart->format('n') == $event->dateend->format('n')}
+			{$event->datestart|date:'j.'}-{$event->dateend|date:'j. n. Y'}
+		{else}
+			{$event->datestart|date:'j. n.'}-{$event->dateend|date:'j. n. Y'}
+		{/if}
+		</span>
+		<div class="box-doublelined-inner">
+			<p style="text-align:justify;">{$event->text}</p>
+			<table class="in-box-table" style="width:100%;">
+				<thead></thead>
+				<tbody>
+					<tr>
+						<td>Sraz:</td><td>
+						{foreach $event->related('event_meeting') as $meeting}
+						    <span class="bold" n:if="$meeting->comment">{$meeting->comment}: </span>
+						    {$meeting->starttime|date:'%A'} {$meeting->starttime|date:'j. n. Y G:i'} {$meeting->startplace}<br />
+						{/foreach}
+						</td>
+					</tr>
+					<tr>
+						<td>Návrat:</td><td>
+						{foreach $event->related('event_meeting') as $meeting}
+						    <span class="bold" n:if="$meeting->comment">{$meeting->comment}: </span>
+						    {$meeting->endtime|date:'%A'} {$meeting->endtime|date:'j. n. Y G:i'} {$meeting->endplace}<br />
+						{/foreach}
+						</td>
+					</tr>
+					<tr>
+						<td>S sebou:</td><td>{$event->equipment|nl2br|noescape}</td>
+					</tr>
+					<tr n:if="$event->morse"><td>Morseovka:</td><td>{$event->morse|morse}</td></tr>
+					{** Checks whether all necessary records exist before rendering *}
+					<tr n:if="$event->ref('member', 'contactperson')
+					&& $event->ref('member', 'contactperson')->ref('registration', 'nickname')
+					&& $event->ref('member', 'contactperson')->user">
+						<td>Kontakt:</td>
+						{var $contactperson = $event->ref('member', 'contactperson')}
+						<td>{$contactperson->nickname} ({$contactperson->name} {$contactperson->surname}) -
+						{$event->ref('member', 'contactperson')->ref('registration', 'nickname')->mobile},
+						{$event->ref('member', 'contactperson')->user->mail}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+{/foreach}
+<!-- end of Akce -->
+
+<!-- Kalendář akcí -->
+{if $calendars->fetch()} <h1 class="heading_1">Kalendář akcí </h1>{/if}
+{var $highlighted = FALSE}{** Highlights current event *}
+{foreach $calendars as $calendar}
+<div class="box-outer">
+	<span class="box-left">{$calendar->yearpart|capitalize} {$calendar->year}</span>
+	<div class="box-doublelined-inner">
+		<table class="table" style="width:100%"><thead>
+			<tr>
+				<td style="width:140px;">Datum</td>
+				<td style="widht:120px;">Akce</td>
+				<td style="width:200px;">Poznámky</td>
+				<td style="width:230px;">Vede</td>
+			</tr>
+		</thead><tbody>
+		{var $events = $calendar->related('event', 'calendar_id')->order('dateend')}
+		{foreach $events as $event}
+		    {** n:if does not work properly for this, so there is this workearoud *}
+			<tr {if ($highlighted == FALSE)&&($event->dateend >= new Datetime("today"))}{var $highlighted = TRUE} id="calendar-highlighted" {/if} >
+				<td>{if $event->datestart == $event->dateend}
+					{$event->datestart|date:'j. n.'}
+				{elseif $event->datestart->format('n') == $event->dateend->format('n')}
+					{$event->datestart|date:'j.'}-{$event->dateend|date:'j. n.'}
+				{else}
+					{$event->datestart|date:'j. n.'}-{$event->dateend|date:'j. n.'}
+				{/if}</td>
+				<td>{$event->type}</td>
+				<td>{$event->calendarnote}</td>
+				<td>{$event->leaders}</td>
+			</tr>
+		{/foreach}
+		</tbody></table>
+	</div>
+</div>
+{/foreach}
+<!-- end of Kalendář akcí -->
+
+{/block}
+

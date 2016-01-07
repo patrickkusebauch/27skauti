@@ -1,0 +1,66 @@
+{**
+ * Frontend layout template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>{ifset $title}{$title} - {/ifset}27skauti.cz</title>
+
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/boxes.css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+	{block #head}{/block}
+</head>
+
+<body>
+<div id="body">
+	<div id="header">
+		<img src="{$basePath}/images/common/logo.gif" id="logo" />
+		<span id="heading">Mustang</span>
+		<span id="address">www.27skauti.cz</span>
+		<hr id="head_line" />
+		<span id="subheading">27. oddíl Liberec</span>
+		<div id="submenu">{block #submenu}{/block}</div>
+	</div>
+	<div id="menu">
+		{control menu}
+		{if $user->isLoggedIn()}
+		Přihlášen jako:<br />{$user->getIdentity()->username}<br />
+		<a n:href="Out!">Odhlásit se</a>		
+		{else}
+			<span style="font-size:16px;" >
+			    {control signInForm}
+			    <a n:href=":Front:Default:Sign:forgot">Zapomenuté heslo</a><br />
+                <a n:href=":Front:Default:Sign:register">Registrace</a>
+            </span>
+		{/if}
+	</div>
+	<div id="content-outer">
+		<div id="content-inner">
+			<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+			{include #content}
+		</div>
+	</div>
+</div>
+
+<script src="{$basePath}/js/jquery.js"></script>
+<script src="{$basePath}/js/netteForms.js"></script>
+<script src="{$basePath}/js/main.js"></script>
+{block #scripts}{/block}
+
+</body>
+</html>

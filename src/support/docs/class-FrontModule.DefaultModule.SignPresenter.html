@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class FrontModule\DefaultModule\SignPresenter | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li class="active"><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-FrontModule.DefaultModule.BasePresenter.html">BasePresenter</a></li>
+				<li><a href="class-FrontModule.DefaultModule.ChroniclePresenter.html">ChroniclePresenter</a></li>
+				<li><a href="class-FrontModule.DefaultModule.GuestbookPresenter.html">GuestbookPresenter</a></li>
+				<li><a href="class-FrontModule.DefaultModule.HlasinekPresenter.html">HlasinekPresenter</a></li>
+				<li><a href="class-FrontModule.DefaultModule.HomepagePresenter.html">HomepagePresenter</a></li>
+				<li><a href="class-FrontModule.DefaultModule.NewsPresenter.html">NewsPresenter</a></li>
+				<li><a href="class-FrontModule.DefaultModule.OrganizationPresenter.html">OrganizationPresenter</a></li>
+				<li class="active"><a href="class-FrontModule.DefaultModule.SignPresenter.html">SignPresenter</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-FrontModule.DefaultModule.html" title="Summary of FrontModule\DefaultModule"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class SignPresenter</h1>
+
+
+	<div class="description">
+	<p>Dedicated signing in with redirection to last request.</p>
+
+<p>Also handles registration, activation and forgot passwords.
+Pretty much all you need to do with a user while they are not signed in.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Application\UI\Presenter
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-BasePresenter.html"><span>BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-FrontModule.BasePresenter.html"><span>FrontModule\BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:90px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-FrontModule.DefaultModule.BasePresenter.html"><span>FrontModule\DefaultModule\BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:120px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>FrontModule\DefaultModule\SignPresenter</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> FrontModule\DefaultModule<br>
+		
+
+				<b>Author:</b>
+				Patrick Kusebauch
+<br>
+				<b>Version:</b>
+				5.00, 09. 11. 2014
+<br>
+		<b>Located at</b> <a href="source-class-FrontModule.DefaultModule.SignPresenter.html#8-336" title="Go to source code">FrontModule/DefaultModule/presenters/SignPresenter.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="injectUser" id="_injectUser">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_injectUser">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#29-40" title="Go to source code">injectUser</a>( <span><code><a href="class-Models.User.html">Models\User</a></code> <var>$user</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects connection to user model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects connection to user model</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="injectPrivilege" id="_injectPrivilege">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_injectPrivilege">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#42-53" title="Go to source code">injectPrivilege</a>( <span><code><a href="class-Models.Privilege.html">Models\Privilege</a></code> <var>$privilege</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects connection to privilege model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects connection to privilege model</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$privilege</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionActivate" id="_actionActivate">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_actionActivate">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#55-77" title="Go to source code">actionActivate</a>( <span>string <var>$username</var></span>, <span>string <var>$token</var></span> )</code>
+
+		<div class="description short">
+			<p>Activates account from e-mail link</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Activates account from e-mail link</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd>username of accout to activate
+</dd>
+					<dt><var>$token</var></dt>
+					<dd>unique activation key
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionIn" id="_actionIn">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_actionIn">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#79-88" title="Go to source code">actionIn</a>( )</code>
+
+		<div class="description short">
+			<p>Redirect user if logged in. Otherwise shows log in form.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Redirect user if logged in. Otherwise shows log in form.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionRecover" id="_actionRecover">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_actionRecover">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#90-113" title="Go to source code">actionRecover</a>( <span>String <var>$username</var></span>, <span>String <var>$token</var></span> )</code>
+
+		<div class="description short">
+			<p>Recover password from e-mail link</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Recover password from e-mail link</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd>username of account to recover
+</dd>
+					<dt><var>$token</var></dt>
+					<dd>unique activation key
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sendActivationMail" id="_sendActivationMail">
+
+		<td class="attributes"><code>
+			 private 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sendActivationMail">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#115-135" title="Go to source code">sendActivationMail</a>( <span>string <var>$mail</var></span>, <span>string <var>$username</var></span>, <span>string <var>$token</var></span> )</code>
+
+		<div class="description short">
+			<p>Send an activation mail to newly registered user</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Send an activation mail to newly registered user</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mail</var></dt>
+					<dd>mail address of recipient
+</dd>
+					<dt><var>$username</var></dt>
+					<dd>usename picked in registration
+</dd>
+					<dt><var>$token</var></dt>
+					<dd>Activation token
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createComponentForgotForm" id="_createComponentForgotForm">
+
+		<td class="attributes"><code>
+			 protected 
+
+			Nette\Application\UI\Form
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createComponentForgotForm">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#137-150" title="Go to source code">createComponentForgotForm</a>( )</code>
+
+		<div class="description short">
+			<p>Creates form for forgotten password</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Creates form for forgotten password</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Application\UI\Form</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="forgotFormSucceded" id="_forgotFormSucceded">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_forgotFormSucceded">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#152-185" title="Go to source code">forgotFormSucceded</a>( <span>Nette\Application\UI\Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Processes Forgotten Password form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Processes Forgotten Password form</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createComponentRegisterForm" id="_createComponentRegisterForm">
+
+		<td class="attributes"><code>
+			 protected 
+
+			Nette\Application\UI\Form
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createComponentRegisterForm">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#187-213" title="Go to source code">createComponentRegisterForm</a>( )</code>
+
+		<div class="description short">
+			<p>Renders Registration form for new users</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Renders Registration form for new users</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Application\UI\Form</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sendConnectionMail" id="_sendConnectionMail">
+
+		<td class="attributes"><code>
+			 private 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sendConnectionMail">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#215-237" title="Go to source code">sendConnectionMail</a>( <span>string <var>$username</var></span>, <span>string <var>$name</var></span>, <span>string <var>$surname</var></span> )</code>
+
+		<div class="description short">
+			<p>Send request for connecting an account with group member</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Send request for connecting an account with group member</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$username</var></dt>
+					<dd>Account username
+</dd>
+					<dt><var>$name</var></dt>
+					<dd>Member's name
+</dd>
+					<dt><var>$surname</var></dt>
+					<dd>Members's surname
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="registerFormSucceded" id="_registerFormSucceded">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_registerFormSucceded">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#239-268" title="Go to source code">registerFormSucceded</a>( <span>Nette\Application\UI\Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Processes Registration form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Processes Registration form</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createComponentUpdateForm" id="_createComponentUpdateForm">
+
+		<td class="attributes"><code>
+			 protected 
+
+			Nette\Application\UI\Form
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createComponentUpdateForm">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#270-291" title="Go to source code">createComponentUpdateForm</a>( )</code>
+
+		<div class="description short">
+			<p>Form for updating password when you forgot it</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Form for updating password when you forgot it</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Application\UI\Form</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateFormSucceded" id="_updateFormSucceded">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateFormSucceded">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#293-310" title="Go to source code">updateFormSucceded</a>( <span>Nette\Application\UI\Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Processing of Update Password Form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Processing of Update Password Form</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="signInFormSucceeded" id="_signInFormSucceeded">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_signInFormSucceeded">#</a>
+		<code><a href="source-class-FrontModule.DefaultModule.SignPresenter.html#312-335" title="Go to source code">signInFormSucceeded</a>( <span>Nette\Application\UI\Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Dedicated processing for Sign In Form
+It allowes for redirecting user back with the last request before being pulled here</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Dedicated processing for Sign In Form
+It allowes for redirecting user back with the last request before being pulled here</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-BasePresenter.html#_signInFormSucceeded">BasePresenter::signInFormSucceeded()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-FrontModule.DefaultModule.BasePresenter.html#methods">FrontModule\DefaultModule\BasePresenter</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-FrontModule.DefaultModule.BasePresenter.html#_createComponentMenu">createComponentMenu()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-BasePresenter.html#methods">BasePresenter</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-BasePresenter.html#_beforeRender">beforeRender()</a>, 
+			<a href="class-BasePresenter.html#_checkRequirements">checkRequirements()</a>, 
+			<a href="class-BasePresenter.html#_createComponentSignInForm">createComponentSignInForm()</a>, 
+			<a href="class-BasePresenter.html#_createTemplate">createTemplate()</a>, 
+			<a href="class-BasePresenter.html#_handleOut">handleOut()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="backlink" id="$backlink">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-FrontModule.DefaultModule.SignPresenter.html#20-21" title="Go to source code"><var>$backlink</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Persistent</h4>
+					<div class="list">
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$backlink" class="anchor">#</a>
+				<code><span class="php-quote">&quot;&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="privileges" id="$privileges">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Models.Privilege.html">Models\Privilege</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-FrontModule.DefaultModule.SignPresenter.html#23-24" title="Go to source code"><var>$privileges</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$privileges" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="users" id="$users">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Models.User.html">Models\User</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-FrontModule.DefaultModule.SignPresenter.html#26-27" title="Go to source code"><var>$users</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$users" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

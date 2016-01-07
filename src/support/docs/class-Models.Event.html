@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Models\Event | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Models.Calendar.html">Calendar</a></li>
+				<li class="active"><a href="class-Models.Event.html">Event</a></li>
+				<li><a href="class-Models.Guestbook.html">Guestbook</a></li>
+				<li><a href="class-Models.History.html">History</a></li>
+				<li><a href="class-Models.Member.html">Member</a></li>
+				<li><a href="class-Models.News.html">News</a></li>
+				<li><a href="class-Models.Privilege.html">Privilege</a></li>
+				<li><a href="class-Models.Registration.html">Registration</a></li>
+				<li><a href="class-Models.Repository.html">Repository</a></li>
+				<li><a href="class-Models.User.html">User</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Models.html" title="Summary of Models"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Event</h1>
+
+
+	<div class="description">
+	<p>Event model</p>
+
+<p>Models the events boy scouts can go on. Starting with scheduling and invitation
+up to the the point a chronicle from the event is written</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Object
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-Models.Repository.html"><span>Models\Repository</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Models\Event</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> Models<br>
+		
+
+				<b>Author:</b>
+				Patrick Kusebauch
+<br>
+				<b>Version:</b>
+				3.00, 09. 11. 2014
+<br>
+		<b>Located at</b> <a href="source-class-Models.Event.html#3-280" title="Go to source code">model/Event.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="addChroniclePhoto" id="_addChroniclePhoto">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addChroniclePhoto">#</a>
+		<code><a href="source-class-Models.Event.html#14-26" title="Go to source code">addChroniclePhoto</a>( <span>integer <var>$event_id</var></span>, <span>string <var>$order</var></span> )</code>
+
+		<div class="description short">
+			<p>Adds photo to chronicle</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Adds photo to chronicle</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$event_id</var></dt>
+					<dd>Event to add photos to
+</dd>
+					<dt><var>$order</var></dt>
+					<dd>Order to display in/name of file
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>Number of affected rows
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteEvent" id="_deleteEvent">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteEvent">#</a>
+		<code><a href="source-class-Models.Event.html#28-42" title="Go to source code">deleteEvent</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Deletes an event</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Deletes an event</p>
+
+<p>Deletes also all information about photos and videos and chronicle
+Keeps all the photos in the filesystem but not in the database</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteChronicle" id="_deleteChronicle">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean|mixed|Nette\Database\Table\IRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteChronicle">#</a>
+		<code><a href="source-class-Models.Event.html#44-66" title="Go to source code">deleteChronicle</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Deletes a chronicle entry (but not the event itself)
+Keeps all the photos in the filesystem but not in the database</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Deletes a chronicle entry (but not the event itself)
+Keeps all the photos in the filesystem but not in the database</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean|mixed|Nette\Database\Table\IRow</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCurrentEvents" id="_getCurrentEvents">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCurrentEvents">#</a>
+		<code><a href="source-class-Models.Event.html#71-82" title="Go to source code">getCurrentEvents</a>( )</code>
+
+		<div class="description short">
+			<p>Get the Collection of events that are yet to finish</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the Collection of events that are yet to finish</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEventsForChronicle" id="_getEventsForChronicle">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEventsForChronicle">#</a>
+		<code><a href="source-class-Models.Event.html#84-94" title="Go to source code">getEventsForChronicle</a>( <span>integer <var>$year</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets event for chronicle overview</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets event for chronicle overview</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$year</var></dt>
+					<dd>The starting year of a school year (2014 for 2014/2015)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEventsFromCalendar" id="_getEventsFromCalendar">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEventsFromCalendar">#</a>
+		<code><a href="source-class-Models.Event.html#96-104" title="Go to source code">getEventsFromCalendar</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Get event from a particular calendar</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get event from a particular calendar</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Calendar ID
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEventFromDatestart" id="_getEventFromDatestart">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean|mixed|Nette\Database\Table\IRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEventFromDatestart">#</a>
+		<code><a href="source-class-Models.Event.html#106-115" title="Go to source code">getEventFromDatestart</a>( <span>string <var>$datestart</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets an event based on a date it started
+Assumes there cannot be 2 events happening at the same date</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets an event based on a date it started
+Assumes there cannot be 2 events happening at the same date</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$datestart</var></dt>
+					<dd>Starting date of the event
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean|mixed|Nette\Database\Table\IRow</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEventsFromYear" id="_getEventsFromYear">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEventsFromYear">#</a>
+		<code><a href="source-class-Models.Event.html#117-137" title="Go to source code">getEventsFromYear</a>( <span>integer <var>$year</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets events from a chosen school year</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets events from a chosen school year</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$year</var></dt>
+					<dd>The starting year of a school year (2014 for 2014/2015)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEventsWithoutNews" id="_getEventsWithoutNews">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEventsWithoutNews">#</a>
+		<code><a href="source-class-Models.Event.html#139-153" title="Go to source code">getEventsWithoutNews</a>( )</code>
+
+		<div class="description short">
+			<p>Get all events that don't have a news post about them</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get all events that don't have a news post about them</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getChronicleImage" id="_getChronicleImage">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean|mixed|Nette\Database\Table\IRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getChronicleImage">#</a>
+		<code><a href="source-class-Models.Event.html#155-165" title="Go to source code">getChronicleImage</a>( <span>integer <var>$chornicle_id</var></span>, <span>integer <var>$image_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Particular image from a chronicle</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Particular image from a chronicle</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$chornicle_id</var></dt>
+					<dd>ID of the chronicle
+</dd>
+					<dt><var>$image_id</var></dt>
+					<dd>order/filename of the image
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean|mixed|Nette\Database\Table\IRow</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getChronicleImages" id="_getChronicleImages">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\GroupedSelection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getChronicleImages">#</a>
+		<code><a href="source-class-Models.Event.html#167-175" title="Go to source code">getChronicleImages</a>( <span>integer <var>$chornicle_id</var></span> )</code>
+
+		<div class="description short">
+			<p>All the images from a chronicle</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>All the images from a chronicle</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$chornicle_id</var></dt>
+					<dd>ID of the chronicle
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\GroupedSelection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getChronicleVideos" id="_getChronicleVideos">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\GroupedSelection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getChronicleVideos">#</a>
+		<code><a href="source-class-Models.Event.html#177-186" title="Go to source code">getChronicleVideos</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets all videos related to certain chronicle</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets all videos related to certain chronicle</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\GroupedSelection</code><br>Collection of videos related to chronicle
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getChroniclesWithoutNews" id="_getChroniclesWithoutNews">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getChroniclesWithoutNews">#</a>
+		<code><a href="source-class-Models.Event.html#188-202" title="Go to source code">getChroniclesWithoutNews</a>( )</code>
+
+		<div class="description short">
+			<p>Get all chronicles that don't have a news post about them</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get all chronicles that don't have a news post about them</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMajorEventsFromYear" id="_getMajorEventsFromYear">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMajorEventsFromYear">#</a>
+		<code><a href="source-class-Models.Event.html#204-214" title="Go to source code">getMajorEventsFromYear</a>( <span>integer <var>$year</var></span> )</code>
+
+		<div class="description short">
+			<p>Get major events from year like "Výprava" and "Vícedeňka"</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get major events from year like "Výprava" and "Vícedeňka"</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$year</var></dt>
+					<dd>The starting year of a school year (2014 for 2014/2015)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getNewestChronicle" id="_getNewestChronicle">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean|mixed|Nette\Database\Table\IRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getNewestChronicle">#</a>
+		<code><a href="source-class-Models.Event.html#216-228" title="Go to source code">getNewestChronicle</a>( )</code>
+
+		<div class="description short">
+			<p>Looks for the newest chronicle allowed to be displayed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Looks for the newest chronicle allowed to be displayed</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean|mixed|Nette\Database\Table\IRow</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getOrderedEventsFromYear" id="_getOrderedEventsFromYear">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Database\Table\Selection
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getOrderedEventsFromYear">#</a>
+		<code><a href="source-class-Models.Event.html#230-239" title="Go to source code">getOrderedEventsFromYear</a>( <span>integer <var>$year</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets events from year ordered by the date they ended</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets events from year ordered by the date they ended</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$year</var></dt>
+					<dd>The starting year of a school year (2014 for 2014/2015)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\Selection</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showEventInvitation" id="_showEventInvitation">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean|mixed|Nette\Database\Table\IRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showEventInvitation">#</a>
+		<code><a href="source-class-Models.Event.html#241-259" title="Go to source code">showEventInvitation</a>( <span>integer <var>$id</var></span>, <span>boolean|null <var>$show</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			<p>Do you want to show the event invitation for particular event</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Do you want to show the event invitation for particular event</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+					<dt><var>$show</var></dt>
+					<dd>Do you want to show the event (NULL for flip from current state)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean|mixed|Nette\Database\Table\IRow</code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidArgumentException<br>If $show is not bool/NULL
+
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="showChronicle" id="_showChronicle">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean|mixed|Nette\Database\Table\IRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_showChronicle">#</a>
+		<code><a href="source-class-Models.Event.html#261-279" title="Go to source code">showChronicle</a>( <span>integer <var>$id</var></span>, <span>boolean|null <var>$show</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			<p>Do you want to show the chornicle for particular event</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Do you want to show the chornicle for particular event</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+					<dt><var>$show</var></dt>
+					<dd>Do you want to show the chronicle (NULL for flip from current state)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean|mixed|Nette\Database\Table\IRow</code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidArgumentException<br>If $show is not bool/NULL
+
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Models.Repository.html#methods">Models\Repository</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Models.Repository.html#___construct">__construct()</a>, 
+			<a href="class-Models.Repository.html#_findAll">findAll()</a>, 
+			<a href="class-Models.Repository.html#_findBy">findBy()</a>, 
+			<a href="class-Models.Repository.html#_get">get()</a>, 
+			<a href="class-Models.Repository.html#_getBy">getBy()</a>, 
+			<a href="class-Models.Repository.html#_insert">insert()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="table" id="$table">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Models.Event.html#68-69" title="Go to source code"><var>$table</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$table" class="anchor">#</a>
+				<code><span class="php-quote">&quot;event&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-Models.Repository.html#properties">Models\Repository</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Models.Repository.html#$database"><var>$database</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

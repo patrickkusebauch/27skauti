@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class DependentSelectBox\FormControlDependencyHelper | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-DependentSelectBox.DependentSelectBox.html">DependentSelectBox</a></li>
+				<li class="active"><a href="class-DependentSelectBox.FormControlDependencyHelper.html">FormControlDependencyHelper</a></li>
+				<li><a href="class-DependentSelectBox.JsonDependentSelectBox.html">JsonDependentSelectBox</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-DependentSelectBox.html" title="Summary of DependentSelectBox"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class FormControlDependencyHelper</h1>
+
+
+	<div class="description">
+	
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Object
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>DependentSelectBox\FormControlDependencyHelper</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> DependentSelectBox<br>
+		
+
+		<b>Located at</b> <a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#17-214" title="Go to source code">components/DependentSelectBox/FormControlDependencyHelper.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#49-60" title="Go to source code">__construct</a>( <span>Nette\Forms\Controls\BaseControl <var>$control</var></span>, <span>string <var>$controlClass</var> = <span class="php-quote">&quot;dependentControl&quot;</span></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$control</var></dt>
+					<dd>Component to attach button
+</dd>
+					<dt><var>$controlClass</var></dt>
+					<dd>Html class for that component
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isAnyButtonAttached" id="_isAnyButtonAttached">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isAnyButtonAttached">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#66-75" title="Go to source code">isAnyButtonAttached</a>( )</code>
+
+		<div class="description short">
+			<p>Is there any button with same name ?</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Is there any button with same name ?</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAnyAttachedButton" id="_getAnyAttachedButton">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Forms\Controls\SubmitButton
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAnyAttachedButton">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#77-87" title="Go to source code">getAnyAttachedButton</a>( <span>boolean <var>$need</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			<p>Return button with same name</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return button with same name</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$need</var></dt>
+					<dd>Throw exception when not exist?
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Forms\Controls\SubmitButton</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addOnChangeCallback" id="_addOnChangeCallback">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addOnChangeCallback">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#89-97" title="Go to source code">addOnChangeCallback</a>( <span>callable <var>$callback</var></span> )</code>
+
+		<div class="description short">
+			<p>Add callback which is called when linked button is submitted</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add callback which is called when linked button is submitted</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$callback</var></dt>
+					<dd>'public function methodName(SubmittButton $button)'
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getControl" id="_getControl">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getControl">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#100-102" title="Go to source code">getControl</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getButton" id="_getButton">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getButton">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#104-108" title="Go to source code">getButton</a>( <span>mixed <var>$need</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getButtonText" id="_getButtonText">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getButtonText">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#110-112" title="Go to source code">getButtonText</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getButtonPosition" id="_getButtonPosition">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getButtonPosition">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#114-116" title="Go to source code">getButtonPosition</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setButtonText" id="_setButtonText">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setButtonText">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#119-122" title="Go to source code">setButtonText</a>( <span>mixed <var>$buttonText</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setButtonPosition" id="_setButtonPosition">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setButtonPosition">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#124-127" title="Go to source code">setButtonPosition</a>( <span>mixed <var>$buttonPosition</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createButton" id="_createButton">
+
+		<td class="attributes"><code>
+			 public 
+
+			Was
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createButton">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#133-190" title="Go to source code">createButton</a>( )</code>
+
+		<div class="description short">
+			<p>Create button if no button is attached to control</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Create button if no button is attached to control</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Was</code><br>button created or not?
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateControlClass" id="_updateControlClass">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateControlClass">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#192-201" title="Go to source code">updateControlClass</a>( )</code>
+
+		<div class="description short">
+			<p>Update html class of control</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Update html class of control</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatButtonName" id="_formatButtonName">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatButtonName">#</a>
+		<code><a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#203-210" title="Go to source code">formatButtonName</a>( <span>string <var>$componentName</var></span> )</code>
+
+		<div class="description short">
+			<p>Format name of button</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Format name of button</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$componentName</var></dt>
+					<dd>Name of component
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="POSITION_UNDEFINED" id="POSITION_UNDEFINED">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#21-22" title="Go to source code"><b>POSITION_UNDEFINED</b></a>
+			</code>
+
+			<div class="description short">
+				<p>Dont use directly, button allready created and position was defined in other class</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Dont use directly, button allready created and position was defined in other class</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#POSITION_UNDEFINED" class="anchor">#</a>
+				<code><span class="php-num">0</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="POSITION_DEFAULT" id="POSITION_DEFAULT">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#23-24" title="Go to source code"><b>POSITION_DEFAULT</b></a>
+			</code>
+
+			<div class="description short">
+				<p>Put button on current position</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Put button on current position</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#POSITION_DEFAULT" class="anchor">#</a>
+				<code><span class="php-num">1</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="POSITION_BEFORE_CONTROL" id="POSITION_BEFORE_CONTROL">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#25-26" title="Go to source code"><b>POSITION_BEFORE_CONTROL</b></a>
+			</code>
+
+			<div class="description short">
+				<p>Put button before given control</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Put button before given control</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#POSITION_BEFORE_CONTROL" class="anchor">#</a>
+				<code><span class="php-num">2</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="POSITION_AFTER_CONTROL" id="POSITION_AFTER_CONTROL">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#27-28" title="Go to source code"><b>POSITION_AFTER_CONTROL</b></a>
+			</code>
+
+			<div class="description short">
+				<p>Put button after given control</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Put button after given control</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#POSITION_AFTER_CONTROL" class="anchor">#</a>
+				<code><span class="php-num">3</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="buttonSuffix" id="$buttonSuffix">
+		<td class="attributes"><code>
+			public static 
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#30-31" title="Go to source code"><var>$buttonSuffix</var></a>
+
+			<div class="description short">
+				<p>Suffix for button name, html id and html class</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Suffix for button name, html id and html class</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$buttonSuffix" class="anchor">#</a>
+				<code><span class="php-quote">&quot;_submit&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="defaultButtonPosition" id="$defaultButtonPosition">
+		<td class="attributes"><code>
+			public static 
+			<code><a href="class-DependentSelectBox.FormControlDependencyHelper.html#POSITION_UNDEFINED">DependentSelectBox\FormControlDependencyHelper::<b>POSITION_UNDEFINED</b></a></code>|<code><a href="class-DependentSelectBox.FormControlDependencyHelper.html#POSITION_DEFAULT">DependentSelectBox\FormControlDependencyHelper::<b>POSITION_DEFAULT</b></a></code>|<code><a href="class-DependentSelectBox.FormControlDependencyHelper.html#POSITION_BEFORE_CONTROL">DependentSelectBox\FormControlDependencyHelper::<b>POSITION_BEFORE_CONTROL</b></a></code>|<code><a href="class-DependentSelectBox.FormControlDependencyHelper.html#POSITION_AFTER_CONTROL">DependentSelectBox\FormControlDependencyHelper::<b>POSITION_AFTER_CONTROL</b></a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#32-33" title="Go to source code"><var>$defaultButtonPosition</var></a>
+
+			<div class="description short">
+				<p>Default position for buttons</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Default position for buttons</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$defaultButtonPosition" class="anchor">#</a>
+				<code><code><a href="class-DependentSelectBox.FormControlDependencyHelper.html#POSITION_AFTER_CONTROL">DependentSelectBox\FormControlDependencyHelper::<b>POSITION_AFTER_CONTROL</b></a></code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="control" id="$control">
+		<td class="attributes"><code>
+			public  
+			Nette\Forms\Controls\BaseControl
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#35-36" title="Go to source code"><var>$control</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$control" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="controlClass" id="$controlClass">
+		<td class="attributes"><code>
+			protected  
+			String
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#37-38" title="Go to source code"><var>$controlClass</var></a>
+
+			<div class="description short">
+				<p>Html class of control</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Html class of control</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$controlClass" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="buttonPosition" id="$buttonPosition">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#39-40" title="Go to source code"><var>$buttonPosition</var></a>
+
+			<div class="description short">
+				<p>Button-s position</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Button-s position</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$buttonPosition" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="button" id="$button">
+		<td class="attributes"><code>
+			protected  
+			Nette\Forms\Controls\SubmitButton
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#41-42" title="Go to source code"><var>$button</var></a>
+
+			<div class="description short">
+				<p>Created SubmitButton</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Created SubmitButton</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$button" class="anchor">#</a>
+				<code><span class="php-keyword1">null</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="buttonText" id="$buttonText">
+		<td class="attributes"><code>
+			protected  
+			String
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DependentSelectBox.FormControlDependencyHelper.html#43-44" title="Go to source code"><var>$buttonText</var></a>
+
+			<div class="description short">
+				<p>SubmitButton-s label</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>SubmitButton-s label</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$buttonText" class="anchor">#</a>
+				<code><span class="php-quote">&quot;Reload&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+BDD TESTS
+---------
+The tests for this project are BDD test written in cucumber.
+They require ruby to by installed. After you have ruby and bundle installed, you
+can use the gemfile to get all other dependencies.
+
+Once you have everything set up, go to these 2 files:
+ - tests\features\support\hooks.rb
+ - tests\step_definitions\database_steps.rb
+
+And change the database connection (2x in database_steps.rb) to reflect your own.
+
+TESTS WILL DELETE ALL DATA IN DATABASE AFTER EACH RUN!!
+
+For that reason it is advisable to create a copy of the structure of the database
+and test on the copy. Required data are loaded for each test separately.
+
+There are test missing for "Hlasinek" section in both frontend and backend and
+for picture upload in backend. The reason is I do not know, how mock existing
+files.
+
+While running the tests, you also have to make sure, that the file in
+"app\config\config.neon" connects to the same database as the files above.
+A good way to do so is to create a copy od "config.neon" and call it
+"config.local.neon". Then update the `database:` section to look like this:
+
+		default:
+			dsn: "mysql:host=localhost;dbname=27skauti"
+			user: 27skauti
+			password: ***
+			autowired: false
+		testing:
+			dsn: "mysql:host=localhost;dbname=27skauti_testing"
+			user: 27skauti_testing
+			password: ***
+			autowired: true
+
+Where `default:` is the default connection to the database with all the data and
+`testing` is the connection to the testing database. You can switch in between
+the databases by changing the value of `autowired:`. Only 1 of those can be TRUE
+at the time.
+The next change to make is in "app\bootstrap.php", where you change the name
+of loaded configuration file.

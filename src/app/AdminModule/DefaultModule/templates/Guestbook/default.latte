@@ -1,0 +1,57 @@
+{**
+ * Guestbook overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $posts      several guestbook posts
+ *}
+{block #content}
+<h1 class="heading_1">Kniha návštěv</h1>
+<div class="box-nolined">
+	<p>Červené <span style="color:#9D3621;">®</span>
+	  se dá přiradit pouze ke členovi, kterého lze nalést v sekci organizace</p>
+</div>
+
+{control vp}
+{if $posts->fetch()}
+<table class="table"><thead><tr>
+	<th>Datum</th>
+	<th>Sekce</th>
+	<th style="width:300px">Nadpis</th>
+	<th n:if="$user->isAllowed('Admin:Default:Guestbook', 'edit')">Editace</th>
+	<th n:if="$user->isAllowed('Admin:Default:Guestbook', 'show')">Zobrazení</th>
+	<th n:if="$user->isAllowed('Admin:Default:Guestbook', 'delete')">Mazání</th>
+</tr></thead><tbody>
+{foreach $posts as $post}
+	<tr>
+		<td>{$post->time|date:'j. n.'}</td>
+		<td>
+		{if $post->name}
+			{$post->name|truncate:'10'}
+		{elseif $post->user->related('member')->fetch()}
+			{$post->user->related('member')->fetch()->nickname|truncate:'10'}<span style="color:#9D3621;vertical-align:baseline;position:relative;top:-0.4em;font-size:.83em;">&reg</span>
+		{else}
+			{$post->user->username|truncate:'10'}
+		{/if}
+		</td>
+		<td>{$post->post|truncate:'30'}</td>
+		<td n:if="$user->isAllowed('Admin:Default:Guestbook', 'edit')"><a n:href="edit id => $post->id">Edituj</a></td>
+		<td n:if="$user->isAllowed('Admin:Default:Guestbook', 'show')"><a n:href="show! id => $post->id">
+			{if $post->show}Odzobraz{else}Zobraz{/if}
+		</a></td>
+		<td n:if="$user->isAllowed('Admin:Default:Guestbook', 'delete')"><a n:href="delete! id => $post->id">Smaž</a></td>
+		
+	</tr>
+{/foreach}
+</tbody></table>
+{/if}
+{/block}
+

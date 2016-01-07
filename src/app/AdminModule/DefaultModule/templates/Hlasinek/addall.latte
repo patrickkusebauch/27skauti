@@ -1,0 +1,44 @@
+{**
+ * Add all hlasinek files from a month template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 10. 11. 2014
+ *
+ * @param string    $basePath       web base path
+ * @param array     $params         configuration parameters
+ * @param string    $robots         tell robots how to index the content of a page (optional)
+ * @param array     $flashes        flash messages
+ * @param string    $title          title for the heading of the browser
+ * @param User      $user           Identity of a (logged in) user
+ *
+ * @param int       $month_number   number of the month of hlasinek
+ * @param int       $year           year of hlasinek
+ *}
+{block #content}
+
+{var $months = [
+	'01' => 'září',
+	'02' => 'říjen',
+	'03' => 'listopad',
+	'04' => 'prosinec',
+	'05' => 'leden',
+	'06' => 'únor',
+	'07' => 'březen',
+	'08' => 'duben',
+	'09' => 'květen',
+	'10' => 'červen',
+	'11' => 'tábor'
+]}
+
+<h1 class="heading_1">Hlásínek pro {$months[$month_number]} {$year}/{$year+1}</h1>
+
+
+<div class="box-outer">
+	<span class="box-left">Přidání souborů</span>
+	<div class="box-nolined">
+		<p>Přidání jakýchkoliv souborů automaticky přepíše soubory, které jsou pro daný Hlásínek už nahrané.</p>
+		{control addHlasinekForm}
+	</div>
+</div>
+{/block}
+

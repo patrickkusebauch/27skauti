@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class AdminModule\DefaultModule\EventPresenter | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-AdminModule.DefaultModule.BasePresenter.html">BasePresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.ChroniclePresenter.html">ChroniclePresenter</a></li>
+				<li class="active"><a href="class-AdminModule.DefaultModule.EventPresenter.html">EventPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.GuestbookPresenter.html">GuestbookPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.HistoryPresenter.html">HistoryPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.HlasinekPresenter.html">HlasinekPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.HomepagePresenter.html">HomepagePresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.NewsPresenter.html">NewsPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.OrganizationPresenter.html">OrganizationPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.PrivilegePresenter.html">PrivilegePresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.RegistrationPresenter.html">RegistrationPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.UserPresenter.html">UserPresenter</a></li>
+				<li><a href="class-AdminModule.DefaultModule.VipchroniclePresenter.html">VipchroniclePresenter</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-AdminModule.DefaultModule.html" title="Summary of AdminModule\DefaultModule"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class EventPresenter</h1>
+
+
+	<div class="description">
+	<p>Operations over calendar and event invitations</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Application\UI\Presenter
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-BasePresenter.html"><span>BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-AdminModule.BasePresenter.html"><span>AdminModule\BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:90px">
+			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-AdminModule.DefaultModule.BasePresenter.html"><span>AdminModule\DefaultModule\BasePresenter</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:120px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>AdminModule\DefaultModule\EventPresenter</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> AdminModule\DefaultModule<br>
+		
+
+				<b>Author:</b>
+				Patrick Kusebauch
+<br>
+				<b>Version:</b>
+				2.00, 09. 11. 2014
+<br>
+				<b>Resource("admin:default:event")</b>
+				
+<br>
+				<b>Secured</b>
+				
+<br>
+		<b>Located at</b> <a href="source-class-AdminModule.DefaultModule.EventPresenter.html#5-473" title="Go to source code">AdminModule/DefaultModule/presenters/EventPresenter.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#31-39" title="Go to source code">__construct</a>( <span>Nette\Database\Context <var>$database</var></span> )</code>
+
+		<div class="description short">
+			<p>Connects to the database by DI</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Connects to the database by DI</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$database</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="injectCalendar" id="_injectCalendar">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_injectCalendar">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#41-52" title="Go to source code">injectCalendar</a>( <span><code><a href="class-Models.Calendar.html">Models\Calendar</a></code> <var>$calendar</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects connection to calendar model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects connection to calendar model</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$calendar</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="injectEvent" id="_injectEvent">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_injectEvent">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#54-65" title="Go to source code">injectEvent</a>( <span><code><a href="class-Models.Event.html">Models\Event</a></code> <var>$event</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects connection to event model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects connection to event model</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$event</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="injectMember" id="_injectMember">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_injectMember">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#67-78" title="Go to source code">injectMember</a>( <span><code><a href="class-Models.Member.html">Models\Member</a></code> <var>$member</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects connection to member model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects connection to member model</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$member</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="injectRegistration" id="_injectRegistration">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_injectRegistration">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#80-91" title="Go to source code">injectRegistration</a>( <span><code><a href="class-Models.Registration.html">Models\Registration</a></code> <var>$registration</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects connection to member model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects connection to member model</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$registration</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					Nette\InvalidStateException
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadEvent" id="_loadEvent">
+
+		<td class="attributes"><code>
+			 protected 
+
+			Nette\Database\Table\ActiveRow
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadEvent">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#93-107" title="Go to source code">loadEvent</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Shortcut for loading single Event</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Shortcut for loading single Event</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Database\Table\ActiveRow</code><br>Single event with chosen ID if it exist
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionCreateCalendar" id="_actionCreateCalendar">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_actionCreateCalendar">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#109-114" title="Go to source code">actionCreateCalendar</a>( )</code>
+
+		<div class="description short">
+			<p>Adding a new nonexistent calendar</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Adding a new nonexistent calendar</p>
+
+
+
+
+
+
+				<h4>Privilege("createcalendar")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionEdit" id="_actionEdit">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_actionEdit">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#116-133" title="Go to source code">actionEdit</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Edit individual invitation to an event</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Edit individual invitation to an event</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("edit")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="actionEditCalendar" id="_actionEditCalendar">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_actionEditCalendar">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#135-155" title="Go to source code">actionEditCalendar</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Editation of already created calendar based on it's ID</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Editation of already created calendar based on it's ID</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Calendar ID
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("editcalendar")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="renderDefault" id="_renderDefault">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_renderDefault">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#157-178" title="Go to source code">renderDefault</a>( )</code>
+
+		<div class="description short">
+			<p>Calendar and Event invitation overview</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Calendar and Event invitation overview</p>
+
+
+
+
+
+
+				<h4>Privilege("default")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleDelete" id="_handleDelete">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleDelete">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#180-198" title="Go to source code">handleDelete</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Deletes an event based on its ID</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Deletes an event based on its ID</p>
+
+<p>Will delete every mention of it, namely: - calendar entry - event invitation - chronicle from event - videos from chronicle - comments of photos from chronicle (however the photos stay on filesystem)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("delete")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleShow" id="_handleShow">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleShow">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#200-216" title="Go to source code">handleShow</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>(Dis)allows event invitation for viewing</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>(Dis)allows event invitation for viewing</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Event ID
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("show")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleShowCalendar" id="_handleShowCalendar">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleShowCalendar">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#218-234" title="Go to source code">handleShowCalendar</a>( <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>(Dis)allows calendars for viewing</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>(Dis)allows calendars for viewing</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>Calendar ID
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("showcalendar")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createComponentAddCalendarForm" id="_createComponentAddCalendarForm">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createComponentAddCalendarForm">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#236-263" title="Go to source code">createComponentAddCalendarForm</a>( )</code>
+
+		<div class="description short">
+			<p>Form for adding a calendar</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Form for adding a calendar</p>
+
+
+
+
+
+
+				<h4>Action("createcalendar")</h4>
+				<div class="list">
+				</div>
+				<h4>Privilege("createcalendar")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addCalendarFormSucceded" id="_addCalendarFormSucceded">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addCalendarFormSucceded">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#265-284" title="Go to source code">addCalendarFormSucceded</a>( <span>Nette\Application\UI\Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Processing of Add calendar Form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Processing of Add calendar Form</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("createcalendar")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createComponentEditCalendarForm" id="_createComponentEditCalendarForm">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createComponentEditCalendarForm">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#286-337" title="Go to source code">createComponentEditCalendarForm</a>( )</code>
+
+		<div class="description short">
+			<p>Form for editing a calendar</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Form for editing a calendar</p>
+
+<p>Basically it works for populating as well,
+since it means to edit an empty calendar</p>
+
+
+
+
+
+
+				<h4>Action("editcalendar")</h4>
+				<div class="list">
+				</div>
+				<h4>Privilege("editcalendar")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="editCalendarFormSucceded" id="_editCalendarFormSucceded">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_editCalendarFormSucceded">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#339-371" title="Go to source code">editCalendarFormSucceded</a>( <span>mixed <var>$button</var></span> )</code>
+
+		<div class="description short">
+			<p>Processing of Edit Calendar form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Processing of Edit Calendar form</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$button</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("editcalendar")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createComponentEditEventForm" id="_createComponentEditEventForm">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createComponentEditEventForm">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#373-426" title="Go to source code">createComponentEditEventForm</a>( )</code>
+
+		<div class="description short">
+			<p>Form for editing the invitations to events</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Form for editing the invitations to events</p>
+
+
+
+
+
+
+				<h4>Action("edit")</h4>
+				<div class="list">
+				</div>
+				<h4>Privilege("edit")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="editEventFormSucceded" id="_editEventFormSucceded">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_editEventFormSucceded">#</a>
+		<code><a href="source-class-AdminModule.DefaultModule.EventPresenter.html#428-472" title="Go to source code">editEventFormSucceded</a>( <span>Nette\Application\UI\Form <var>$form</var></span> )</code>
+
+		<div class="description short">
+			<p>Processing of Event Edit form</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Processing of Event Edit form</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$form</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+				<h4>Privilege("edit")</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-AdminModule.DefaultModule.BasePresenter.html#methods">AdminModule\DefaultModule\BasePresenter</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-AdminModule.DefaultModule.BasePresenter.html#_createComponentMenu">createComponentMenu()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-AdminModule.BasePresenter.html#methods">AdminModule\BasePresenter</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-AdminModule.BasePresenter.html#_createComponent">createComponent()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-BasePresenter.html#methods">BasePresenter</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-BasePresenter.html#_beforeRender">beforeRender()</a>, 
+			<a href="class-BasePresenter.html#_checkRequirements">checkRequirements()</a>, 
+			<a href="class-BasePresenter.html#_createComponentSignInForm">createComponentSignInForm()</a>, 
+			<a href="class-BasePresenter.html#_createTemplate">createTemplate()</a>, 
+			<a href="class-BasePresenter.html#_handleOut">handleOut()</a>, 
+			<a href="class-BasePresenter.html#_signInFormSucceeded">signInFormSucceeded()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="calendars" id="$calendars">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Models.Calendar.html">Models\Calendar</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-AdminModule.DefaultModule.EventPresenter.html#16-17" title="Go to source code"><var>$calendars</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$calendars" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="database" id="$database">
+		<td class="attributes"><code>
+			private  
+			Nette\Database\Context
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-AdminModule.DefaultModule.EventPresenter.html#19-20" title="Go to source code"><var>$database</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$database" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="events" id="$events">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Models.Event.html">Models\Event</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-AdminModule.DefaultModule.EventPresenter.html#22-23" title="Go to source code"><var>$events</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$events" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="members" id="$members">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Models.Member.html">Models\Member</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-AdminModule.DefaultModule.EventPresenter.html#25-26" title="Go to source code"><var>$members</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$members" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="registrations" id="$registrations">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Models.Registration.html">Models\Registration</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-AdminModule.DefaultModule.EventPresenter.html#28-29" title="Go to source code"><var>$registrations</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$registrations" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{**
+ * Contact page template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $leaders    Leaders of the group
+ *}
+
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+	<h1 class="heading_1">{$title}</h1>
+{foreach $leaders as $leader}
+{var $member = $leader->related('registration')->fetch()}
+<div class="box-outer">
+	<span class="box-left">{$leader->group} - {$leader->nickname}</span>
+	<span class="box-right">{$leader->title} {$leader->name} {$leader->surname}</span>
+	<div class="box-doublelined-inner in-box-text-bigger">
+		<div class="picture-outer">
+			{include '../common/member_picture.latte', member => $leader}
+		</div>
+		<table class="in-box-table"><thead></thead><tbody>
+			<tr n:if="$member">
+			    <td>Věk</td><td>
+				{var $age = $member->birth_date->diff(\Nette\DateTime::from(time()))->y}
+                {$age}
+                {if $age == 1} rok
+				    {elseif $age < 5} roky
+				    {else} let
+				{/if}
+				</td>
+			</tr>
+			<tr n:if="$member">
+			    <td>Mobil:</td><td>{$member->mobile}</td>
+			</tr><tr n:if="$leader->user">
+			    <td>E-mail:</td><td>{$leader->user->mail}</td>
+			</tr><tr n:if="$member">
+			    <td>Adresa:</td><td>{$member->address|nl2br|noescape}</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>
+{/foreach}
+
+{/block}

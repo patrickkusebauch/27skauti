@@ -1,0 +1,19 @@
+p {
+	text-align: justify;
+}
+
+.hlasinek-outer-box {
+	width: 234px;
+	height: 200px;
+	float: left;
+	text-align: center;
+}
+
+.hlasinek-inner-box {
+	background-color: #ebe9ea;
+	width: 100px;
+	height: 150px;
+	float: left;
+	margin: 2px;
+	padding: 5px;
+}

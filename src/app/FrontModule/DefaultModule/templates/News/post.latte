@@ -1,0 +1,33 @@
+{**
+ * News post template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param ActiveRow $post       post to display
+ *}
+<div class="box-outer">
+	<span class="box-left">
+	{if $post->type == "Akce"}<a n:href="News:">{$post->type}</a>
+	{elseif $post->type == "Kronika"}<a n:href="Chronicle:detail id => $post->event_id">{$post->type}</a>
+	{else}{$post->type}
+	{/if}
+	</span>
+	<span class="box-right">{$post->posted|date:'j. n. Y'}</span>
+	<div class="box-singlelined-inner">
+		<p style="text-align:justify;"><span class="bold">
+		    {if $post->type == 'Akce'}<a n:href="News:">{$post->heading}</a>
+		    {elseif $post->type == "Kronika"}<a n:href="Chronicle:detail id => $post->event_id">{$post->heading}</a>
+		    {else}<span style="color:black;">{$post->heading}</span>
+		    {/if}
+		     - </span>{$post->content|noescape}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+source:
+	- ..\app
+	
+destination: docs
+skipDocPrefix:
+	- Nette
+	
+charset:
+	- UTF-8
+	
+title: 27skauti.cz
+autocomplete:
+	- classes
+	- constants
+	- methods
+	- functions
+	
+accessLevels:
+	- public
+	- protected
+	- private
+	

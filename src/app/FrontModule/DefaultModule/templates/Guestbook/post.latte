@@ -1,0 +1,40 @@
+{**
+ * Gestbook post template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param string    $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $posts      posts to display
+ *}
+{foreach $posts as $post}
+<div class="box-outer">
+	<div class="box-innerlined-inner">
+		<div class="box-innerlined-inner-heading">
+		{if $post->name}
+			<span class="box-left">{$post->name}</span>
+		{elseif $post->user->related('member')->fetch()}
+			<span class="box-left">{$post->user->related('member')->fetch()->nickname}<span style="color:#9D3621;vertical-align:baseline;position:relative;top:-0.4em;font-size:.83em;">&reg</span></span>
+		{else}
+			<span class="box-left">{$post->user->username}</span>
+		{/if}
+		<span class="box-right">{$post->time|date:'j. n. Y - G:i'}</span>
+		</div>
+		<div class="box-singlelined-inner">
+			<table class="in-box-table" style="width:100%"><thead></thead><tbody>
+				<tr><td>Příspěvek</td><td style="text-align:justify;">{$post->post}</td></tr>
+				{if $post->mail}<tr><td>E-mail:</td><td><a href="mailto:{$post->mail}">{$post->mail}</a></td></tr>
+				{elseif $post->user_id}	<tr><td>E-mail:</td><td><a href="mailto:{$post->user->mail}">{$post->user->mail}</a></td></tr>
+				{/if}
+				<tr n:if="$post->web"><td>Web:</td><td><a href="//{$post->web}" target="_blank">{$post->web}</a></td></tr>
+			</tbody></table>
+		</div>
+	</div>
+</div>
+{/foreach}

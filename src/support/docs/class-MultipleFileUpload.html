@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class MultipleFileUpload | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Acl.html">Acl</a></li>
+				<li><a href="class-Authenticator.html">Authenticator</a></li>
+				<li><a href="class-BasePresenter.html">BasePresenter</a></li>
+				<li><a href="class-ErrorPresenter.html">ErrorPresenter</a></li>
+				<li><a href="class-Helpers.html">Helpers</a></li>
+				<li><a href="class-MFUBaseQueueModel.html">MFUBaseQueueModel</a></li>
+				<li><a href="class-MFUBaseQueuesModel.html">MFUBaseQueuesModel</a></li>
+				<li><a href="class-MFUQueueSQLite3.html">MFUQueueSQLite3</a></li>
+				<li><a href="class-MFUQueuesSQLite3.html">MFUQueuesSQLite3</a></li>
+				<li><a href="class-MFUTemplate.html">MFUTemplate</a></li>
+				<li><a href="class-MFUUIBase.html">MFUUIBase</a></li>
+				<li><a href="class-MFUUIHTML4SingleUpload.html">MFUUIHTML4SingleUpload</a></li>
+				<li><a href="class-MFUUIPlupload.html">MFUUIPlupload</a></li>
+				<li><a href="class-MFUUIRegistrator.html">MFUUIRegistrator</a></li>
+				<li class="active"><a href="class-MultipleFileUpload.html">MultipleFileUpload</a></li>
+				<li><a href="class-RouterFactory.html">RouterFactory</a></li>
+				<li><a href="class-VisualPaginator.html">VisualPaginator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-IMFUQueueModel.html">IMFUQueueModel</a></li>
+				<li><a href="class-IMFUQueuesModel.html">IMFUQueuesModel</a></li>
+				<li><a href="class-MFUUIInterface.html">MFUUIInterface</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-FormContainer_addMultipleFileUpload.html">FormContainer_addMultipleFileUpload</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class MultipleFileUpload</h1>
+
+
+	<div class="description">
+	
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+Nette\Forms\Controls\UploadControl
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>MultipleFileUpload</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+		<b>Located at</b> <a href="source-class-MultipleFileUpload.html#42-487" title="Go to source code">components/MultipleFileUpload/MultipleFileUpload.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="init" id="_init">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_init">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#71-83" title="Go to source code">init</a>( )</code>
+
+		<div class="description short">
+			<p>Initialize MFU</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Initialize MFU</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="register" id="_register">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_register">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#86-95" title="Go to source code">register</a>( )</code>
+
+		<div class="description short">
+			<p>Register MFU into Nette</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Register MFU into Nette</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setLifeTime" id="_setLifeTime">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setLifeTime">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#99-105" title="Go to source code">setLifeTime</a>( <span>integer <var>$lifeTime</var></span> )</code>
+
+		<div class="description short">
+			<p>Setts life time of files in queue (shortcut for self::getQueuesModel()->setLifeTime)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Setts life time of files in queue (shortcut for self::getQueuesModel()->setLifeTime)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$lifeTime</var></dt>
+					<dd>Time in seconds
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_doSetLifetime" id="__doSetLifetime">
+
+		<td class="attributes"><code>
+			 protected static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__doSetLifetime">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#107-118" title="Go to source code">_doSetLifetime</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleUploads" id="_handleUploads">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleUploads">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#120-152" title="Go to source code">handleUploads</a>( )</code>
+
+		<div class="description short">
+			<p>Handles uploading files</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Handles uploading files</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validateFile" id="_validateFile">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validateFile">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#154-161" title="Go to source code">validateFile</a>( <span>HttpUploadedFile <var>$file</var></span> )</code>
+
+		<div class="description short">
+			<p>Checks file if is ok and can be processed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Checks file if is ok and can be processed</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$file</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="cleanCache" id="_cleanCache">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_cleanCache">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#163-170" title="Go to source code">cleanCache</a>( )</code>
+
+		<div class="description short">
+			<p>Cleans cache</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Cleans cache</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getQueuesModel" id="_getQueuesModel">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-IMFUQueuesModel.html">IMFUQueuesModel</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getQueuesModel">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#172-184" title="Go to source code">getQueuesModel</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-IMFUQueuesModel.html">IMFUQueuesModel</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setQueuesModel" id="_setQueuesModel">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setQueuesModel">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#186-189" title="Go to source code">setQueuesModel</a>( <span><code><a href="class-IMFUQueuesModel.html">IMFUQueuesModel</a></code> <var>$model</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getUIRegistrator" id="_getUIRegistrator">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-MFUUIRegistrator.html">MFUUIRegistrator</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getUIRegistrator">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#191-199" title="Go to source code">getUIRegistrator</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-MFUUIRegistrator.html">MFUUIRegistrator</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getHead" id="_getHead">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHead">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#201-207" title="Go to source code">getHead</a>( )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#234-253" title="Go to source code">__construct</a>( <span>string <var>$label</var> = <span class="php-keyword1">NULL</span></span>, <span>mixed <var>$maxSelectedFiles</var> = <span class="php-num">999</span></span> )</code>
+
+		<div class="description short">
+			<p>Constructor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$label</var></dt>
+					<dd>Label
+</dd>
+					<dt><var>$maxSelectedFiles</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="attached" id="_attached">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_attached">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#255-264" title="Go to source code">attached</a>( <span>mixed <var>$component</var></span> )</code>
+
+		<div class="description short">
+			<p>Monitoring</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Monitoring</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$component</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getControl" id="_getControl">
+
+		<td class="attributes"><code>
+			 public 
+
+			Nette\Utils\Html
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getControl">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#266-343" title="Go to source code">getControl</a>( )</code>
+
+		<div class="description short">
+			<p>Generates control</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Generates control</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Nette\Utils\Html</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loadHttpData" id="_loadHttpData">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loadHttpData">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#345-361" title="Go to source code">loadHttpData</a>( )</code>
+
+		<div class="description short">
+			<p>Loads and process STANDARD http request. NOT uploadify requests!</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Loads and process STANDARD http request. NOT uploadify requests!</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setValue" id="_setValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setValue">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#363-374" title="Go to source code">setValue</a>( <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Setts value</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Setts value</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getValue" id="_getValue">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getValue">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#376-393" title="Go to source code">getValue</a>( )</code>
+
+		<div class="description short">
+			<p>Getts value</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Getts value</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getToken" id="_getToken">
+
+		<td class="attributes"><code>
+			 public 
+
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getToken">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#395-415" title="Go to source code">getToken</a>( <span>mixed <var>$need</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			<p>Returns token</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns token</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|null</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getQueue" id="_getQueue">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-IMFUQueueModel.html">IMFUQueueModel</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getQueue">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#417-423" title="Go to source code">getQueue</a>( )</code>
+
+		<div class="description short">
+			<p>Getts queue model</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Getts queue model</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-IMFUQueueModel.html">IMFUQueueModel</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__destruct" id="___destruct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___destruct">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#425-433" title="Go to source code">__destruct</a>( )</code>
+
+		<div class="description short">
+			<p>Destructors: makes fast cleanup</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Destructors: makes fast cleanup</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validateFilled" id="_validateFilled">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validateFilled">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#439-447" title="Go to source code">validateFilled</a>( <span>Nette\Forms\IControl <var>$control</var></span> )</code>
+
+		<div class="description short">
+			<p>Filled validator: has been any file uploaded?</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Filled validator: has been any file uploaded?</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$control</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validateFileSize" id="_validateFileSize">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validateFileSize">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#449-462" title="Go to source code">validateFileSize</a>( <span>Nette\Forms\Controls\UploadControl <var>$control</var></span>, <span>integer <var>$limit</var></span> )</code>
+
+		<div class="description short">
+			<p>FileSize validator: is file size in limit?</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>FileSize validator: is file size in limit?</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$control</var></dt>
+					<dd>
+</dd>
+					<dt><var>$limit</var></dt>
+					<dd>size limit
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validateMimeType" id="_validateMimeType">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validateMimeType">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#464-472" title="Go to source code">validateMimeType</a>( <span>Nette\Forms\Controls\UploadControl <var>$control</var></span>, <span>array|string <var>$mimeType</var></span> )</code>
+
+		<div class="description short">
+			<p>MimeType validator: has file specified mime type?</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>MimeType validator: has file specified mime type?</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$control</var></dt>
+					<dd>
+</dd>
+					<dt><var>$mimeType</var></dt>
+					<dd>type
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parseIniSize" id="_parseIniSize">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parseIniSize">#</a>
+		<code><a href="source-class-MultipleFileUpload.html#476-486" title="Go to source code">parseIniSize</a>( <span>string <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Parses ini size</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Parses ini size</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$value</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="NAME" id="NAME">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-MultipleFileUpload.html#43" title="Go to source code"><b>NAME</b></a>
+			</code>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#NAME" class="anchor">#</a>
+				<code><span class="php-quote">&quot;Multiple File Uploader&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="VERSION" id="VERSION">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-MultipleFileUpload.html#45" title="Go to source code"><b>VERSION</b></a>
+			</code>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#VERSION" class="anchor">#</a>
+				<code><span class="php-quote">'$Rev: 77 $ released on $Date: 2011-03-17 23:52:31 +0100 (čt, 17 3 2011) $'</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="handleUploadsCalled" id="$handleUploadsCalled">
+		<td class="attributes"><code>
+			private static 
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MultipleFileUpload.html#47-52" title="Go to source code"><var>$handleUploadsCalled</var></a>
+
+			<div class="description short">
+				<p>Is files handle uploads called?</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Is files handle uploads called?</p>
+
+
+					<h4>See</h4>
+					<div class="list">
+							<code><code><a href="class-MultipleFileUpload.html#_handleUploads">MultipleFileUpload::handleUploads()</a></code></code><br>
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$handleUploadsCalled" class="anchor">#</a>
+				<code><span class="php-keyword1">false</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="queuesModel" id="$queuesModel">
+		<td class="attributes"><code>
+			protected static 
+			<code><a href="class-IMFUQueuesModel.html">IMFUQueuesModel</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MultipleFileUpload.html#53-58" title="Go to source code"><var>$queuesModel</var></a>
+
+			<div class="description short">
+				<p>Model</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Model</p>
+
+
+					<h4>See</h4>
+					<div class="list">
+							<code><code><a href="class-MultipleFileUpload.html#_init">MultipleFileUpload::init()</a></code></code><br>
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$queuesModel" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="validateFileCallback" id="$validateFileCallback">
+		<td class="attributes"><code>
+			public static 
+			Callback
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MultipleFileUpload.html#59-65" title="Go to source code"><var>$validateFileCallback</var></a>
+
+			<div class="description short">
+				<p>Validate file callback</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Validate file callback</p>
+
+
+					<h4>Param</h4>
+					<div class="list">
+							HttpUploadedFile File to be checked
+<br>
+					</div>
+					<h4>Return</h4>
+					<div class="list">
+							<code>boolean</code><br>
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$validateFileCallback" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="interfaceRegistrator" id="$interfaceRegistrator">
+		<td class="attributes"><code>
+			public static 
+			<code><a href="class-MFUUIRegistrator.html">MFUUIRegistrator</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MultipleFileUpload.html#66-70" title="Go to source code"><var>$interfaceRegistrator</var></a>
+
+			<div class="description short">
+				<p>Interface registrator instance</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Interface registrator instance</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$interfaceRegistrator" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="token" id="$token">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MultipleFileUpload.html#213-217" title="Go to source code"><var>$token</var></a>
+
+			<div class="description short">
+				<p>Unique identifier</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Unique identifier</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$token" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="maxFiles" id="$maxFiles">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MultipleFileUpload.html#218-222" title="Go to source code"><var>$maxFiles</var></a>
+
+			<div class="description short">
+				<p>Maximum selected files in one input</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Maximum selected files in one input</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$maxFiles" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="maxFileSize" id="$maxFileSize">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MultipleFileUpload.html#223-227" title="Go to source code"><var>$maxFileSize</var></a>
+
+			<div class="description short">
+				<p>Maximum file size of single uploaded file</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Maximum file size of single uploaded file</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$maxFileSize" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="simUploadThreads" id="$simUploadThreads">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-MultipleFileUpload.html#228-232" title="Go to source code"><var>$simUploadThreads</var></a>
+
+			<div class="description short">
+				<p>How many threads will be used to upload files</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				<p>How many threads will be used to upload files</p>
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$simUploadThreads" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

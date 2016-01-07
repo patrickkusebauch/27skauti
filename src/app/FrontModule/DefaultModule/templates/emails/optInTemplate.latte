@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>{$title}</title>
+        <style>
+            .bold {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+	<h2>Nezávazná příhlíška z oddílového webu (27sakuti.cz)</h2>
+
+	<ul>
+            <li>
+                <span class="bold">Jméno:</span> {$values['name']}
+            </li>
+            <li>
+                <span class="bold">Email:</span> {$values['mail']}
+            </li>
+            <li>
+                <span class="bold">Telefon:</span> {$values['phone']}
+	        </li>
+	        <li>
+		        <span class="bold">Škola:</span> {$values['school']}
+	        </li>
+	        <li>
+    		    <span class="bold">Třída:</span> {$values['class']}
+	        </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+{**
+ * Organization newbie page template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $members    Newbies in the group
+ *}
+{block #submenu}
+	{control submenu}
+{/block}
+
+{block #content}
+	<h1 class="heading_1">{$title}</h1>
+	<div class="box-nolined">
+		<p>Každý oddíl potřebuje pravidelně doplňovat nové členy. Postupně se tak obnovuje členská základna. Rádci a
+		podrádci odcházejí do roverů a na jejich místo postupně dorůstají mladší členi. Když k nám přijde nový kluk,
+		má nějaký čas, aby se v oddíle rozkoukal. Po nějaké době je již přiřazen do jedné z družin a po splnění
+		přijímací zkoušky se stává právoplatným členem našeho oddílu.</p>
+	</div>
+	{include 'member.latte', showAge => FALSE}
+{/block}

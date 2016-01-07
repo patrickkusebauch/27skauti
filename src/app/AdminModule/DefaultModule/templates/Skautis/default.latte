@@ -1,0 +1,29 @@
+{**
+ * Hlásínek page template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $config     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param string    $dir        Directory name where the files for chosen "Hlásínek" are stored
+ *}
+{block #head}
+	<link rel="stylesheet" href="{$basePath}/css/paginator.css" />
+{/block}
+
+{block #content}
+<h1 class="heading_1">IS skaut</h1>
+<div class="box-nolined">
+	<p>Vyberte si, která data chcete z IS skautu přenést:</p>
+	<ul>
+		<li><a n:href="people">Lidi</a></li>
+		<li><a n:href="unit">Oddíl</a></li>
+	</ul>
+</div>
+{/block}

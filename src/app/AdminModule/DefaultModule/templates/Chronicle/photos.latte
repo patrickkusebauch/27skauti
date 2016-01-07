@@ -1,0 +1,75 @@
+{**
+ * Label chronicle photos template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param string    $dirPath    path to the directory with photos
+ * @param Selection $photos     photos to be labeled
+ *}
+{block #content}
+<h1 class="heading_1">Kronika - popisky k fotkám</h1>
+<div class="box-outer">
+	<span class="box-left">{$event->name|truncate:45}
+	{if $event->datestart == $event->dateend}
+        ({$event->datestart|date:'j. n. Y'})
+    {elseif $event->datestart->format('n') == $event->dateend->format('n')}
+        ({$event->datestart|date:'j.'}-{$event->dateend|date:'j. n. Y'})
+    {else}
+        ({$event->datestart|date:'j. n.'}-{$event->dateend|date:'j. n. Y'})
+    {/if}</span>
+    <div class="box-nolined">
+    {form labelPhotosForm}
+        {input id}
+        <table class="table">
+	        <thead>
+    		    <tr>
+        			<th>Foto</th>
+	        		<th>Popisek</th>
+		        	<th>Úvodní?</th>
+    		    </tr>
+        	</thead>
+	        <tbody>
+    	    {foreach $form['chronicle_photos']->containers as $id => $dummy}
+	    	    <tr>
+		    	    <td class="picture-outer" style="right:auto;">{input chronicle_photos-$id-id}
+    		    	{var $filename = $dirPath . '/' . \Nette\Utils\Strings::padLeft($photos[$id], 4, 0) . '.jpg'}
+	    		    {if !(file_exists($config['wwwDir'] . $filename) && is_file($config['wwwDir'] . $filename))}
+		    		    {var $filename = $config['chroniclePhotosStorage'] . '/default.gif'}
+    			    {/if}
+    	    		{var $picture = Nette\Image::fromFile($config['wwwDir'] . $filename)}
+	    	    	{if $picture->getWidth() > $picture->getHeight()}
+		    	    	<div class="picture-inner-higher"></div>
+			    	    <div class="picture-inner-wider">
+				    	    <img src="{$basePath . $filename}" alt="Foto z akce" class="landscape" />
+        				</div>
+	        		{else}
+		        		<div class="picture-inner-wider"></div>
+			        	<div class="picture-inner-higher">
+				        	<img src="{$basePath . $filename}" alt="Foto z akce" class="photo" />
+    				    </div>
+    	    		{/if}
+	    	    	</td>
+		    	    <td>{input chronicle_photos-$id-text}</td>
+    		    	<td>{input chronicle_photos-$id-intro}</td>
+    	    	</tr>
+        	{/foreach}
+	        	<tr>
+		        	<td>{label showchronicle:}{/label}</td>
+			        <td>{input showchronicle:}</td>
+        			<td>{input send}</td>
+	        	</tr>
+	        </tbody>
+        </table>
+    {/form}
+    </div>
+</div>
+{/block}
+

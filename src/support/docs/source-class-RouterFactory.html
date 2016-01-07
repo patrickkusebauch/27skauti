@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+
+	<title>File router/RouterFactory.php | 27skauti.cz</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-AdminModule.html">AdminModule<span></span></a>
+						<ul>
+				<li><a href="namespace-AdminModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-DependentSelectBox.html">DependentSelectBox</a>
+						</li>
+				<li><a href="namespace-FrontModule.html">FrontModule<span></span></a>
+						<ul>
+				<li><a href="namespace-FrontModule.DefaultModule.html">DefaultModule</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-Models.html">Models</a>
+						</li>
+				<li><a href="namespace-Navigation.html">Navigation</a>
+						</li>
+				<li class="active"><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li><a href="namespace-skauti.html">skauti</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Acl.html">Acl</a></li>
+				<li><a href="class-Authenticator.html">Authenticator</a></li>
+				<li><a href="class-BasePresenter.html">BasePresenter</a></li>
+				<li><a href="class-ErrorPresenter.html">ErrorPresenter</a></li>
+				<li><a href="class-Helpers.html">Helpers</a></li>
+				<li><a href="class-MFUBaseQueueModel.html">MFUBaseQueueModel</a></li>
+				<li><a href="class-MFUBaseQueuesModel.html">MFUBaseQueuesModel</a></li>
+				<li><a href="class-MFUQueueSQLite3.html">MFUQueueSQLite3</a></li>
+				<li><a href="class-MFUQueuesSQLite3.html">MFUQueuesSQLite3</a></li>
+				<li><a href="class-MFUTemplate.html">MFUTemplate</a></li>
+				<li><a href="class-MFUUIBase.html">MFUUIBase</a></li>
+				<li><a href="class-MFUUIHTML4SingleUpload.html">MFUUIHTML4SingleUpload</a></li>
+				<li><a href="class-MFUUIPlupload.html">MFUUIPlupload</a></li>
+				<li><a href="class-MFUUIRegistrator.html">MFUUIRegistrator</a></li>
+				<li><a href="class-MultipleFileUpload.html">MultipleFileUpload</a></li>
+				<li class="active"><a href="class-RouterFactory.html">RouterFactory</a></li>
+				<li><a href="class-VisualPaginator.html">VisualPaginator</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-IMFUQueueModel.html">IMFUQueueModel</a></li>
+				<li><a href="class-IMFUQueuesModel.html">IMFUQueuesModel</a></li>
+				<li><a href="class-MFUUIInterface.html">MFUUIInterface</a></li>
+			</ul>
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-FormContainer_addMultipleFileUpload.html">FormContainer_addMultipleFileUpload</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-None.html" title="Summary of None"><span>Namespace</span></a>
+			</li>
+			<li>
+				<a href="class-RouterFactory.html" title="Summary of RouterFactory"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2: </a><span class="php-keyword1">use</span> Nette\Application\Routers\RouteList,
+</span><span id="3" class="l"><a class="l" href="#3"> 3: </a>    Nette\Application\Routers\Route;
+</span><span id="4" class="l"><a class="l" href="#4"> 4: </a><span class="php-comment">/**
+</span></span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment"> * Router factory
+</span></span><span id="6" class="l"><a class="l" href="#6"> 6: </a><span class="php-comment"> *
+</span></span><span id="7" class="l"><a class="l" href="#7"> 7: </a><span class="php-comment"> * @author Patrick Kusebauch
+</span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * @version 2.00, 09. 11. 2014
+</span></span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-comment"> */</span>
+</span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-keyword1">class</span> <a id="RouterFactory" href="#RouterFactory">RouterFactory</a>
+</span><span id="11" class="l"><a class="l" href="#11">11: </a>{
+</span><span id="12" class="l"><a class="l" href="#12">12: </a>
+</span><span id="13" class="l"><a class="l" href="#13">13: </a>    <span class="php-comment">/**
+</span></span><span id="14" class="l"><a class="l" href="#14">14: </a><span class="php-comment">     * @return Nette\Application\IRouter
+</span></span><span id="15" class="l"><a class="l" href="#15">15: </a><span class="php-comment">     */</span>
+</span><span id="16" class="l"><a class="l" href="#16">16: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_createRouter" href="#_createRouter">createRouter</a>()
+</span><span id="17" class="l"><a class="l" href="#17">17: </a>    {
+</span><span id="18" class="l"><a class="l" href="#18">18: </a>        <span class="php-var">$router</span> = <span class="php-keyword1">new</span> RouteList();
+</span><span id="19" class="l"><a class="l" href="#19">19: </a>        <span class="php-var">$router</span>[] = <span class="php-keyword1">new</span> Route(<span class="php-quote">'index.php'</span>, <span class="php-quote">'Front:Default:Homepage:default'</span>, Route::ONE_WAY);
+</span><span id="20" class="l"><a class="l" href="#20">20: </a>        <span class="php-var">$router</span>[] = <span class="php-keyword1">new</span> Route(<span class="php-quote">'admin/&lt;presenter&gt;/&lt;action&gt;[/&lt;id&gt;]'</span>, <span class="php-keyword1">array</span>(
+</span><span id="21" class="l"><a class="l" href="#21">21: </a>                <span class="php-quote">'module'</span> =&gt; <span class="php-quote">'Admin:Default'</span>,
+</span><span id="22" class="l"><a class="l" href="#22">22: </a>                <span class="php-quote">'presenter'</span> =&gt; <span class="php-quote">'Homepage'</span>,
+</span><span id="23" class="l"><a class="l" href="#23">23: </a>                <span class="php-quote">'action'</span> =&gt; <span class="php-quote">'default'</span>,
+</span><span id="24" class="l"><a class="l" href="#24">24: </a>            ));
+</span><span id="25" class="l"><a class="l" href="#25">25: </a>    
+</span><span id="26" class="l"><a class="l" href="#26">26: </a>        <span class="php-var">$router</span>[] = <span class="php-keyword1">new</span> Route(<span class="php-quote">'&lt;presenter&gt;/&lt;action&gt;[/&lt;id&gt;]'</span>, <span class="php-keyword1">array</span>(
+</span><span id="27" class="l"><a class="l" href="#27">27: </a>                <span class="php-quote">'module'</span> =&gt; <span class="php-quote">'Front:Default'</span>,
+</span><span id="28" class="l"><a class="l" href="#28">28: </a>                <span class="php-quote">'presenter'</span> =&gt; <span class="php-keyword1">array</span>(
+</span><span id="29" class="l"><a class="l" href="#29">29: </a>                    Route::VALUE =&gt; <span class="php-quote">'Homepage'</span>,
+</span><span id="30" class="l"><a class="l" href="#30">30: </a>                    Route::FILTER_TABLE =&gt; <span class="php-keyword1">array</span>(
+</span><span id="31" class="l"><a class="l" href="#31">31: </a>                        <span class="php-comment">// řetězec v URL =&gt; presenter</span>
+</span><span id="32" class="l"><a class="l" href="#32">32: </a>                        <span class="php-quote">'aktuality'</span> =&gt; <span class="php-quote">'News'</span>,
+</span><span id="33" class="l"><a class="l" href="#33">33: </a>                        <span class="php-quote">'akce'</span> =&gt; <span class="php-quote">'Event'</span>,
+</span><span id="34" class="l"><a class="l" href="#34">34: </a>                        <span class="php-quote">'kronika'</span> =&gt; <span class="php-quote">'Chronicle'</span>,
+</span><span id="35" class="l"><a class="l" href="#35">35: </a>                        <span class="php-quote">'organizace'</span> =&gt; <span class="php-quote">'Organization'</span>,
+</span><span id="36" class="l"><a class="l" href="#36">36: </a>                        <span class="php-quote">'knihanavstev'</span> =&gt; <span class="php-quote">'Guestbook'</span>,
+</span><span id="37" class="l"><a class="l" href="#37">37: </a>                        <span class="php-quote">'prihlaseni'</span> =&gt; <span class="php-quote">'Sign'</span>,
+</span><span id="38" class="l"><a class="l" href="#38">38: </a>                        ),
+</span><span id="39" class="l"><a class="l" href="#39">39: </a>                    ),
+</span><span id="40" class="l"><a class="l" href="#40">40: </a>                <span class="php-quote">'action'</span> =&gt; <span class="php-keyword1">array</span>(
+</span><span id="41" class="l"><a class="l" href="#41">41: </a>                    Route::VALUE =&gt; <span class="php-quote">'default'</span>,
+</span><span id="42" class="l"><a class="l" href="#42">42: </a>                    Route::FILTER_TABLE =&gt; <span class="php-keyword1">array</span>(
+</span><span id="43" class="l"><a class="l" href="#43">43: </a>                        <span class="php-comment">// řetězec v URL =&gt; akce</span>
+</span><span id="44" class="l"><a class="l" href="#44">44: </a>                        <span class="php-quote">'zapomenuteHeslo'</span> =&gt; <span class="php-quote">'forgot'</span>,
+</span><span id="45" class="l"><a class="l" href="#45">45: </a>                        <span class="php-quote">'registrace'</span> =&gt; <span class="php-quote">'register'</span>,
+</span><span id="46" class="l"><a class="l" href="#46">46: </a>                        <span class="php-quote">'aktivace'</span> =&gt; <span class="php-quote">'activate'</span>,
+</span><span id="47" class="l"><a class="l" href="#47">47: </a>                        <span class="php-quote">'nabor'</span> =&gt; <span class="php-quote">'recruit'</span>,
+</span><span id="48" class="l"><a class="l" href="#48">48: </a>                        <span class="php-quote">'prorodice'</span> =&gt; <span class="php-quote">'parent'</span>,
+</span><span id="49" class="l"><a class="l" href="#49">49: </a>                        <span class="php-quote">'klubovna'</span> =&gt; <span class="php-quote">'lounge'</span>,
+</span><span id="50" class="l"><a class="l" href="#50">50: </a>                        <span class="php-quote">'detailKlubovny'</span> =&gt; <span class="php-quote">'loungeDetail'</span>,
+</span><span id="51" class="l"><a class="l" href="#51">51: </a>                        <span class="php-quote">'detailFotky'</span> =&gt; <span class="php-quote">'detailPicture'</span>,
+</span><span id="52" class="l"><a class="l" href="#52">52: </a>                        <span class="php-quote">'kontakty'</span> =&gt; <span class="php-quote">'contact'</span>,
+</span><span id="53" class="l"><a class="l" href="#53">53: </a>                        <span class="php-quote">'pridejse'</span> =&gt; <span class="php-quote">'join'</span>,
+</span><span id="54" class="l"><a class="l" href="#54">54: </a>                        <span class="php-quote">'akce'</span> =&gt; <span class="php-quote">'event'</span>,
+</span><span id="55" class="l"><a class="l" href="#55">55: </a>                        <span class="php-quote">'aktuality'</span> =&gt; <span class="php-quote">'news'</span>,
+</span><span id="56" class="l"><a class="l" href="#56">56: </a>                        <span class="php-quote">'archiv'</span> =&gt; <span class="php-quote">'archive'</span>,
+</span><span id="57" class="l"><a class="l" href="#57">57: </a>                        <span class="php-quote">'vedeni'</span> =&gt; <span class="php-quote">'leader'</span>,
+</span><span id="58" class="l"><a class="l" href="#58">58: </a>                        <span class="php-quote">'roveri'</span> =&gt; <span class="php-quote">'ranger'</span>,
+</span><span id="59" class="l"><a class="l" href="#59">59: </a>                        <span class="php-quote">'novacci'</span> =&gt; <span class="php-quote">'newbie'</span>,
+</span><span id="60" class="l"><a class="l" href="#60">60: </a>                        <span class="php-quote">'oldskauti'</span> =&gt; <span class="php-quote">'oldscout'</span>,
+</span><span id="61" class="l"><a class="l" href="#61">61: </a>                        <span class="php-quote">'historieoddilu'</span> =&gt; <span class="php-quote">'history'</span>,
+</span><span id="62" class="l"><a class="l" href="#62">62: </a>                        ),
+</span><span id="63" class="l"><a class="l" href="#63">63: </a>                    ),
+</span><span id="64" class="l"><a class="l" href="#64">64: </a>            ));
+</span><span id="65" class="l"><a class="l" href="#65">65: </a>        <span class="php-keyword1">return</span> <span class="php-var">$router</span>;
+</span><span id="66" class="l"><a class="l" href="#66">66: </a>    }
+</span><span id="67" class="l"><a class="l" href="#67">67: </a>
+</span><span id="68" class="l"><a class="l" href="#68">68: </a>}
+</span><span id="69" class="l"><a class="l" href="#69">69: </a></span></code></pre>
+
+	<div id="footer">
+		27skauti.cz API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?1747426484"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{**
+ * Chronicle overview template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *
+ * @param Selection $events     events from specified year
+ *}
+{block #head}
+	<link rel="stylesheet" href="{$basePath}/css/paginator.css" />
+{/block}
+
+{block #content}
+<h1 class="heading_1">Kronika</h1>
+<div class="box-nolined">
+	 <p n:if="$user->isAllowed('Admin:Default:Chronicle', 'generate')">Pokud chcete přidat fotky nebo videa, použijde Editace "G". "F" a "V" slouží pro přidání popisků k fotkám a videím.</p>
+	 <p n:if="$user->isAllowed('Admin:Default:Chronicle', 'delete')">Vymazání kroniky vymaže pouze text, všechny fotky a videa. Samotná akce se dá kompletně vymazat (včetně lístečku a zobrazení v kalendáři) v sekci Akce.</p>
+	 <p n:if="$user->isAllowed('Admin:Default:Chronicle', 'delete')">Pokud jsou fotky nahrané na serveru, avšak se vám nezobrazují u akce, využijte sekce <a n:href="fixPhotos">oprava fotek</a></p>
+</div>
+	Stránkování:
+	{control vp}
+
+{if $events->fetch()}
+<table class="table"><thead><tr>
+	<th>Datum</th>
+	<th>Typ Akce</th>
+	<th>Záznam</th>
+	<th n:if="$user->isAllowed('Admin:Default:Chronicle', 'edit')" style="min-width:110px;">Editace</th>
+	<th n:if="$user->isAllowed('Admin:Default:Chronicle', 'show')">Zobrazení</th>
+	<th n:if="$user->isAllowed('Admin:Default:Chronicle', 'delete')">Mazání</th>
+</tr></thead><tbody>
+{foreach $events as $event}<tr>
+	<td>
+		{if $event->datestart == $event->dateend}
+			{$event->datestart|date:'j. n.'}
+		{elseif $event->datestart->format('n') == $event->dateend->format('n')}
+			{$event->datestart|date:'j.'}-{$event->dateend|date:'j. n.'}
+		{else}
+			{$event->datestart|date:'j. n.'}-{$event->dateend|date:'j. n.'}
+		{/if}
+	</td>
+	<td>{$event->type}</td>
+	<td>{$event->name|truncate:24}</td>
+	<td n:if="$user->isAllowed('Admin:Default:Chronicle', 'edit')">
+		<span><a n:href="edit id => $event->id" title="Text">T</a></span>
+		<span n:if="$user->isAllowed('Admin:Default:Chronicle', 'photos')">
+			 | <a n:href="photos id => $event->id" title="Popisky fotek">F</a></span>
+		<span n:if="$user->isAllowed('Admin:Default:Chronicle', 'videos')">
+			 | <a n:href="videos id => $event->id" title="Nadpisy videí">V</a></span>
+		<span n:if="$user->isAllowed('Admin:Default:Chronicle', 'generate')">
+			 | <a n:href="generate id => $event->id" title="Generovat fotky nebo videa">G</a></span>
+	</td>
+	<td n:if="$user->isAllowed('Admin:Default:Chronicle', 'show')"><a n:href="show! id => $event->id">
+		{if $event->showchronicle}Odzobraz{else}Zobraz{/if}
+	</a></td>
+	<td n:if="$user->isAllowed('Admin:Default:Chronicle', 'delete')"><a n:href="delete! id => $event->id">Smaž</a></td>
+</tr>{/foreach}
+</tbody></table>
+{/if}
+
+{/block}
+

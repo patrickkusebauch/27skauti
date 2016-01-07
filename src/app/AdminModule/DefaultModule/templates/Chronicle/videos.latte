@@ -1,0 +1,63 @@
+{**
+ * Label chronicle videos template.
+ *
+ * @author Patrick Kusebauch
+ * @version 2.00, 03. 11. 2014
+ *
+ * @param string    $basePath   web base path
+ * @param array     $params     configuration parameters
+ * @param string    $robots     tell robots how to index the content of a page (optional)
+ * @param array     $flashes    flash messages
+ * @param string    $title      title for the heading of the browser
+ * @param User      $user       Identity of a (logged in) user
+ *}
+{block #content}
+<h1 class="heading_1">Kronika - videa</h1>
+<div class="box-outer">
+	<span class="box-left">{$event->name|truncate:45}
+	{if $event->datestart == $event->dateend}
+        ({$event->datestart|date:'j. n. Y'})
+    {elseif $event->datestart->format('n') == $event->dateend->format('n')}
+        ({$event->datestart|date:'j.'}-{$event->dateend|date:'j. n. Y'})
+    {else}
+        ({$event->datestart|date:'j. n.'}-{$event->dateend|date:'j. n. Y'})
+    {/if}</span>
+
+    <div class="box-nolined">
+	    <p>Návod na získání potřebného kódu pro kroniku:</p>
+    	<ol>
+    		<li>Vlezeš na video na youtube</li>
+	    	<li>Pod videem klikni na sdílet</li>
+		    <li>Následně klikni na vložit</li>
+    		<li>Ten kód, co ti to tam dá je to, co zkopíruješ do kroniky</li>
+	    </ol>
+	    {form labelVideosForm}
+    	    {input id}
+    	    <table class="table" style="width:100%">
+	    	    <thead>
+		    	    <tr>
+			    	    <th>Nadpis/Popisek videa</th>
+    			    	<th>HTML kód pro zobrazení</th>
+	    			    <th>Odebrat video</th>
+    		    	<tr>
+        		</thead>
+	        	<tbody>
+		        {foreach $form['chronicle_videos']->containers as $id => $dummy}
+        			<tr>
+	        			<td>{input chronicle_videos-$id-id}{input chronicle_videos-$id-note, style => 'width:275px;'}</td>
+		        		<td>{input chronicle_videos-$id-input, style => 'width:300px;'}</td>
+			        	<td>{input chronicle_videos-$id-remove}</td>
+        			</tr>
+	        	{/foreach}
+		        	<tr>
+			        	<td>{input chronicle_videos-add}</td>
+				        <td>{label showchronicle:}{/label}{input showchronicle:}</td>
+    				    <td>{input send}</td>
+    	    		</tr>
+	    	    </tbody>
+    	    </table>
+    	{/form}
+    </div>
+</div>
+{/block}
+
